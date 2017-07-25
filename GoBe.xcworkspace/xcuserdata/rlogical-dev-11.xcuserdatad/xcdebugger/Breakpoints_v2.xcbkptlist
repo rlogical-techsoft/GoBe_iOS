@@ -138,7 +138,7 @@
                   moduleName = "GoBe"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rlogical-dev-11/Desktop/Mitul%20Work/Applications/Gobe/Repo/GoBe/GoBe/GOBE_APP/Login-SignUp/LoginViewController.swift"
-                  timestampString = "522680927.572681"
+                  timestampString = "522683930.259414"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "258"
@@ -153,7 +153,7 @@
                   moduleName = "GoBe"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rlogical-dev-11/Desktop/Mitul%20Work/Applications/Gobe/Repo/GoBe/GoBe/GOBE_APP/Login-SignUp/LoginViewController.swift"
-                  timestampString = "522680927.574789"
+                  timestampString = "522683930.261823"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "258"
@@ -404,11 +404,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoBe/GOBE_APP/HOME/HomeViewVC.swift"
-            timestampString = "522678643.265927"
+            timestampString = "522683929.028237"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1982"
-            endingLineNumber = "1982"
+            startingLineNumber = "1990"
+            endingLineNumber = "1990"
             landmarkName = "getHomescreenAllsectionResponse(responseObj:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -416,7 +416,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoBe/GOBE_APP/HOME/HomeViewVC.swift"
@@ -429,14 +429,14 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "GoBe.HomeViewVC.tableView (__ObjC.UITableView, cellForRowAt : Foundation.IndexPath) -&gt; __ObjC.UITableViewCell"
                   moduleName = "GoBe"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rlogical-dev-11/Desktop/Mitul%20Work/Applications/Gobe/Repo/GoBe/GoBe/GOBE_APP/HOME/HomeViewVC.swift"
-                  timestampString = "522680927.603532"
+                  timestampString = "522683930.291744"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "962"
@@ -444,14 +444,14 @@
                   offsetFromSymbolStart = "232">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "GoBe.HomeViewVC.(tableView (__ObjC.UITableView, cellForRowAt : Foundation.IndexPath) -&gt; __ObjC.UITableViewCell).(closure #1)"
                   moduleName = "GoBe"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rlogical-dev-11/Desktop/Mitul%20Work/Applications/Gobe/Repo/GoBe/GoBe/GOBE_APP/HOME/HomeViewVC.swift"
-                  timestampString = "522680927.605803"
+                  timestampString = "522683930.293836"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "962"
@@ -468,11 +468,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoBe/GOBE_APP/HOME/HomeViewVC.swift"
-            timestampString = "522674803.788544"
+            timestampString = "522683929.028237"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1967"
-            endingLineNumber = "1967"
+            startingLineNumber = "1975"
+            endingLineNumber = "1975"
             landmarkName = "HomescreenOtherSectionAPI()"
             landmarkType = "7">
          </BreakpointContent>

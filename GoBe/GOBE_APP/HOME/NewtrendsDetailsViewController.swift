@@ -243,7 +243,5 @@ class NewtrendsDetailsViewController: UIViewController,UICollectionViewDelegate,
     }
     
     //MARK:- UIAlertView Show
-    
-    
-    
+
 }

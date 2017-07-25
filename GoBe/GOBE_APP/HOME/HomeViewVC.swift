@@ -1950,8 +1950,16 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
                     
                 }
                 else{
+                    
                     if ISDebug{
-                        print("Simple Login False")
+                        print("Tips like & Unlike False")
+                    }
+                    
+                    if responseAllKey.contains(kAPI_Msg) {
+                        
+                        if let strMessage = responseObj.value(forKey: kAPI_Msg) as? String {
+                            Constants.showAlertTitle(kAlertAppName, messageStr: strMessage, viewController: self)
+                        }
                     }
                 }
             }
@@ -2011,7 +2019,14 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
                 }
                 else{
                     if ISDebug{
-                        print("Simple Login False")
+                        print("Tips like & Unlike False")
+                    }
+                    
+                    if responseAllKey.contains(kAPI_Msg) {
+                        
+                        if let strMessage = responseObj.value(forKey: kAPI_Msg) as? String {
+                            Constants.showAlertTitle(kAlertAppName, messageStr: strMessage, viewController: self)
+                        }
                     }
                 }
             }

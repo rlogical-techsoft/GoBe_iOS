@@ -1,4 +1,3 @@
-//
 //  YOURLISTSVC.swift
 //  GoBe
 //
@@ -59,7 +58,6 @@ class YOURLISTSVC: UIViewController,UITableViewDelegate,UITableViewDataSource,We
             }
         }
         
-        
         web.delegate = self
         self.view.addSubview(HUD)
         
@@ -119,9 +117,8 @@ class YOURLISTSVC: UIViewController,UITableViewDelegate,UITableViewDataSource,We
     
     //MARK:- Webservices methods
     func getTipsFromListID(strID:String) -> Void {
+        
+        
     }
-    
-    
-    
     
 }

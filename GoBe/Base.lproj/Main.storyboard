@@ -4197,7 +4197,7 @@
         <image name="list" width="48" height="41"/>
         <image name="map" width="48" height="39"/>
         <image name="map arrow" width="32" height="18"/>
-        <image name="map arrow hit" width="16" height="16"/>
+        <image name="map arrow hit" width="32" height="18"/>
         <image name="med ok" width="103" height="103"/>
         <image name="next" width="61" height="18"/>
         <image name="pod" width="38" height="48"/>
