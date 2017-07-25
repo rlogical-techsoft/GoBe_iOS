@@ -1,0 +1,17 @@
+PODS:
+  - IQKeyboardManagerSwift (4.0.8)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
+
+DEPENDENCIES:
+  - IQKeyboardManagerSwift (= 4.0.8)
+  - SDWebImage (~> 3.8)
+
+SPEC CHECKSUMS:
+  IQKeyboardManagerSwift: c04bc9f68473823f825eb44d958fce98d921bead
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+
+PODFILE CHECKSUM: 62c9a569ea0430aa983bd881da21e2b2bc2a0e1b
+
+COCOAPODS: 1.2.1
