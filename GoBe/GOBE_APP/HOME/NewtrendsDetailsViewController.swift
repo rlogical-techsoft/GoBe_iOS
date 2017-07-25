@@ -104,9 +104,9 @@ class NewtrendsDetailsViewController: UIViewController,UICollectionViewDelegate,
         
         
         //For Like Button 
-        if let str_isLikeOrNot = dict_Cell?.value(forKey: "LikeStatus") as? String{
+        if let str_isLikeOrNot = dict_Cell?.value(forKey: "LikeStatus") as? Int {
             
-            if str_isLikeOrNot == "1" {
+            if str_isLikeOrNot == 1 {
                 cell?.btn_Like.isSelected = true
             }else{
                 cell?.btn_Like.isSelected = false
@@ -115,6 +115,9 @@ class NewtrendsDetailsViewController: UIViewController,UICollectionViewDelegate,
         
         cell?.btn_Like.tag = indexPath.row
         cell?.btn_Like.addTarget(self, action: #selector(btnLikeTapped(_:)), for: .touchUpInside)
+        
+        cell?.btn_Direction.tag = indexPath.row
+        cell?.btn_Direction.addTarget(self, action: #selector(btnAction_Direction(_:)), for: .touchUpInside)
         
         return cell!
     }
@@ -130,59 +133,85 @@ class NewtrendsDetailsViewController: UIViewController,UICollectionViewDelegate,
         
     }
     
-    func btnLikeTapped(_ sender : UIButton)
-    {
+    func btnLikeTapped(_ sender : UIButton){
+        
         let indexForTap = sender.tag
-        print("Index of Tap Like button : \(indexForTap)")
+//        print("Index of Tap Like button : \(indexForTap)")
         let dict_Cell = arrTipsListData.object(at: indexForTap) as? NSDictionary
         
         let dictChange : NSMutableDictionary = dict_Cell?.mutableCopy() as! NSMutableDictionary
         
-        if let str_isLikeOrNot = dict_Cell?.value(forKey: "LikeStatus") as? String{
+//        print("Old Dict: \(dict_Cell!) \n")
+        
+        if let intTotalLikelist = dict_Cell?.value(forKey: "Likelist") as? String {
             
-            if str_isLikeOrNot == "1" {
-                dictChange.setValue("0", forKey: "LikeStatus")
+            var intTotalCount : Int = Int(intTotalLikelist)!
+            
+            if let int_isLikeOrNot = dict_Cell?.value(forKey: "LikeStatus") as? Int {
                 
+                if int_isLikeOrNot == 1 {
+                    intTotalCount = intTotalCount - 1
+                    
+                    dictChange.setValue(0, forKey: "LikeStatus")
+                    dictChange.setValue("\(intTotalCount)", forKey: "Likelist")
+                }else{
+                    intTotalCount = intTotalCount + 1
+                    
+                    dictChange.setValue(1, forKey: "LikeStatus")
+                    dictChange.setValue("\(intTotalCount)", forKey: "Likelist")
+                }
+//                print("New Dict: \(dictChange)")
                 
-            }else{
-                dictChange.setValue("1", forKey: "LikeStatus")
-                
+                arrTipsListData.replaceObject(at: indexForTap, with: dictChange)
+                CollectionviewForNewTrendDetails.reloadData()
             }
-            print("")
-            
-            
-            arrTipsListData.replaceObject(at: indexForTap, with: dictChange)
-            CollectionviewForNewTrendDetails.reloadData()
-            
         }
-        
-        
-        
-        
         
         if sender.isSelected{
             sender.isSelected = false
         }else{
             sender.isSelected = true
         }
+        
+        //Call Webservices
+        if let strTipID = dict_Cell?.value(forKey: "TipID") as? String{
+            self.tipLikeUnlike(strTipID: strTipID)
+        }
     }
 
-
-    
+    func btnAction_Direction(_ sender : UIButton){
+        
+        let LocationSearch = self.storyboard?.instantiateViewController(withIdentifier: "LocationSearchViewController") as! LocationSearchViewController
+        
+        let dict_Cell = arrTipsListData.object(at: sender.tag) as? NSDictionary
+        
+        if let strAddress = dict_Cell?.value(forKey: "Title") as? String{
+            LocationSearch.EventTilte = strAddress as NSString
+        }
+        if let strAddress = dict_Cell?.value(forKey: "Address") as? String{
+            LocationSearch.locationName = strAddress as NSString
+        }
+        if let strLatitude = dict_Cell?.value(forKey: "Latitude") as? String{
+            LocationSearch.Latitude = strLatitude as NSString
+        }
+        if let strlongitude = dict_Cell?.value(forKey: "Longitude") as? String{
+            LocationSearch.longitude = strlongitude as NSString
+        }
+        
+        self.navigationController?.pushViewController(LocationSearch, animated: true)
+    }
     
     //MARK:- Webservice Methods
     
     func tipLikeUnlike(strTipID:String) -> Void {
         
-        HUD.show(true)
         web.tipLikeUnlike(strUserID: appDel.instanceModelLogin.UserID, strTipID: strTipID)
     }
     
     func tipsLikeOrUnLikeResponse(responseObj: NSDictionary) -> Void{
         
-        HUD.hide(true)
         let responseAllKey : NSArray = responseObj.allKeys as NSArray
-        print("Print Array Keys : \(responseAllKey)")
+//        print("Print Array Keys : \(responseAllKey)")
         
         if responseAllKey.contains(kAPI_Status) {
             
@@ -192,10 +221,6 @@ class NewtrendsDetailsViewController: UIViewController,UICollectionViewDelegate,
                     if ISDebug{
                         print("Tips like & Unlike Response \(responseObj)")
                     }
-                    
-                    
-                    
-                    
                     
                 }else{
                     

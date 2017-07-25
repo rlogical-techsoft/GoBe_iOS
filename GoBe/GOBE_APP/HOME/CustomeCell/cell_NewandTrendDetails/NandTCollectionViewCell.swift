@@ -14,9 +14,13 @@ class NandTCollectionViewCell: UICollectionViewCell {
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     
     @IBOutlet weak var view_EventTitle: UIView!
+    
     @IBOutlet weak var btn_Like: UIButton!
+    @IBOutlet var btn_Direction: UIButton!
+    
     @IBOutlet weak var View_bottom: UIView!
     @IBOutlet weak var image_pod: UIImageView!
+    
     @IBOutlet weak var lbl_date: UILabel?
     @IBOutlet weak var lbl_placeName: UILabel?
     @IBOutlet weak var view_PlaceandDate: UIView?

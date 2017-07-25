@@ -113,6 +113,10 @@ class YOURLISTSVC: UIViewController,UITableViewDelegate,UITableViewDataSource,We
         return dcell!
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
     //MARK:- Webservices methods
     func getTipsFromListID(strID:String) -> Void {
     }

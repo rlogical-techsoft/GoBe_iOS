@@ -165,9 +165,6 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
         web.delegate = self
         self.view.addSubview(HUD)
         
-        self.getNewAndTrending()
-        
-
         print("User ID: \(String(describing: appDel.instanceModelLogin.UserID))")
         
         
@@ -233,8 +230,6 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
         self.setupViews()
         self.TextfieldProperitiesSet()
         
-        perform(#selector(HomescreenOtherSectionAPI), with: nil, afterDelay: 0)
-
     }
     
     
@@ -246,6 +241,10 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
     override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(animated)
+        
+        perform(#selector(getNewAndTrending), with: nil, afterDelay: 0.1)
+        perform(#selector(HomescreenOtherSectionAPI), with: nil, afterDelay: 0.1)
+        
         
         //Cell click Highlights Reload
         
@@ -1964,8 +1963,8 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
     func HomescreenOtherSectionAPI(){
         
         HUD.show(true)
-        web.getHome_alllist(strUserID: "31") //We have to change this Id to Login User ID.
-//        web.getHome_alllist(strUserID: appDel.instanceModelLogin.UserID)
+//        web.getHome_alllist(strUserID: "31") //We have to change this Id to Login User ID.
+        web.getHome_alllist(strUserID: appDel.instanceModelLogin.UserID)
     }
     
     func getHomescreenAllsectionResponse(responseObj: NSDictionary) -> Void

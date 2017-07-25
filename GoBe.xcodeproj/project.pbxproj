@@ -18,6 +18,7 @@
 		3FD0D81F1F064B20001EDD04 /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD0D81E1F064B20001EDD04 /* Extension+String.swift */; };
 		5AA7441B4054BE42871238FA /* Pods_GoBe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE2199B55CC0495B1CDCD0EE /* Pods_GoBe.framework */; };
 		730878041F21E1D300E3EF22 /* NewtrendsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730878031F21E1D300E3EF22 /* NewtrendsDetailsViewController.swift */; };
+		733F77931F2773F700E68603 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 733F77921F2773F700E68603 /* MapKit.framework */; };
 		736111061F23495F00BF0B45 /* YOURLIKES_screenshot1.png in Resources */ = {isa = PBXBuildFile; fileRef = 736111051F23495F00BF0B45 /* YOURLIKES_screenshot1.png */; };
 		736914831F1F27BD00EBECE7 /* HomeViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736914821F1F27BD00EBECE7 /* HomeViewVC.swift */; };
 		736914851F1F280C00EBECE7 /* ProfileInterestedTopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736914841F1F280C00EBECE7 /* ProfileInterestedTopicViewController.swift */; };
@@ -30,6 +31,8 @@
 		736DFD5D1F1CC1C90097E771 /* Cell_FriendsRequest.xib in Resources */ = {isa = PBXBuildFile; fileRef = 736DFD591F1CC1C90097E771 /* Cell_FriendsRequest.xib */; };
 		736DFD5E1F1CC1C90097E771 /* Cell_userList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736DFD5A1F1CC1C90097E771 /* Cell_userList.swift */; };
 		736DFD5F1F1CC1C90097E771 /* Cell_userList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 736DFD5B1F1CC1C90097E771 /* Cell_userList.xib */; };
+		737A94981F27645500AD6F9D /* LocationSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737A94971F27645500AD6F9D /* LocationSearchViewController.swift */; };
+		737A949A1F27651900AD6F9D /* Screen Shot 2017-07-25 at 1.07.23 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 737A94991F27651900AD6F9D /* Screen Shot 2017-07-25 at 1.07.23 PM.png */; };
 		738E1A2B1F164CCA00B13A6D /* LaunchScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738E1A2A1F164CCA00B13A6D /* LaunchScreenVC.swift */; };
 		738E1A331F164E0300B13A6D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738E1A321F164E0300B13A6D /* ViewController.swift */; };
 		7397A42B1F179F07004BE6EB /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7397A42A1F179F07004BE6EB /* RegisterViewController.swift */; };
@@ -105,6 +108,7 @@
 		3FD0D81C1F064A2B001EDD04 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		3FD0D81E1F064B20001EDD04 /* Extension+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 		730878031F21E1D300E3EF22 /* NewtrendsDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewtrendsDetailsViewController.swift; sourceTree = "<group>"; };
+		733F77921F2773F700E68603 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		736111051F23495F00BF0B45 /* YOURLIKES_screenshot1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = YOURLIKES_screenshot1.png; sourceTree = "<group>"; };
 		736914821F1F27BD00EBECE7 /* HomeViewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewVC.swift; sourceTree = "<group>"; };
 		736914841F1F280C00EBECE7 /* ProfileInterestedTopicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileInterestedTopicViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +121,8 @@
 		736DFD591F1CC1C90097E771 /* Cell_FriendsRequest.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Cell_FriendsRequest.xib; path = "GoBe/GOBE_APP/FRIENDS & FOLLOWERS/cell/Cell_FriendsRequest.xib"; sourceTree = SOURCE_ROOT; };
 		736DFD5A1F1CC1C90097E771 /* Cell_userList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cell_userList.swift; path = "GoBe/GOBE_APP/FRIENDS & FOLLOWERS/cell/Cell_userList.swift"; sourceTree = SOURCE_ROOT; };
 		736DFD5B1F1CC1C90097E771 /* Cell_userList.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Cell_userList.xib; path = "GoBe/GOBE_APP/FRIENDS & FOLLOWERS/cell/Cell_userList.xib"; sourceTree = SOURCE_ROOT; };
+		737A94971F27645500AD6F9D /* LocationSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSearchViewController.swift; sourceTree = "<group>"; };
+		737A94991F27651900AD6F9D /* Screen Shot 2017-07-25 at 1.07.23 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2017-07-25 at 1.07.23 PM.png"; sourceTree = "<group>"; };
 		738E1A2A1F164CCA00B13A6D /* LaunchScreenVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreenVC.swift; sourceTree = "<group>"; };
 		738E1A321F164E0300B13A6D /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7397A42A1F179F07004BE6EB /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -195,6 +201,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				733F77931F2773F700E68603 /* MapKit.framework in Frameworks */,
 				3F4E2EB81EFC018400D9297D /* FBSDKShareKit.framework in Frameworks */,
 				3F4E2EB61EFC018400D9297D /* FBSDKCoreKit.framework in Frameworks */,
 				3F4E2EB71EFC018400D9297D /* FBSDKLoginKit.framework in Frameworks */,
@@ -366,6 +373,7 @@
 		73A420531F0B5CB6001A1BCB /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				737A94991F27651900AD6F9D /* Screen Shot 2017-07-25 at 1.07.23 PM.png */,
 				736111051F23495F00BF0B45 /* YOURLIKES_screenshot1.png */,
 				736DFD4B1F1C87720097E771 /* Screen Shot - Launch.png */,
 				9A3E642A1F1899FB00ED6697 /* Screen Shot 2017-07-14 at 11.48.29 AM.png */,
@@ -459,6 +467,7 @@
 			isa = PBXGroup;
 			children = (
 				730878031F21E1D300E3EF22 /* NewtrendsDetailsViewController.swift */,
+				737A94971F27645500AD6F9D /* LocationSearchViewController.swift */,
 			);
 			name = "Tips Details";
 			sourceTree = "<group>";
@@ -482,6 +491,7 @@
 		883446E2AB130BCDE56897B8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				733F77921F2773F700E68603 /* MapKit.framework */,
 				AE2199B55CC0495B1CDCD0EE /* Pods_GoBe.framework */,
 			);
 			name = Frameworks;
@@ -727,6 +737,7 @@
 				9A52CE9D1F03B13700FCEB71 /* YourLikesTableViewCell.xib in Resources */,
 				736DFD5D1F1CC1C90097E771 /* Cell_FriendsRequest.xib in Resources */,
 				9A52CEC31F03B34200FCEB71 /* Type Dynamic - Larsseit Medium.otf in Resources */,
+				737A949A1F27651900AD6F9D /* Screen Shot 2017-07-25 at 1.07.23 PM.png in Resources */,
 				3F486AB41EFAAA55006BB1D0 /* Main.storyboard in Resources */,
 				7369148C1F1F2A5400EBECE7 /* Cell_Following.xib in Resources */,
 				7397A43D1F179FCB004BE6EB /* profile2.png in Resources */,
@@ -817,6 +828,7 @@
 				3FD0D81D1F064A2B001EDD04 /* MBProgressHUD.m in Sources */,
 				736DFD4E1F1CBD770097E771 /* Friends_FollowersViewController.swift in Sources */,
 				736DFD5E1F1CC1C90097E771 /* Cell_userList.swift in Sources */,
+				737A94981F27645500AD6F9D /* LocationSearchViewController.swift in Sources */,
 				9A52CE9C1F03B13700FCEB71 /* YourLikesTableViewCell.m in Sources */,
 				738E1A331F164E0300B13A6D /* ViewController.swift in Sources */,
 				7397A4311F179F3A004BE6EB /* ModelLogin.swift in Sources */,
