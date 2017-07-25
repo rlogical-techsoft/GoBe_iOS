@@ -119,20 +119,41 @@ class NewtrendsDetailsViewController: UIViewController,UICollectionViewDelegate,
         return cell!
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
+    {
+        let size:CGSize = CGSize(width: Constants.WIDTH, height: Constants.HEIGHT - 80)
+        return size
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
+    {
+        
+    }
+    
     func btnLikeTapped(_ sender : UIButton)
     {
         let indexForTap = sender.tag
         print("Index of Tap Like button : \(indexForTap)")
-        
         let dict_Cell = arrTipsListData.object(at: indexForTap) as? NSDictionary
+        
+        let dictChange : NSMutableDictionary = dict_Cell?.mutableCopy() as! NSMutableDictionary
         
         if let str_isLikeOrNot = dict_Cell?.value(forKey: "LikeStatus") as? String{
             
             if str_isLikeOrNot == "1" {
+                dictChange.setValue("0", forKey: "LikeStatus")
+                
                 
             }else{
+                dictChange.setValue("1", forKey: "LikeStatus")
                 
             }
+            print("")
+            
+            
+            arrTipsListData.replaceObject(at: indexForTap, with: dictChange)
+            CollectionviewForNewTrendDetails.reloadData()
+            
         }
         
         
@@ -147,16 +168,7 @@ class NewtrendsDetailsViewController: UIViewController,UICollectionViewDelegate,
     }
 
 
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
-    {
-        let size:CGSize = CGSize(width: Constants.WIDTH, height: Constants.HEIGHT - 80)
-        return size
-    }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
-    {
-        
-    }
     
     //MARK:- Webservice Methods
     
