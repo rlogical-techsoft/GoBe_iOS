@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 @class SWTableViewCell;
 
-#define kUtilityButtonWidthDefault 90
+#define kUtilityButtonWidthDefault 25
 
 @interface SWUtilityButtonView : UIView
 

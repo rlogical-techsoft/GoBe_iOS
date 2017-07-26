@@ -90,18 +90,28 @@
             else
             {
                 // Subsequent button; pin it to the right edge of the preceding one, with equal width.
-                [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[precedingView][button(==precedingView)]"
+                [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:
+                                      @"H:[precedingView]-(25)-[button(==precedingView)]"
                                                                              options:0L
                                                                              metrics:nil
                                                                                views:NSDictionaryOfVariableBindings(precedingView, button)]];
+                
+
             }
+            [self addConstraint:[NSLayoutConstraint constraintWithItem:button
+                                                             attribute:NSLayoutAttributeWidth
+                                                             relatedBy:NSLayoutRelationEqual
+                                                                toItem:nil
+                                                             attribute:NSLayoutAttributeNotAnAttribute
+                                                            multiplier:1.0
+                                                              constant:25]];
+
+            
             
             [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[button]|"
                                                                          options:0L
                                                                          metrics:nil
                                                                            views:NSDictionaryOfVariableBindings(button)]];
-            
-            
             
             
             SWUtilityButtonTapGestureRecognizer *utilityButtonTapGestureRecognizer = [[SWUtilityButtonTapGestureRecognizer alloc] initWithTarget:_parentCell action:_utilityButtonSelector];
@@ -150,6 +160,9 @@
     
     self.buttonBackgroundColors = nil;
 }
+
+
+
 
 @end
 
