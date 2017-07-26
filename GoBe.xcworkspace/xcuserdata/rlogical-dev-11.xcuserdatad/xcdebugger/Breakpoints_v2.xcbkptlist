@@ -138,12 +138,12 @@
                   moduleName = "GoBe"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rlogical-dev-11/Desktop/Mitul%20Work/Applications/Gobe/Repo/GoBe/GoBe/GOBE_APP/Login-SignUp/LoginViewController.swift"
-                  timestampString = "522683930.259414"
+                  timestampString = "522752395.089263"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "258"
                   endingLineNumber = "258"
-                  offsetFromSymbolStart = "280">
+                  offsetFromSymbolStart = "328">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -153,12 +153,12 @@
                   moduleName = "GoBe"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rlogical-dev-11/Desktop/Mitul%20Work/Applications/Gobe/Repo/GoBe/GoBe/GOBE_APP/Login-SignUp/LoginViewController.swift"
-                  timestampString = "522683930.261823"
+                  timestampString = "522752395.091388"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "258"
                   endingLineNumber = "258"
-                  offsetFromSymbolStart = "612">
+                  offsetFromSymbolStart = "660">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -404,11 +404,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoBe/GOBE_APP/HOME/HomeViewVC.swift"
-            timestampString = "522683929.028237"
+            timestampString = "522752021.03522"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1990"
-            endingLineNumber = "1990"
+            startingLineNumber = "1936"
+            endingLineNumber = "1936"
             landmarkName = "getHomescreenAllsectionResponse(responseObj:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -420,11 +420,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoBe/GOBE_APP/HOME/HomeViewVC.swift"
-            timestampString = "522674803.788544"
+            timestampString = "522752021.03522"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "962"
-            endingLineNumber = "962"
+            startingLineNumber = "949"
+            endingLineNumber = "949"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
             <Locations>
@@ -468,11 +468,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoBe/GOBE_APP/HOME/HomeViewVC.swift"
-            timestampString = "522683929.028237"
+            timestampString = "522752021.03522"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1975"
-            endingLineNumber = "1975"
+            startingLineNumber = "1921"
+            endingLineNumber = "1921"
             landmarkName = "HomescreenOtherSectionAPI()"
             landmarkType = "7">
          </BreakpointContent>
@@ -484,11 +484,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoBe/GOBE_APP/HOME/HomeViewVC.swift"
-            timestampString = "522674803.788544"
+            timestampString = "522752021.03522"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1516"
-            endingLineNumber = "1516"
+            startingLineNumber = "1396"
+            endingLineNumber = "1396"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>

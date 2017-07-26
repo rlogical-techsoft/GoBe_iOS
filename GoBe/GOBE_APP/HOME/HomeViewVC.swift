@@ -629,27 +629,25 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
         
-        if collectionView == CollectionviewForNewTrending
-        {
-            print(arr_NewTrending.count)
+        if collectionView == CollectionviewForNewTrending {
             
+//            print(arr_NewTrending.count)
             return arr_NewTrending.count
-        }
-        else if collectionView == CollectionViewForFollowing
-        {
-            print(arr_Following.count)
+            
+        }else if collectionView == CollectionViewForFollowing {
+//            print(arr_Following.count)
             return arr_Following.count
-        }
-        else
-        {
+            
+        }else {
+            
             return arr_Friends.count
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
-    {
-        if collectionView == CollectionviewForNewTrending
-        {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        if collectionView == CollectionviewForNewTrending {
+            
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CarouselCollectionViewCell.identifier, for: indexPath) as! CarouselCollectionViewCell
             
             let dict_Cell = arr_NewTrending.object(at: indexPath.row) as? NSDictionary
@@ -785,19 +783,17 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
         var height : CGFloat = 0
         var width : CGFloat = 0
         
-        if collectionView == CollectionviewForNewTrending
-        {
+        if collectionView == CollectionviewForNewTrending {
             width = 196
             height = 272
-        }
-        else if collectionView == CollectionViewForFollowing
-        {
+            
+        }else if collectionView == CollectionViewForFollowing {
             //width = 138
             width = (collectionView.frame.size.width/2) - 22
             height = 195
-        }
-        else
-        {
+            
+        }else{
+            
             //width = 138
             width = (collectionView.frame.size.width/2) - 22
             height = 195
@@ -807,10 +803,10 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
         return size
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
-    {
-        if collectionView == CollectionviewForNewTrending
-        {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if collectionView == CollectionviewForNewTrending {
+            
             let cell = collectionView.cellForItem(at: indexPath) as! CarouselCollectionViewCell
             cell.isSelected = true
             cell.Cell_backgroundImge.image = UIImage(named:"NT box hit.png")
@@ -822,10 +818,9 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
             move.intStartIndex = indexPath.row
             
             self.navigationController?.pushViewController(move, animated: true)
-        }
-
-        else if collectionView == CollectionViewForFollowing
-        {
+            
+        }else if collectionView == CollectionViewForFollowing {
+            
             let cell = collectionView.cellForItem(at: indexPath) as! Cell_Following
             cell.img_background.image = UIImage(named:"NT box hit.png")
             selectedIndexFollowing = indexPath.row
@@ -836,9 +831,9 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
             move.intStartIndex = indexPath.row
             
             self.navigationController?.pushViewController(move, animated: true)
-        }
-        else
-        {
+            
+        }else{
+            
             let cell = collectionView.cellForItem(at: indexPath) as! Cell_Following
             cell.img_background.image = UIImage(named:"NT box hit.png")
             selectedIndexFriends = indexPath.row
@@ -864,90 +859,82 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
     }
     
     // MARK: - UITableview Datasurce And Delegate
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
-    {
-        if tableView == tblYourLikes
-        {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if tableView == tblYourLikes {
+            
             print(arr_YourLikes.count)
             return arr_YourLikes.count
-        }
-        else if tableView == tblYourTips
-        {
+        }else if tableView == tblYourTips {
+            
             return arr_YourTips.count
-        }
-        else if tableView == tblYourLists
-        {
+        }else if tableView == tblYourLists {
+            
             return arr_YourLists.count
-        }
-        else if tableView == tblListYouLike
-        {
-            if isSearchingListYoulikes == true
-            {
+        }else if tableView == tblListYouLike {
+            
+            if isSearchingListYoulikes == true {
+                
                 return arr_ListsYouLikeFilter.count
-            }
-            else{
+            }else{
+                
                 return arr_ListsYouLike.count
             }
-        }
-        else if tableView == tblFriendsList
-        {
-            if isSearchingFriendsList == true
-            {
+            
+        }else if tableView == tblFriendsList {
+            
+            if isSearchingFriendsList == true {
+                
                 return arr_FriendsListFilter.count
-            }
-            else{
+            }else{
+                
                 return arr_FriendsList.count
             }
-        }
-        else if tableView == tblPublicList
-        {
-            if isSearchingPubliclist == true
-            {
+            
+        }else if tableView == tblPublicList {
+            
+            if isSearchingPubliclist == true {
+                
                 return arr_PublicListFilter.count
             }
             else{
+                
                 return arr_PublicList.count
             }
         }
         return 0
     }
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
-    {
-        if tableView == tblListYouLike
-        {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        
+        if tableView == tblListYouLike {
+            
             return tblHeaderListYouLike.frame.size.height
-        }
-        else if tableView == tblFriendsList
-        {
+        }else if tableView == tblFriendsList {
+            
             return tblHeaderFriendsList.frame.size.height
-        }
-        else if tableView == tblPublicList
-        {
+        }else if tableView == tblPublicList{
+            
             return tblHeaderPublicList.frame.size.height
-        }
-        else
-        {
+        }else{
+            
             return 0
         }
     }
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
-    {
-        if tableView == tblListYouLike
-        {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        if tableView == tblListYouLike {
+            
             return tblHeaderListYouLike
-        }
-        else if tableView == tblFriendsList
-        {
+        }else if tableView == tblFriendsList {
+            
             return tblHeaderFriendsList
-        }
-        else if tableView == tblPublicList
-        {
+        }else if tableView == tblPublicList {
+            
             return tblHeaderPublicList
-        }
-        else
-        {
+        }else{
+            
             let headerVw = UIView(frame: CGRect(x: CGFloat(0), y: CGFloat(0), width: CGFloat(Constants.WIDTH), height: CGFloat(0)))
             headerVw.backgroundColor = UIColor.clear
          
@@ -955,18 +942,16 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
         }
     }
 
-    internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
-    {
-        if tableView == tblYourLikes
-        {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        
+        if tableView == tblYourLikes {
+            
             var dcell: YourLikesTableViewCell? = tableView.dequeueReusableCell(withIdentifier: "YourLikesTableViewCell", for: indexPath as IndexPath) as? YourLikesTableViewCell
             
-            if (dcell == nil)
-            {
+            if (dcell == nil){
+                
                 if dcell == nil {
-                    // Load the top-level objects from the custom cell XIB.
                     var topLevelObjects: [Any] = Bundle.main.loadNibNamed("YourLikesTableViewCell", owner: self, options: nil)!
-                    // Grab a pointer to the first object (presumably the custom cell, as that's all the XIB should contain).
                     dcell = topLevelObjects[0] as? YourLikesTableViewCell
                 }
             }
@@ -981,6 +966,7 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
                     dcell?.img_activityIndi.stopAnimating()
                 })
             }
+            
             if let strTitleName = dict_YourLikes?.value(forKey: "Title") as? String{
                 
                 dcell?.lblHeader.text = strTitleName
@@ -989,10 +975,20 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
                 
                 dcell?.lblDescription.text = strDescription
             }
-            if let strlblName = dict_YourLikes?.value(forKey: "AuthorName") as? String{
+            
+            if let strAutherID = dict_YourLikes?.value(forKey: "AuthorID") as? String{
                 
-                dcell?.lblName.text = strlblName
+                //If this Tips is created by me OR not
+                if strAutherID == appDel.instanceModelLogin.UserID {
+                    
+                    dcell?.lblName.text = "by You"
+                }else{
+                    if let strlblName = dict_YourLikes?.value(forKey: "AuthorName") as? String{
+                        dcell?.lblName.text = strlblName
+                    }
+                }
             }
+            
 
             if isselctedYourLikes == true
             {
@@ -1016,9 +1012,9 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
             dcell?.selectionStyle = .none
             
             return dcell!
-        }
-        else if tableView == tblYourTips
-        {
+            
+        }else if tableView == tblYourTips{
+            
             var dcell: Cell_YourTips? = tableView.dequeueReusableCell(withIdentifier: "Cell_YourTips", for: indexPath as IndexPath) as? Cell_YourTips
             
             if (dcell == nil)
@@ -1030,6 +1026,7 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
                     dcell = topLevelObjects[0] as? Cell_YourTips
                 }
             }
+            
             let dict_YourTips = arr_YourTips.object(at: indexPath.row) as? NSDictionary
             
             if let strImageUrl = dict_YourTips?.value(forKey: "Thumb") as? String{
@@ -1042,33 +1039,28 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
                 })
             }
             if let strTitleName = dict_YourTips?.value(forKey: "Title") as? String{
-                
                 dcell?.lblHeader.text = strTitleName
             }
             if let strDescription = dict_YourTips?.value(forKey: "Description") as? String{
-                
                 dcell?.lblDescription.text = strDescription
             }
             if let strlblName = dict_YourTips?.value(forKey: "AuthorName") as? String{
-                
                 dcell?.lblName.text = strlblName
             }
 
-            if isselctedYourTips == true
-            {
-                if selectedIndexYourTips == indexPath.row
-                {
+            if isselctedYourTips == true{
+                if selectedIndexYourTips == indexPath.row{
+                    
                     dcell?.backgroundImg.image = UIImage(named:"NT box hit")
-                }
-                else
-                {
+                }else{
                     dcell?.backgroundImg.image = UIImage(named:"NT box")
                 }
-            }
-            else
-            {
+                
+            }else{
+                
                 dcell?.backgroundImg.image = UIImage(named:"NT box")
             }
+            
             // Load the top-level objects from the custom cell XIB.
             dcell?.setLeftUtilityButtons(leftButtons(tableView,indexpath: indexPath), withButtonWidth: 40.0)
             dcell?.setRightUtilityButtons(rightbuttons(tableView,indexpath: indexPath), withButtonWidth: 40.0)
@@ -1399,7 +1391,7 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
             move.str_ScreenTitle = "FRIENDS’ LISTS"
             self.navigationController?.pushViewController(move, animated: true)
             
-        }else if tableView == tblPublicList{
+        } else if tableView == tblPublicList{
             
             var dict_YourLists : NSDictionary?
             
@@ -1418,10 +1410,27 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
         }
     }
     
-    func leftButtons(_ tableview : UITableView,indexpath:IndexPath) -> [Any]
-    {
-        if tableview == tblYourLikes
-        {
+    func leftButtons(_ tableview : UITableView,indexpath:IndexPath) -> [Any]{
+        
+        if tableview == tblYourLikes {
+            
+            //IF Public Tips then Share
+            
+//            let dict_YourLikes = arr_YourLikes.object(at: indexpath.row) as? NSDictionary
+//            
+//            if let strAutherID = dict_YourLikes?.value(forKey: "AuthorID") as? String{
+//                
+//                //If this Tips is created by me OR not
+//                if strAutherID == appDel.instanceModelLogin.UserID {
+//                    
+//                    
+//                }else{
+//                    
+//                    
+//                }
+//            }
+            
+            
             let leftUtilityButtons = NSMutableArray()
             leftUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "aarchive.png"))
             leftUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "archive.png"))
@@ -1463,21 +1472,36 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
         }
     }
     
-    func rightbuttons(_ tableview : UITableView,indexpath:IndexPath) -> [Any]
-    {
-        if tableview == tblYourLikes
-        {
+    func rightbuttons(_ tableview : UITableView,indexpath:IndexPath) -> [Any]{
+        
+        if tableview == tblYourLikes {
+            
             let rightUtilityButtons = NSMutableArray()
-            rightUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "edit"))
-            rightUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "remove from"))
+            
+            let dict_YourLikes = arr_YourLikes.object(at: indexpath.row) as? NSDictionary
+            if let strAutherID = dict_YourLikes?.value(forKey: "AuthorID") as? String{
+                
+                //If this Tips is created by me OR not
+                if strAutherID == appDel.instanceModelLogin.UserID {
+                    rightUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "edit"))
+                    rightUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "remove from"))
+                    
+                }else{
+                    
+                    rightUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "remove from"))
+                }
+            }
+            
+            //This Button is for Space Only
             rightUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "deletee"))
             return rightUtilityButtons as! [Any]
             
-        }else if tableview == tblYourTips{
+        }else if tableview == tblYourTips {
             
             let rightUtilityButtons = NSMutableArray()
+            
             rightUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "edit.png"))
-            rightUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "remove from"))
+            rightUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "Cross"))
             return rightUtilityButtons as! [Any]
             
         }else if tableview == tblYourLists{
@@ -1512,8 +1536,8 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
         }
     }
     
-    func swipeableTableViewCell(_ cell: SWTableViewCell, scrollingTo state: SWCellState)
-    {
+    func swipeableTableViewCell(_ cell: SWTableViewCell, scrollingTo state: SWCellState){
+        
         
         //bhavesh Work on it
 //        let indexpath = NSIndexPath(row: cell.tag, section: 0)
@@ -1542,41 +1566,73 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
     
     func swipeableTableViewCell(_ cell: SWTableViewCell, didTriggerLeftUtilityButtonWith index: Int)
     {
-        switch index
-        {
-        case 0:
-            print("left button 0 was pressed")
-            
-        case 1:
-            print("left button 1 was pressed")
-            
-        case 2:
-            print("left button 2 was pressed")
-            
-        default:
-            break
+        if cell is YourLikesTableViewCell {
+            print("This Left Cell is from tblYourLikes and Index = \(index)")
+        }else if cell is Cell_YourTips{
+            print("This Left Cell is from tblYourTips and Index = \(index)")
+        }else if cell is Cell_YourList{
+            print("This Left  Cell is from tblYourList and Index = \(index)")
+        }else if cell is Cell_ListYouLike{
+            print("This Right Cell is from tblListYouLike and Index = \(index)")
+        }else if cell is Cell_FriendsList{
+            print("This Right Cell is from tblFriendsList and Index = \(index)")
+        }else if cell is Cell_PublicList{
+            print("This Right Cell is from tblPublicList and Index = \(index)")
         }
+
+        
+//        switch index
+//        {
+//        case 0:
+//            print("left button 0 was pressed")
+//            
+//        case 1:
+//            print("left button 1 was pressed")
+//            
+//        case 2:
+//            print("left button 2 was pressed")
+//            
+//        default:
+//            break
+//        }
     }
   
     func swipeableTableViewCell(_ cell: SWTableViewCell, didTriggerRightUtilityButtonWith index: Int)
     {
-        let indexPath: IndexPath? = tblYourLikes.indexPath(for: cell)
-        print("Index path: \(String(describing: indexPath))")
-        
-        switch index
-        {
-        case 0: break
-        // [cell hideUtilityButtonsAnimated:YES];
-        case 1:
-            break
-        case 2: break
-        // Delete button was pressed
-        default:
-            break
+        if cell is YourLikesTableViewCell {
+            print("This Right Cell is from tblYourLikes and Index = \(index)")
+        }else if cell is Cell_YourTips{
+            print("This Right Cell is from tblYourTips and Index = \(index)")
+        }else if cell is Cell_YourList{
+            print("ThisRight  Cell is from tblYourList and Index = \(index)")
+        }else if cell is Cell_ListYouLike{
+            print("This Right Cell is from tblListYouLike and Index = \(index)")
+        }else if cell is Cell_FriendsList{
+            print("This Right Cell is from tblFriendsList and Index = \(index)")
+        }else if cell is Cell_PublicList{
+            print("This Right Cell is from tblPublicList and Index = \(index)")
         }
+        
+//        let indexPath: IndexPath? = tblYourLikes.indexPath(for: cell)
+//        print("Index path: \(String(describing: indexPath))")
+        
+//        switch index
+//        {
+//        case 0: break
+//        // [cell hideUtilityButtonsAnimated:YES];
+//        case 1:
+//            break
+//        case 2: break
+//        // Delete button was pressed
+//        default:
+//            break
+//        }
+        
     }
     
-    
+    func swipeableTableViewCellShouldHideUtilityButtons(onSwipe cell: SWTableViewCell!) -> Bool {
+        return true
+    }
     
 
     //MARK:- Textfield search Event
@@ -1861,8 +1917,8 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
     func HomescreenOtherSectionAPI(){
         
         HUD.show(true)
-//        web.getHome_alllist(strUserID: "31") //We have to change this Id to Login User ID.
-        web.getHome_alllist(strUserID: appDel.instanceModelLogin.UserID)
+        web.getHome_alllist(strUserID: "31") //We have to change this Id to Login User ID.
+//        web.getHome_alllist(strUserID: appDel.instanceModelLogin.UserID)
     }
     
     func getHomescreenAllsectionResponse(responseObj: NSDictionary) -> Void

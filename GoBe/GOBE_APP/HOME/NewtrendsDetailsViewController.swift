@@ -130,7 +130,7 @@ class NewtrendsDetailsViewController: UIViewController,UICollectionViewDelegate,
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
     {
-        
+        collectionView.deselectItem(at: indexPath, animated: true)
     }
     
     func btnLikeTapped(_ sender : UIButton){

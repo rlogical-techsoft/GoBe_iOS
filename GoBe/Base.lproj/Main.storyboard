@@ -1168,7 +1168,7 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GqV-bH-LFH">
-                                                <rect key="frame" x="139" y="90" width="42" height="16"/>
+                                                <rect key="frame" x="139.5" y="90" width="42" height="16"/>
                                                 <fontDescription key="fontDescription" name="Larsseit-Medium" family="Larsseit" pointSize="16"/>
                                                 <color key="textColor" red="0.4039215686" green="0.74509803919999995" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1524,7 +1524,7 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Borja Goyarrola" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VYl-nS-4v6">
-                                                <rect key="frame" x="104.5" y="89" width="110.5" height="16"/>
+                                                <rect key="frame" x="104" y="89" width="110.5" height="16"/>
                                                 <fontDescription key="fontDescription" name="Larsseit-Medium" family="Larsseit" pointSize="16"/>
                                                 <color key="textColor" red="0.4039215686" green="0.74509803919999995" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
