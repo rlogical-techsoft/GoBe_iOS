@@ -1010,8 +1010,8 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
                 dcell?.backgroungImgView.image = UIImage(named:"NT box")
             }
             // Load the top-level objects from the custom cell XIB.
-            dcell?.setLeftUtilityButtons(leftButtons(tableView), withButtonWidth: 40.0)
-            dcell?.setRightUtilityButtons(rightbuttons(tableView), withButtonWidth: 40.0)
+            dcell?.setLeftUtilityButtons(leftButtons(tableView,indexpath: indexPath), withButtonWidth: 40.0)
+            dcell?.setRightUtilityButtons(rightbuttons(tableView,indexpath: indexPath), withButtonWidth: 40.0)
             dcell?.delegate = self
             dcell?.selectionStyle = .none
             
@@ -1019,16 +1019,6 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
         }
         else if tableView == tblYourTips
         {
-            /*
-            var dcell: YourLikesTableViewCell? = tableView.dequeueReusableCell(withIdentifier: "YourLikesTableViewCell", for: indexPath as IndexPath) as? YourLikesTableViewCell
-            // Load the top-level objects from the custom cell XIB.
-            let topLevelObjects: [Any] = Bundle.main.loadNibNamed("YourLikesTableViewCell", owner: self, options: nil)!
-            dcell = (topLevelObjects[0] as? YourLikesTableViewCell)
-            dcell?.selectionStyle = .none
-            
-            return dcell!
-             */
-            
             var dcell: Cell_YourTips? = tableView.dequeueReusableCell(withIdentifier: "Cell_YourTips", for: indexPath as IndexPath) as? Cell_YourTips
             
             if (dcell == nil)
@@ -1080,8 +1070,8 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
                 dcell?.backgroundImg.image = UIImage(named:"NT box")
             }
             // Load the top-level objects from the custom cell XIB.
-            dcell?.setLeftUtilityButtons(leftButtons(tableView), withButtonWidth: 40.0)
-            dcell?.setRightUtilityButtons(rightbuttons(tableView), withButtonWidth: 40.0)
+            dcell?.setLeftUtilityButtons(leftButtons(tableView,indexpath: indexPath), withButtonWidth: 40.0)
+            dcell?.setRightUtilityButtons(rightbuttons(tableView,indexpath: indexPath), withButtonWidth: 40.0)
             dcell?.delegate = self
             dcell?.selectionStyle = .none
             dcell?.tag = indexPath.row
@@ -1104,8 +1094,8 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
                     dcell = topLevelObjects[0] as? Cell_YourList
                 }
             }
-            dcell?.setLeftUtilityButtons(leftButtons(tableView), withButtonWidth: 40.0)
-            dcell?.setRightUtilityButtons(rightbuttons(tableView), withButtonWidth: 40.0)
+            dcell?.setLeftUtilityButtons(leftButtons(tableView,indexpath: indexPath), withButtonWidth: 40.0)
+            dcell?.setRightUtilityButtons(rightbuttons(tableView,indexpath: indexPath), withButtonWidth: 40.0)
             dcell?.delegate = self
             dcell?.selectionStyle = .none
             
@@ -1149,77 +1139,47 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
                     dcell = topLevelObjects[0] as? Cell_ListYouLike
                 }
             }
-            dcell?.setLeftUtilityButtons(leftButtons(tableView), withButtonWidth: 40.0)
-            dcell?.setRightUtilityButtons(rightbuttons(tableView), withButtonWidth: 40.0)
+            dcell?.setLeftUtilityButtons(leftButtons(tableView,indexpath: indexPath), withButtonWidth: 40.0)
+            dcell?.setRightUtilityButtons(rightbuttons(tableView,indexpath: indexPath), withButtonWidth: 40.0)
             dcell?.delegate = self
             dcell?.selectionStyle = .none
             
+            let dict_ListsYouLike : NSDictionary?
+            
             if isSearchingListYoulikes == true
             {
-                let dict_ListsYouLike = arr_ListsYouLikeFilter.object(at: indexPath.row) as? NSDictionary
-                
-                if let strTitleName = dict_ListsYouLike?.value(forKey: "ListName") as? String{
-                    
-                    dcell?.lblTitle.text = strTitleName
-                }
-                if let strTitleName = dict_ListsYouLike?.value(forKey: "AuthorName") as? String{
-                    
-                    dcell?.lbl_byYou.text = strTitleName
-                }
-                if let permissionStatus = dict_ListsYouLike?.value(forKey: "PermissionStatus") as? String{
-                    
-                    if permissionStatus == "public"
-                    {
-                        dcell?.img_permissionStatus.isHidden = true
-                    }
-                    else if permissionStatus == "private"{
-                        
-                        dcell?.img_permissionStatus.isHidden = false
-                        
-                        dcell?.img_permissionStatus.image = UIImage(named:"public can")
-                    }
-                    else{
-                        dcell?.img_permissionStatus.isHidden = false
-                        
-                        dcell?.img_permissionStatus.image = UIImage(named:"friends can")
-                    }
-                }
-                
-
+                dict_ListsYouLike = arr_ListsYouLikeFilter.object(at: indexPath.row) as? NSDictionary
+            }else{
+                dict_ListsYouLike = arr_ListsYouLike.object(at: indexPath.row) as? NSDictionary
             }
-            else{
                 
-                let dict_ListsYouLike = arr_ListsYouLike.object(at: indexPath.row) as? NSDictionary
+            if let strTitleName = dict_ListsYouLike?.value(forKey: "ListName") as? String{
                 
-                if let strTitleName = dict_ListsYouLike?.value(forKey: "ListName") as? String{
-                    
-                    dcell?.lblTitle.text = strTitleName
-                }
-                if let strTitleName = dict_ListsYouLike?.value(forKey: "AuthorName") as? String{
-                    
-                    dcell?.lbl_byYou.text = strTitleName
-                }
-                if let permissionStatus = dict_ListsYouLike?.value(forKey: "PermissionStatus") as? String{
-                    
-                    if permissionStatus == "public"
-                    {
-                        dcell?.img_permissionStatus.isHidden = true
-                    }
-                    else if permissionStatus == "private"{
-                        
-                        dcell?.img_permissionStatus.isHidden = false
-                        
-                        dcell?.img_permissionStatus.image = UIImage(named:"public can")
-                    }
-                    else{
-                        dcell?.img_permissionStatus.isHidden = false
-                        
-                        dcell?.img_permissionStatus.image = UIImage(named:"friends can")
-                    }
-                }
-                
-
+                dcell?.lblTitle.text = strTitleName
             }
+            if let strTitleName = dict_ListsYouLike?.value(forKey: "AuthorName") as? String{
+                
+                dcell?.lbl_byYou.text = strTitleName
+            }
+            if let permissionStatus = dict_ListsYouLike?.value(forKey: "PermissionStatus") as? String{
+                
+                if permissionStatus == "public"
+                {
+                    dcell?.img_permissionStatus.isHidden = true
+                }
+                else if permissionStatus == "private"{
+                    
+                    dcell?.img_permissionStatus.isHidden = false
+                    
+                    dcell?.img_permissionStatus.image = UIImage(named:"public can")
+                }
+                else{
+                    dcell?.img_permissionStatus.isHidden = false
+                    
+                    dcell?.img_permissionStatus.image = UIImage(named:"friends can")
+                }
+            }
+
             return dcell!
         }
         else if tableView == tblFriendsList
@@ -1235,78 +1195,47 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
                     dcell = topLevelObjects[0] as? Cell_FriendsList
                 }
             }
-            dcell?.setLeftUtilityButtons(leftButtons(tableView), withButtonWidth: 40.0)
-            dcell?.setRightUtilityButtons(rightbuttons(tableView), withButtonWidth: 40.0)
+            dcell?.setLeftUtilityButtons(leftButtons(tableView,indexpath: indexPath), withButtonWidth: 40.0)
+            dcell?.setRightUtilityButtons(rightbuttons(tableView,indexpath: indexPath), withButtonWidth: 40.0)
             dcell?.delegate = self
             dcell?.selectionStyle = .none
             
+            let dict_FriendsList : NSDictionary?
+            
             if isSearchingFriendsList == true
             {
-                let dict_FriendsList = arr_FriendsListFilter.object(at: indexPath.row) as? NSDictionary
-                
-                if let strTitleName = dict_FriendsList?.value(forKey: "ListName") as? String{
-                    
-                    dcell?.lblTitle.text = strTitleName
-                }
-                if let strAuthorName = dict_FriendsList?.value(forKey: "AuthorName") as? String{
-                    
-                    dcell?.lbl_authorName.text = strAuthorName
-                }
-                
-                if let permissionStatus = dict_FriendsList?.value(forKey: "PermissionStatus") as? String{
-                    
-                    if permissionStatus == "public"
-                    {
-                        dcell?.img_permissionStatus.isHidden = true
-                    }
-                    else if permissionStatus == "private"{
-                        
-                        dcell?.img_permissionStatus.isHidden = false
-                        
-                        dcell?.img_permissionStatus.image = UIImage(named:"public can")
-                    }
-                    else{
-                        dcell?.img_permissionStatus.isHidden = false
-                        
-                        dcell?.img_permissionStatus.image = UIImage(named:"friends can")
-                    }
-                }
-
-            }
-            else{
-                
-                let dict_FriendsList = arr_FriendsList.object(at: indexPath.row) as? NSDictionary
-                
-                if let strTitleName = dict_FriendsList?.value(forKey: "ListName") as? String{
-                    
-                    dcell?.lblTitle.text = strTitleName
-                }
-                if let strAuthorName = dict_FriendsList?.value(forKey: "AuthorName") as? String{
-                    
-                    dcell?.lbl_authorName.text = strAuthorName
-                }
-                
-                if let permissionStatus = dict_FriendsList?.value(forKey: "PermissionStatus") as? String{
-                    
-                    if permissionStatus == "public"
-                    {
-                        dcell?.img_permissionStatus.isHidden = true
-                    }
-                    else if permissionStatus == "private"{
-                        
-                        dcell?.img_permissionStatus.isHidden = false
-                        
-                        dcell?.img_permissionStatus.image = UIImage(named:"public can")
-                    }
-                    else{
-                        dcell?.img_permissionStatus.isHidden = false
-                        
-                        dcell?.img_permissionStatus.image = UIImage(named:"friends can")
-                    }
-                }
-
+                dict_FriendsList = arr_FriendsListFilter.object(at: indexPath.row) as? NSDictionary
+            }else{
+                dict_FriendsList = arr_FriendsList.object(at: indexPath.row) as? NSDictionary
             }
             
+            
+            if let strTitleName = dict_FriendsList?.value(forKey: "ListName") as? String{
+                
+                dcell?.lblTitle.text = strTitleName
+            }
+            if let strAuthorName = dict_FriendsList?.value(forKey: "AuthorName") as? String{
+                
+                dcell?.lbl_authorName.text = strAuthorName
+            }
+            
+            if let permissionStatus = dict_FriendsList?.value(forKey: "PermissionStatus") as? String{
+                
+                if permissionStatus == "public"
+                {
+                    dcell?.img_permissionStatus.isHidden = true
+                }
+                else if permissionStatus == "private"{
+                    
+                    dcell?.img_permissionStatus.isHidden = false
+                    dcell?.img_permissionStatus.image = UIImage(named:"public can")
+                    
+                }else{
+                    
+                    dcell?.img_permissionStatus.isHidden = false
+                    dcell?.img_permissionStatus.image = UIImage(named:"friends can")
+                }
+            }
             
             return dcell!
         }
@@ -1323,78 +1252,49 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
                     dcell = topLevelObjects[0] as? Cell_PublicList
                 }
             }
-            dcell?.setLeftUtilityButtons(leftButtons(tableView), withButtonWidth: 40.0)
-            dcell?.setRightUtilityButtons(rightbuttons(tableView), withButtonWidth: 40.0)
+            dcell?.setLeftUtilityButtons(leftButtons(tableView, indexpath: indexPath), withButtonWidth: 40.0)
+            dcell?.setRightUtilityButtons(rightbuttons(tableView,indexpath: indexPath), withButtonWidth: 40.0)
             dcell?.delegate = self
             dcell?.selectionStyle = .none
             
+            let dict_PublicList : NSDictionary?
+            
+            
             if isSearchingPubliclist == true
             {
-                let dict_PublicList = arr_PublicListFilter.object(at: indexPath.row) as? NSDictionary
+                dict_PublicList = arr_PublicListFilter.object(at: indexPath.row) as? NSDictionary
                 
-                if let strTitleName = dict_PublicList?.value(forKey: "ListName") as? String{
-                    
-                    dcell?.lblTitle.text = strTitleName
-                }
-                if let strAuthorName = dict_PublicList?.value(forKey: "AuthorName") as? String{
-                    
-                    dcell?.lbl_authorName.text = strAuthorName
-                }
+            }else{
                 
-                if let permissionStatus = dict_PublicList?.value(forKey: "PermissionStatus") as? String{
-                    
-                    if permissionStatus == "public"
-                    {
-                        dcell?.img_permissionStatus.isHidden = true
-                    }
-                    else if permissionStatus == "private"{
-                        
-                        dcell?.img_permissionStatus.isHidden = false
-                        
-                        dcell?.img_permissionStatus.image = UIImage(named:"public can")
-                    }
-                    else{
-                        dcell?.img_permissionStatus.isHidden = false
-                        
-                        dcell?.img_permissionStatus.image = UIImage(named:"friends can")
-                    }
-                    
-                }
-
+                dict_PublicList = arr_PublicList.object(at: indexPath.row) as? NSDictionary
             }
-            else{
                 
-                let dict_PublicList = arr_PublicList.object(at: indexPath.row) as? NSDictionary
+            if let strTitleName = dict_PublicList?.value(forKey: "ListName") as? String{
                 
-                if let strTitleName = dict_PublicList?.value(forKey: "ListName") as? String{
-                    
-                    dcell?.lblTitle.text = strTitleName
+                dcell?.lblTitle.text = strTitleName
+            }
+            if let strAuthorName = dict_PublicList?.value(forKey: "AuthorName") as? String{
+                
+                dcell?.lbl_authorName.text = strAuthorName
+            }
+            
+            if let permissionStatus = dict_PublicList?.value(forKey: "PermissionStatus") as? String{
+                
+                if permissionStatus == "public"
+                {
+                    dcell?.img_permissionStatus.isHidden = true
                 }
-                if let strAuthorName = dict_PublicList?.value(forKey: "AuthorName") as? String{
+                else if permissionStatus == "private"{
                     
-                    dcell?.lbl_authorName.text = strAuthorName
-                }
-                
-                if let permissionStatus = dict_PublicList?.value(forKey: "PermissionStatus") as? String{
-                    
-                    if permissionStatus == "public"
-                    {
-                        dcell?.img_permissionStatus.isHidden = true
-                    }
-                    else if permissionStatus == "private"{
-                        
-                        dcell?.img_permissionStatus.isHidden = false
-                        
-                        dcell?.img_permissionStatus.image = UIImage(named:"public can")
-                    }
-                    else{
-                        dcell?.img_permissionStatus.isHidden = false
-                        
-                        dcell?.img_permissionStatus.image = UIImage(named:"friends can")
-                    }
+                    dcell?.img_permissionStatus.isHidden = false
+                    dcell?.img_permissionStatus.image = UIImage(named:"public can")
                     
                 }
-
+                else{
+                    
+                    dcell?.img_permissionStatus.isHidden = false
+                    dcell?.img_permissionStatus.image = UIImage(named:"friends can")
+                }
             }
             
             return dcell!
@@ -1410,28 +1310,17 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
-        if tableView == tblYourLikes
-        {
+        if tableView == tblYourLikes{
             return 120
-        }
-        else if tableView == tblYourTips
-        {
+        }else if tableView == tblYourTips{
             return 120
-        }
-        else if tableView == tblYourLists
-        {
+        }else if tableView == tblYourLists{
             return 60
-        }
-        else if tableView == tblListYouLike
-        {
+        }else if tableView == tblListYouLike{
             return 60
-        }
-        else if tableView == tblFriendsList
-        {
+        }else if tableView == tblFriendsList{
             return 60
-        }
-        else if tableView == tblPublicList
-        {
+        }else if tableView == tblPublicList{
             return 60
         }
         return 0
@@ -1439,8 +1328,8 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        if tableView == tblYourLikes
-        {
+        if tableView == tblYourLikes{
+            
             let cell = tableView.cellForRow(at:indexPath) as! YourLikesTableViewCell
 
             cell.backgroungImgView.image = UIImage(named:"NT box hit.png")
@@ -1453,9 +1342,9 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
             move.intStartIndex = indexPath.row
             
             self.navigationController?.pushViewController(move, animated: true)
-        }
-        else if tableView == tblYourTips
-        {
+            
+        }else if tableView == tblYourTips{
+            
             let cell = tableView.cellForRow(at:indexPath) as! Cell_YourTips
             
             cell.backgroundImg.image = UIImage(named:"NT box hit.png")
@@ -1469,9 +1358,9 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
             move.intStartIndex = indexPath.row
                 
             self.navigationController?.pushViewController(move, animated: true)
-        }
-        else if tableView == tblYourLists
-        {
+            
+        }else if tableView == tblYourLists{
+            
             let dict_YourLists = arr_YourLists.object(at: indexPath.row) as? NSDictionary
             
             let move = self.storyboard?.instantiateViewController(withIdentifier: kVIew_YOURLISTS) as! YOURLISTSVC
@@ -1479,9 +1368,8 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
             move.str_ScreenTitle = "YOUR LISTS"
             self.navigationController?.pushViewController(move, animated: true)
             
-        }
-        else if tableView == tblListYouLike
-        {
+        }else if tableView == tblListYouLike{
+            
             var dict_YourLists : NSDictionary?
             
             if isSearchingListYoulikes == true{
@@ -1495,9 +1383,9 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
             move.dict_CurrentListFromHome = dict_YourLists!
             move.str_ScreenTitle = "LISTS YOU LIKE"
             self.navigationController?.pushViewController(move, animated: true)
-        }
-        else if tableView == tblFriendsList
-        {
+            
+        }else if tableView == tblFriendsList{
+            
             var dict_YourLists : NSDictionary?
             if isSearchingFriendsList == true{
                 dict_YourLists = arr_FriendsListFilter.object(at: indexPath.row) as? NSDictionary
@@ -1510,9 +1398,9 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
             move.dict_CurrentListFromHome = dict_YourLists!
             move.str_ScreenTitle = "FRIENDS’ LISTS"
             self.navigationController?.pushViewController(move, animated: true)
-        }
-        else if tableView == tblPublicList
-        {
+            
+        }else if tableView == tblPublicList{
+            
             var dict_YourLists : NSDictionary?
             
             if isSearchingPubliclist == true{
@@ -1522,8 +1410,7 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
                 dict_YourLists = arr_PublicList.object(at: indexPath.row) as? NSDictionary
             }
             
-            
-            
+
             let move = self.storyboard?.instantiateViewController(withIdentifier: kVIew_YOURLISTS) as! YOURLISTSVC
             move.dict_CurrentListFromHome = dict_YourLists!
             move.str_ScreenTitle = "PUBLIC LISTS"
@@ -1531,7 +1418,7 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
         }
     }
     
-    func leftButtons(_ tableview : UITableView) -> [Any]
+    func leftButtons(_ tableview : UITableView,indexpath:IndexPath) -> [Any]
     {
         if tableview == tblYourLikes
         {
@@ -1539,43 +1426,44 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
             leftUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "aarchive.png"))
             leftUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "archive.png"))
             leftUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "FB.png"))
+            
             return leftUtilityButtons as! [Any]
-        }
-        else if tableview == tblYourTips
-        {
+            
+        }else if tableview == tblYourTips{
+            
             let leftUtilityButtons = NSMutableArray()
             leftUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "archive.png"))
             leftUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "FB.png"))
             return leftUtilityButtons as! [Any]
-        }
-        else if tableview == tblYourLists
-        {
+            
+        }else if tableview == tblYourLists{
+            
             let leftUtilityButtons = NSMutableArray()
             return leftUtilityButtons as! [Any]
-        }
-        else if tableview == tblListYouLike
-        {
+            
+        }else if tableview == tblListYouLike{
+            
             let leftUtilityButtons = NSMutableArray()
             return leftUtilityButtons as! [Any]
-        }
-        else if tableview == tblFriendsList
-        {
+            
+        }else if tableview == tblFriendsList{
+            
             let leftUtilityButtons = NSMutableArray()
             return leftUtilityButtons as! [Any]
-        }
-        else if tableview == tblPublicList
-        {
+            
+        }else if tableview == tblPublicList{
+            
             let leftUtilityButtons = NSMutableArray()
             return leftUtilityButtons as! [Any]
-        }
-        else
-        {
+            
+        }else{
+            
             let leftUtilityButtons = NSMutableArray()
             return leftUtilityButtons as! [Any]
         }
     }
     
-    func rightbuttons(_ tableview : UITableView) -> [Any]
+    func rightbuttons(_ tableview : UITableView,indexpath:IndexPath) -> [Any]
     {
         if tableview == tblYourLikes
         {
@@ -1584,42 +1472,41 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
             rightUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "remove from"))
             rightUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "deletee"))
             return rightUtilityButtons as! [Any]
-        }
-        else if tableview == tblYourTips
-        {
+            
+        }else if tableview == tblYourTips{
+            
             let rightUtilityButtons = NSMutableArray()
             rightUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "edit.png"))
             rightUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "remove from"))
             return rightUtilityButtons as! [Any]
-        }
-        else if tableview == tblYourLists
-        {
+            
+        }else if tableview == tblYourLists{
+            
             let rightUtilityButtons = NSMutableArray()
             rightUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "like.png"))
             rightUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "visib small.png"))
             rightUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "Cross"))
             return rightUtilityButtons as! [Any]
-        }
-        else if tableview == tblListYouLike
-        {
+            
+        }else if tableview == tblListYouLike{
+            
             let rightUtilityButtons = NSMutableArray()
             rightUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "remove from"))
             return rightUtilityButtons as! [Any]
-        }
-        else if tableview == tblFriendsList
-        {
+            
+        }else if tableview == tblFriendsList{
+            
             let rightUtilityButtons = NSMutableArray()
             rightUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "like.png"))
             return rightUtilityButtons as! [Any]
-        }
-        else if tableview == tblPublicList
-        {
+            
+        }else if tableview == tblPublicList{
             let rightUtilityButtons = NSMutableArray()
             rightUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "like.png"))
             return rightUtilityButtons as! [Any]
-        }
-        else
-        {
+            
+        }else{
+            
             let rightUtilityButtons = NSMutableArray()
             return rightUtilityButtons as! [Any]
         }
@@ -1688,6 +1575,9 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
             break
         }
     }
+    
+    
+    
 
     //MARK:- Textfield search Event
 
