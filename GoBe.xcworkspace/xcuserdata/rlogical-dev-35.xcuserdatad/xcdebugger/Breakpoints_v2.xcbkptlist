@@ -30,7 +30,9 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "170"
-            endingLineNumber = "170">
+            endingLineNumber = "170"
+            landmarkName = "btnLikeTapped(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -56,12 +58,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoBe/GOBE_APP/HOME/HomeViewVC.swift"
-            timestampString = "522243331.959143"
+            timestampString = "522755682.829935"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1754"
-            endingLineNumber = "1754"
-            landmarkName = "crossFriendsTapped(_:)"
+            startingLineNumber = "1752"
+            endingLineNumber = "1752"
+            landmarkName = "YourListsTapped(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -72,12 +74,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoBe/GOBE_APP/HOME/HomeViewVC.swift"
-            timestampString = "522243331.959143"
+            timestampString = "522755682.829935"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1877"
-            endingLineNumber = "1877"
-            landmarkName = "getHomescreenAllsectionResponse(responseObj:)"
+            startingLineNumber = "1875"
+            endingLineNumber = "1875"
+            landmarkName = "getNewAndTendingTipsResponse(responseObj:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -93,7 +95,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "636"
             endingLineNumber = "636"
-            landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkName = "collectionView(_:numberOfItemsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -109,7 +111,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "625"
             endingLineNumber = "625"
-            landmarkName = "collectionView(_:numberOfItemsInSection:)"
+            landmarkName = "friendsFollowinfTapped(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -125,8 +127,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "627"
             endingLineNumber = "627"
-            landmarkName = "collectionView(_:numberOfItemsInSection:)"
-            landmarkType = "7">
+            landmarkName = "HomeViewVC"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -157,7 +159,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "933"
             endingLineNumber = "933"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkName = "tableView(_:viewForHeaderInSection:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -189,7 +191,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "844"
             endingLineNumber = "844"
-            landmarkName = "tableView(_:numberOfRowsInSection:)"
+            landmarkName = "collectionView(_:didSelectItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -205,7 +207,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "842"
             endingLineNumber = "842"
-            landmarkName = "tableView(_:numberOfRowsInSection:)"
+            landmarkName = "collectionView(_:didSelectItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -223,38 +225,6 @@
             endingLineNumber = "1027"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "GoBe.HomeViewVC.tableView (__ObjC.UITableView, cellForRowAt : Foundation.IndexPath) -&gt; __ObjC.UITableViewCell"
-                  moduleName = "GoBe"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/rlogical-dev-35/Desktop/Manoj/Applications/Gobe/july/20:7/GoBe/GoBe/GOBE_APP/HOME/HomeViewVC.swift"
-                  timestampString = "522240148.902274"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1002"
-                  endingLineNumber = "1002"
-                  offsetFromSymbolStart = "15815">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "GoBe.HomeViewVC.tableView (__ObjC.UITableView, cellForRowAt : Foundation.IndexPath) -&gt; __ObjC.UITableViewCell"
-                  moduleName = "GoBe"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/rlogical-dev-35/Desktop/Manoj/Applications/Gobe/july/20:7/GoBe/GoBe/GOBE_APP/HOME/HomeViewVC.swift"
-                  timestampString = "522240148.903622"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1002"
-                  endingLineNumber = "1002"
-                  offsetFromSymbolStart = "16714">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -287,6 +257,197 @@
             endingLineNumber = "665"
             landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GoBe.HomeViewVC.collectionView (__ObjC.UICollectionView, cellForItemAt : Foundation.IndexPath) -&gt; __ObjC.UICollectionViewCell"
+                  moduleName = "GoBe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rlogical-dev-35/Desktop/Manoj/Applications/Gobe/GoBe%20Repo/GoBe/GoBe/GOBE_APP/HOME/HomeViewVC.swift"
+                  timestampString = "522852788.177954"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "665"
+                  endingLineNumber = "665"
+                  offsetFromSymbolStart = "3023">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GoBe.HomeViewVC.collectionView (__ObjC.UICollectionView, cellForItemAt : Foundation.IndexPath) -&gt; __ObjC.UICollectionViewCell"
+                  moduleName = "GoBe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rlogical-dev-35/Desktop/Manoj/Applications/Gobe/GoBe%20Repo/GoBe/GoBe/GOBE_APP/HOME/HomeViewVC.swift"
+                  timestampString = "522852788.180656"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "665"
+                  endingLineNumber = "665"
+                  offsetFromSymbolStart = "3922">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GoBe/GOBE_APP/TipsAddToListViewController.swift"
+            timestampString = "522834620.629006"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "startAnimation()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GoBe.TipsAddToListViewController.startAnimation () -&gt; ()"
+                  moduleName = "GoBe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rlogical-dev-35/Desktop/Manoj/Applications/Gobe/GoBe%20Repo/GoBe/GoBe/GOBE_APP/TipsAddToListViewController.swift"
+                  timestampString = "522852788.187205"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "725">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GoBe.TipsAddToListViewController.(startAnimation () -&gt; ()).(closure #1)"
+                  moduleName = "GoBe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rlogical-dev-35/Desktop/Manoj/Applications/Gobe/GoBe%20Repo/GoBe/GoBe/GOBE_APP/TipsAddToListViewController.swift"
+                  timestampString = "522852788.190014"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "309">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GoBe.TipsAddToListViewController.(startAnimation () -&gt; ()).(closure #2)"
+                  moduleName = "GoBe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rlogical-dev-35/Desktop/Manoj/Applications/Gobe/GoBe%20Repo/GoBe/GoBe/GOBE_APP/TipsAddToListViewController.swift"
+                  timestampString = "522852788.192917"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "23">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GoBe/GOBE_APP/TipsAddToListViewController.swift"
+            timestampString = "522834620.629006"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "startAnimation()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GoBe.TipsAddToListViewController.(startAnimation () -&gt; ()).(closure #2)"
+                  moduleName = "GoBe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rlogical-dev-35/Desktop/Manoj/Applications/Gobe/GoBe%20Repo/GoBe/GoBe/GOBE_APP/TipsAddToListViewController.swift"
+                  timestampString = "522852788.200653"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "23">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GoBe.TipsAddToListViewController.(startAnimation () -&gt; ()).(closure #2).(closure #1)"
+                  moduleName = "GoBe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rlogical-dev-35/Desktop/Manoj/Applications/Gobe/GoBe%20Repo/GoBe/GoBe/GOBE_APP/TipsAddToListViewController.swift"
+                  timestampString = "522852788.203602"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GoBe/GOBE_APP/TipsAddToListViewController.swift"
+            timestampString = "522834620.629006"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "startAnimation()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GoBe.TipsAddToListViewController.(startAnimation () -&gt; ()).(closure #2).(closure #2)"
+                  moduleName = "GoBe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rlogical-dev-35/Desktop/Manoj/Applications/Gobe/GoBe%20Repo/GoBe/GoBe/GOBE_APP/TipsAddToListViewController.swift"
+                  timestampString = "522852788.21244"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "23">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GoBe.TipsAddToListViewController.(startAnimation () -&gt; ()).(closure #2).(closure #2).(closure #1)"
+                  moduleName = "GoBe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rlogical-dev-35/Desktop/Manoj/Applications/Gobe/GoBe%20Repo/GoBe/GoBe/GOBE_APP/TipsAddToListViewController.swift"
+                  timestampString = "522852788.217006"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "86"
+                  endingLineNumber = "86"
+                  offsetFromSymbolStart = "19">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

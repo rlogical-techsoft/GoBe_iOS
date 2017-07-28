@@ -637,7 +637,6 @@ class Webservice: AnyObject {
         dataTask.resume()
     }
     
-    
     //MARK:- Friends
     
     func getFriendList(strUserID:String) -> Void {
