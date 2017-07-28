@@ -14,6 +14,7 @@ static NSString * const kTableViewCellContentView = @"UITableViewCellContentView
 #define kSectionIndexWidth 15
 #define kAccessoryTrailingSpace 15
 #define kLongPressMinimumDuration 0.16f
+#define SPACE 32.0
 
 @interface SWTableViewCell () <UIScrollViewDelegate,  UIGestureRecognizerDelegate>
 
@@ -102,6 +103,7 @@ static NSString * const kTableViewCellContentView = @"UITableViewCellContentView
     for (UIView *subview in cellSubviews)
     {
         [_contentCellView addSubview:subview];
+        
     }
     
     // Set scroll view to perpetually have same frame as self. Specifying relative to superview doesn't work, since the latter UITableViewCellScrollView has different behaviour.
@@ -127,23 +129,24 @@ static NSString * const kTableViewCellContentView = @"UITableViewCellContentView
     // Such an approach is necessary in order for the utility views to sit on top to get taps, as well as allow the backgroundColor (and private UITableViewCellBackgroundView) to work properly.
 
     self.leftUtilityClipView = [[UIView alloc] init];
-    self.leftUtilityClipConstraint = [NSLayoutConstraint constraintWithItem:self.leftUtilityClipView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft multiplier:1.0 constant:0.0];
+    self.leftUtilityClipConstraint = [NSLayoutConstraint constraintWithItem:self.leftUtilityClipView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft multiplier:1.0 constant:SPACE];
     self.leftUtilityButtonsView = [[SWUtilityButtonView alloc] initWithUtilityButtons:nil
                                                                            parentCell:self
                                                                 utilityButtonSelector:@selector(leftUtilityButtonHandler:)];
 
     self.rightUtilityClipView = [[UIView alloc] initWithFrame:self.bounds];
-    self.rightUtilityClipConstraint = [NSLayoutConstraint constraintWithItem:self.rightUtilityClipView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeRight multiplier:1.0 constant:0.0];
+    self.rightUtilityClipConstraint = [NSLayoutConstraint constraintWithItem:self.rightUtilityClipView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeRight multiplier:1.0 constant:SPACE];
     self.rightUtilityButtonsView = [[SWUtilityButtonView alloc] initWithUtilityButtons:nil
                                                                             parentCell:self
                                                                  utilityButtonSelector:@selector(rightUtilityButtonHandler:)];
 
     
+    
     UIView *clipViews[] = { self.rightUtilityClipView, self.leftUtilityClipView };
     NSLayoutConstraint *clipConstraints[] = { self.rightUtilityClipConstraint, self.leftUtilityClipConstraint };
     UIView *buttonViews[] = { self.rightUtilityButtonsView, self.leftUtilityButtonsView };
     NSLayoutAttribute alignmentAttributes[] = { NSLayoutAttributeRight, NSLayoutAttributeLeft };
-    
+
     for (NSUInteger i = 0; i < 2; ++i)
     {
         UIView *clipView = clipViews[i];
@@ -157,24 +160,62 @@ static NSString * const kTableViewCellContentView = @"UITableViewCellContentView
         clipView.clipsToBounds = YES;
         
         [clipViewParent addSubview:clipView];
-        [self addConstraints:@[
-                               // Pin the clipping view to the appropriate outer edges of the cell.
-                               [NSLayoutConstraint constraintWithItem:clipView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1.0 constant:0.0],
-                               [NSLayoutConstraint constraintWithItem:clipView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0.0],
-                               [NSLayoutConstraint constraintWithItem:clipView attribute:alignmentAttribute relatedBy:NSLayoutRelationEqual toItem:self attribute:alignmentAttribute multiplier:1.0 constant:0.0],
-                               clipConstraint,
-                               ]];
+
+        if (i == 0)
+        {
+            //RIGHT
+            [self addConstraints:@[
+                                   // Pin the clipping view to the appropriate outer edges of the cell.
+                                   [NSLayoutConstraint constraintWithItem:clipView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1.0 constant:0.0],
+                                   [NSLayoutConstraint constraintWithItem:clipView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0.0],
+                                   [NSLayoutConstraint constraintWithItem:clipView attribute:alignmentAttribute relatedBy:NSLayoutRelationEqual toItem:self attribute:alignmentAttribute multiplier:1.0 constant:-SPACE],
+                                   clipConstraint,
+                                   ]];
+            [clipView addSubview:buttonView];
+        }
+        else
+        {
+            //LEFT
+            [self addConstraints:@[
+                                   // Pin the clipping view to the appropriate outer edges of the cell.
+                                   [NSLayoutConstraint constraintWithItem:clipView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1.0 constant:0.0],
+                                   [NSLayoutConstraint constraintWithItem:clipView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0.0],
+                                   [NSLayoutConstraint constraintWithItem:clipView attribute:alignmentAttribute relatedBy:NSLayoutRelationEqual toItem:self attribute:alignmentAttribute multiplier:1.0 constant:SPACE],
+                                   clipConstraint,
+                                   ]];
+            [clipView addSubview:buttonView];
+        }
         
-        [clipView addSubview:buttonView];
-        [self addConstraints:@[
-                               // Pin the button view to the appropriate outer edges of its clipping view.
-                               [NSLayoutConstraint constraintWithItem:buttonView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:clipView attribute:NSLayoutAttributeTop multiplier:1.0 constant:0.0],
-                               [NSLayoutConstraint constraintWithItem:buttonView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:clipView attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0.0],
-                               [NSLayoutConstraint constraintWithItem:buttonView attribute:alignmentAttribute relatedBy:NSLayoutRelationEqual toItem:clipView attribute:alignmentAttribute multiplier:1.0 constant:0.0],
-                               
-                               // Constrain the maximum button width so that at least a button's worth of contentView is left visible. (The button view will shrink accordingly.)
-                               [NSLayoutConstraint constraintWithItem:buttonView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationLessThanOrEqual toItem:self.contentView attribute:NSLayoutAttributeWidth multiplier:1.0 constant:-kUtilityButtonWidthDefault],
-                               ]];
+        
+        if (i == 0)
+        {
+            //RIGHT MENU
+            [self addConstraints:@[
+                                   // Pin the button view to the appropriate outer edges of its clipping view.
+                                   [NSLayoutConstraint constraintWithItem:buttonView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:clipView attribute:NSLayoutAttributeTop multiplier:1.0 constant:0.0],
+                                   [NSLayoutConstraint constraintWithItem:buttonView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:clipView attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0.0],
+                                   [NSLayoutConstraint constraintWithItem:buttonView attribute:alignmentAttribute relatedBy:NSLayoutRelationEqual toItem:clipView attribute:alignmentAttribute multiplier:1.0 constant:0.0],
+                                   
+                                   // Constrain the maximum button width so that at least a button's worth of contentView is left visible. (The button view will shrink accordingly.)
+                                   [NSLayoutConstraint constraintWithItem:buttonView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationLessThanOrEqual toItem:self.contentView attribute:NSLayoutAttributeWidth multiplier:1.0 constant:-kUtilityButtonWidthDefault],
+                                   ]];
+
+        }
+        else
+        {
+            //LEFT
+            [self addConstraints:@[
+                                   // Pin the button view to the appropriate outer edges of its clipping view.
+                                   [NSLayoutConstraint constraintWithItem:buttonView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:clipView attribute:NSLayoutAttributeTop multiplier:1.0 constant:0.0],
+                                   [NSLayoutConstraint constraintWithItem:buttonView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:clipView attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0.0],
+                                   [NSLayoutConstraint constraintWithItem:buttonView attribute:alignmentAttribute relatedBy:NSLayoutRelationEqual toItem:clipView attribute:alignmentAttribute multiplier:1.0 constant:0.0],
+                                   
+                                   // Constrain the maximum button width so that at least a button's worth of contentView is left visible. (The button view will shrink accordingly.)
+                                   [NSLayoutConstraint constraintWithItem:buttonView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationLessThanOrEqual toItem:self.contentView attribute:NSLayoutAttributeWidth multiplier:1.0 constant:-kUtilityButtonWidthDefault],
+                                   ]];
+        }
+        
+        [clipViewParent bringSubviewToFront:clipView];
     }
 }
 
@@ -196,7 +237,6 @@ static NSString * const kTableViewPanState = @"state";
     [self removeOldTableViewPanObserver];
     
     _tableViewPanGestureRecognizer = containingTableView.panGestureRecognizer;
-    
     _containingTableView = containingTableView;
     
     if (containingTableView)
@@ -211,7 +251,6 @@ static NSString * const kTableViewPanState = @"state";
         _containingTableView.directionalLockEnabled = YES;
         
         [self.tapGestureRecognizer requireGestureRecognizerToFail:_containingTableView.panGestureRecognizer];
-        
         [_tableViewPanGestureRecognizer addObserver:self forKeyPath:kTableViewPanState options:0 context:nil];
     }
 }
@@ -533,20 +572,49 @@ static NSString * const kTableViewPanState = @"state";
 
 - (CGFloat)leftUtilityButtonsWidth
 {
+//    NSLog(@"Left Button Array count :%d",(int)self.leftUtilityButtons.count);
+    
+    if (self.leftUtilityButtons.count>0)
+    {
+        
 #if CGFLOAT_IS_DOUBLE
-    return round(CGRectGetWidth(self.leftUtilityButtonsView.frame));
+        return round(CGRectGetWidth(self.leftUtilityButtonsView.frame)  + SPACE);
 #else
-    return roundf(CGRectGetWidth(self.leftUtilityButtonsView.frame));
+        return roundf(CGRectGetWidth(self.leftUtilityButtonsView.frame) + SPACE);
 #endif
+        
+    }else{
+        
+#if CGFLOAT_IS_DOUBLE
+        return round(CGRectGetWidth(self.leftUtilityButtonsView.frame));
+#else
+        return roundf(CGRectGetWidth(self.leftUtilityButtonsView.frame));
+#endif
+        
+    }
 }
 
 - (CGFloat)rightUtilityButtonsWidth
 {
+//    NSLog(@"Right Button Array count :%d",(int)self.rightUtilityButtons.count);
+    if (self.rightUtilityButtons.count > 0)
+    {
+        
 #if CGFLOAT_IS_DOUBLE
-    return round(CGRectGetWidth(self.rightUtilityButtonsView.frame) + self.additionalRightPadding);
+        return round(CGRectGetWidth(self.rightUtilityButtonsView.frame) + self.additionalRightPadding + SPACE);
 #else
-    return roundf(CGRectGetWidth(self.rightUtilityButtonsView.frame) + self.additionalRightPadding);
+        return roundf(CGRectGetWidth(self.rightUtilityButtonsView.frame) + self.additionalRightPadding + SPACE);
 #endif
+        
+    }else{
+        
+#if CGFLOAT_IS_DOUBLE
+        return round(CGRectGetWidth(self.rightUtilityButtonsView.frame) + self.additionalRightPadding);
+#else
+        return roundf(CGRectGetWidth(self.rightUtilityButtonsView.frame) + self.additionalRightPadding);
+#endif
+        
+    }
 }
 
 - (CGFloat)utilityButtonsPadding

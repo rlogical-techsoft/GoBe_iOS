@@ -26,6 +26,7 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
     
     
     //For New & Trending
+    
     @IBOutlet var CollectionviewForNewTrending: UICollectionView?
     @IBOutlet var constraintNewTrending: NSLayoutConstraint!
     let reusableIdentifierNEWTRENDING = "NEWTRENDING"
@@ -290,21 +291,21 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
     }
     
     //MARK:- Setup view
-    func setupViews() -> Void
-    {
+    func setupViews() -> Void {
+        
         var CustomHeight = 0
         
         CollectionviewForNewTrending?.reloadData()
         //For New & Trending
         CustomHeight = CustomHeight + headerHeight_NT
         
-        if arr_NewTrending.count == 0
-        {
+        if arr_NewTrending.count == 0 {
+            
             CustomHeight = CustomHeight + headerHeight_NT
             constraintNewTrending.constant = 0
-        }
-        else
-        {
+            
+        }else{
+            
             constraintNewTrending.constant = viewHeightForNewTrending
             CustomHeight = CustomHeight + headerHeight_NT + Int(viewHeightForNewTrending)
         }
@@ -313,15 +314,14 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
         
         //For Following
         CollectionViewForFollowing?.reloadData()
-        if arr_Following.count == 0
-        {
+        if arr_Following.count == 0{
+            
             CustomHeight = CustomHeight + headerHeight_Following
             constraintFollowing.constant = 0
-        }
-        else
-        {
-            if arr_Following.count >= 7
-            {
+        }else{
+            
+            if arr_Following.count >= 7{
+                
                 var frame : CGRect! = self.CollectionViewForFollowing?.frame
                 frame.origin.x = 0;
                 frame.origin.y = CGFloat(HeaderDetailsHeight)
@@ -332,9 +332,9 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
                 
                 constraintFollowing.constant = viewHeightForFollowing + CGFloat(HeaderDetailsHeight)
                 CustomHeight = CustomHeight + headerHeight_Following + HeaderDetailsHeight + Int(CustomHeight)
-            }
-            else
-            {
+                
+            }else{
+                
                 //Find Content size and display
                 let newHeight : CGFloat = (self.CollectionViewForFollowing?.collectionViewLayout.collectionViewContentSize.height)!
                 
@@ -356,15 +356,15 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
         
         //For Friend
         CollectionViewForFriends?.reloadData()
-        if arr_Friends.count == 0
-        {
+        if arr_Friends.count == 0 {
+            
             CustomHeight = CustomHeight + headerHeight_ALL
             constraintFriends.constant = 0
-        }
-        else
-        {
-            if arr_Friends.count >= 7
-            {
+            
+        }else{
+            
+            if arr_Friends.count >= 7 {
+                
                 var frame : CGRect! = self.CollectionViewForFollowing!.frame
                 frame.origin.x = 0;
                 frame.origin.y = CGFloat(HeaderDetailsHeight)
@@ -375,9 +375,9 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
                 
                 constraintFriends.constant = viewHeightForFriends + CGFloat(HeaderDetailsHeight)
                 CustomHeight = CustomHeight + headerHeight_ALL + HeaderDetailsHeight + Int(viewHeightForFriends)
-            }
-            else
-            {
+                
+            }else{
+                
                 //Find Friend Size and display
                 let newHeight : CGFloat = self.CollectionViewForFriends!.collectionViewLayout.collectionViewContentSize.height
                 
@@ -399,24 +399,23 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
         
         
         //For Your Likes
-        if isYourLikes
-        {
-            if arr_YourLikes.count == 0
-            {
+        if isYourLikes {
+            
+            if arr_YourLikes.count == 0 {
+                
                 CustomHeight = CustomHeight + headerHeight_ALL
                 constraintYorLikes.constant = 0.0
-            }
-            else
-            {
+            }else{
+                
                 let tblHeight = CGFloat(arr_YourLikes.count * 120)
                 
                 tblYourLikes.frame = CGRect(x: 0, y: CGFloat(HeaderDetailsHeight), width:self.view.frame.size.width, height: tblHeight)
                 constraintYorLikes.constant = tblHeight;
                 CustomHeight = CustomHeight + headerHeight_ALL + HeaderDetailsHeight + Int(tblHeight)
             }
-        }
-        else
-        {
+            
+        }else{
+            
             CustomHeight = CustomHeight + headerHeight_ALL
             constraintYorLikes.constant = 0.0
         }
@@ -424,24 +423,22 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
         
         
         //Your Tips
-        if isYourTips
-        {
-            if arr_YourTips.count == 0
-            {
+        if isYourTips{
+            
+            if arr_YourTips.count == 0{
+                
                 CustomHeight = CustomHeight + headerHeight_ALL
                 constraintsYourTips.constant = 0.0
-            }
-            else
-            {
+            }else{
+                
                 let tblHeight = CGFloat(arr_YourTips.count * 120)
                 
                 tblYourTips.frame = CGRect(x: 0, y: CGFloat(HeaderDetailsHeight), width:self.view.frame.size.width, height: tblHeight)
                 constraintsYourTips.constant = tblHeight;
                 CustomHeight = CustomHeight  + headerHeight_ALL + HeaderDetailsHeight +  Int(tblHeight)
             }
-        }
-        else
-        {
+        }else{
+            
             CustomHeight = CustomHeight + headerHeight_ALL
             constraintsYourTips.constant = 0.0
         }
@@ -449,24 +446,22 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
         
         
         //Your Lists
-        if isYourLists
-        {
-            if arr_YourLists.count == 0
-            {
+        if isYourLists{
+            
+            if arr_YourLists.count == 0{
+                
                 CustomHeight = CustomHeight + headerHeight_ALL
                 constraintsYourLists.constant = 0.0
-            }
-            else
-            {
+            }else{
+                
                 let tblHeight = CGFloat(arr_YourLists.count * 60)
                 
                 tblYourLists.frame = CGRect(x: 0, y: CGFloat(HeaderDetailsHeight), width:self.view.frame.size.width, height: tblHeight)
                 constraintsYourLists.constant = tblHeight;
                 CustomHeight = CustomHeight  + headerHeight_ALL + HeaderDetailsHeight +  Int(tblHeight)
             }
-        }
-        else
-        {
+        }else{
+            
             CustomHeight = CustomHeight + headerHeight_ALL
             constraintsYourLists.constant = 0.0
         }
@@ -474,48 +469,44 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
         
         
         //Lists You Like
-        if isListYouLike
-        {
-            if arr_ListsYouLike.count == 0
-            {
+        if isListYouLike{
+            
+            if arr_ListsYouLike.count == 0{
+                
                 CustomHeight = CustomHeight + headerHeight_ALL
                 constraintsListYouLike.constant = 0.0
-            }
-            else
-            {
+            }else{
+                
                 let tblHeight = CGFloat(arr_ListsYouLike.count * 60) + tblHeaderListYouLike.frame.size.height
                 
                 tblListYouLike.frame = CGRect(x: 0, y: CGFloat(HeaderDetailsHeight), width:self.view.frame.size.width, height: tblHeight)
                 constraintsListYouLike.constant = tblHeight;
                 CustomHeight = CustomHeight  + headerHeight_ALL + HeaderDetailsHeight +  Int(tblHeight)
             }
-        }
-        else
-        {
+        }else{
+            
             CustomHeight = CustomHeight + headerHeight_ALL
             constraintsListYouLike.constant = 0.0
         }
         tblListYouLike.reloadData()
         
         //Friends Lists
-        if isFriendsList
-        {
-            if arr_FriendsList.count == 0
-            {
+        if isFriendsList{
+            
+            if arr_FriendsList.count == 0{
+                
                 CustomHeight = CustomHeight + headerHeight_ALL
                 constraintsFriendsList.constant = 0.0
-            }
-            else
-            {
+            }else{
+                
                 let tblHeight = CGFloat(arr_FriendsList.count * 60) + tblHeaderFriendsList.frame.size.height
                 
                 tblFriendsList.frame = CGRect(x: 0, y: CGFloat(HeaderDetailsHeight), width:self.view.frame.size.width, height: tblHeight)
                 constraintsFriendsList.constant = tblHeight;
                 CustomHeight = CustomHeight  + headerHeight_ALL + HeaderDetailsHeight +  Int(tblHeight)
             }
-        }
-        else
-        {
+        }else{
+            
             CustomHeight = CustomHeight + headerHeight_ALL
             constraintsFriendsList.constant = 0.0
         }
@@ -523,16 +514,15 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
         
         
         //Public Lists
-        if ispublicList
-        {
-            if arr_PublicList.count == 0
-            {
+        if ispublicList{
+            
+            if arr_PublicList.count == 0{
+                
                 CustomHeight = CustomHeight + headerHeight_ALL
                 constraintsPublicList.constant = 0.0
                 viewPublicListDetails.frame = CGRect(x: 0, y: CustomHeight, width: Int(self.view.frame.size.width), height: 0)
-            }
-            else
-            {
+            }else{
+                
                 let tblHeight = CGFloat(arr_PublicList.count * 60) + tblHeaderPublicList.frame.size.height
                 
                 tblPublicList.frame = CGRect(x: 0, y: CGFloat(HeaderDetailsHeight), width:self.view.frame.size.width, height: tblHeight)
@@ -541,9 +531,8 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
                 
                 viewPublicListDetails.frame = CGRect(x: 0, y: CustomHeight, width: Int(self.view.frame.size.width), height: Int(tblHeight))
             }
-        }
-        else
-        {
+        }else{
+            
             CustomHeight = CustomHeight + headerHeight_ALL
             constraintsPublicList.constant = 0.0
             viewPublicListDetails.frame = CGRect(x: 0, y: CustomHeight, width: Int(self.view.frame.size.width), height: 0)
@@ -556,27 +545,26 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
         //self.view_InsideScrollView.updateConstraints()
         
         
-        if isSetAnimationFirstTime
-        {
+        if isSetAnimationFirstTime{
+            
             isSetAnimationFirstTime = false
             
             self.view_InsideScrollView.frame = CGRect(x: 0, y: self.view_InsideScrollView.frame.origin.y, width: self.view.frame.size.width, height: CGFloat(CustomHeight))
             self.mainScrl.contentSize = CGSize(width: self.view_InsideScrollView.frame.size.width, height: CGFloat(CustomHeight))
+        }else{
             
-        }
-        else
-        {
             self.view_InsideScrollView.frame = CGRect(x: 0, y: self.view_InsideScrollView.frame.origin.y, width: self.view.frame.size.width, height: CGFloat(CustomHeight))
             self.mainScrl.contentSize = CGSize(width: self.view_InsideScrollView.frame.size.width, height: CGFloat(CustomHeight))
             
-            //self.mainScrl.contentOffset = CGPoint(x: CGFloat(0), y: CGFloat(self.scrlYPos))
+            //Set Scroll Postion to Particular View
+            self.mainScrl.contentOffset = CGPoint(x: CGFloat(0), y: CGFloat(self.scrlYPos))
             
         }
-        
     }
     
-    func TextfieldProperitiesSet()
-    {
+    
+    func TextfieldProperitiesSet(){
+        
         txtListYouLikeHeader.attributedPlaceholder = NSAttributedString(string: "Search for a List title",                                                                 attributes: [NSForegroundColorAttributeName: Constants.hexStringToUIColor(hex: "#636363")])
         txtPublicListHeader.attributedPlaceholder = NSAttributedString(string: "Search List title or Friend’s name", attributes: [NSForegroundColorAttributeName: Constants.hexStringToUIColor(hex: "#636363")])
         txtFriendsHeader.attributedPlaceholder = NSAttributedString(string: "Search List title or Friend’s name",                                                                 attributes: [NSForegroundColorAttributeName: Constants.hexStringToUIColor(hex: "#636363")])
@@ -593,34 +581,33 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
         }
     }
     
-    fileprivate var pageSize: CGSize
-    {
+    fileprivate var pageSize: CGSize{
+        
         let layout = CollectionviewForNewTrending?.collectionViewLayout as! UPCarouselFlowLayout
         var pageSize = layout.itemSize
-        if layout.scrollDirection == .horizontal
-        {
+        if layout.scrollDirection == .horizontal{
+            
             pageSize.width += layout.minimumLineSpacing
-        }
-        else
-        {
+        }else{
+            
             pageSize.height += layout.minimumLineSpacing
         }
         return pageSize
     }
     
-    fileprivate var orientation: UIDeviceOrientation
-    {
+    fileprivate var orientation: UIDeviceOrientation {
+        
         return UIDevice.current.orientation
     }
     
-    fileprivate func setupLayout()
-    {
+    fileprivate func setupLayout() {
+        
         let layout = CollectionviewForNewTrending?.collectionViewLayout as! UPCarouselFlowLayout
         layout.spacingMode = UPCarouselFlowLayoutSpacingMode.overlap(visibleOffset: 30)
     }
     
-    @IBAction func friendsFollowinfTapped(_ sender: Any)
-    {
+    @IBAction func friendsFollowinfTapped(_ sender: Any) {
+        
         let move = self.storyboard?.instantiateViewController(withIdentifier: "Friends_FollowersViewController") as! Friends_FollowersViewController
         self.navigationController?.pushViewController(move, animated: true)
     }
@@ -638,7 +625,7 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
 //            print(arr_Following.count)
             return arr_Following.count
             
-        }else {
+        }else{
             
             return arr_Friends.count
         }
@@ -718,8 +705,8 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
                 cell?.lblName.text = strDetails
             }
 
-            if isselctedFollowing == true
-            {
+            if isselctedFollowing == true{
+                
                 if selectedIndexFollowing == indexPath.row
                 {
                     cell?.img_background.image = UIImage(named:"NT box hit.png")
@@ -734,9 +721,9 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
             }
 
             return cell!
-        }
-        else
-        {
+            
+        }else{
+            
             let cell : Cell_Following? = collectionView.dequeueReusableCell(withReuseIdentifier: reusableIdentifierFriends, for: indexPath) as? Cell_Following
             
             let dict_Friends = arr_Friends.object(at: indexPath.row) as? NSDictionary
@@ -759,14 +746,13 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
                 cell?.lblName.text = strDetails
             }
 
-            if isselctedFriends == true
-            {
-                if selectedIndexFriends == indexPath.row
-                {
+            if isselctedFriends == true{
+                
+                if selectedIndexFriends == indexPath.row{
+                    
                     cell?.img_background.image = UIImage(named:"NT box hit.png")
-                }
-                else
-                {
+                }else{
+                    
                     cell?.img_background.image = UIImage(named:"NT box.png")
                 }
             }
@@ -990,19 +976,16 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
             }
             
 
-            if isselctedYourLikes == true
-            {
-                if selectedIndexYourLikes == indexPath.row
-                {
+            if isselctedYourLikes == true{
+                
+                if selectedIndexYourLikes == indexPath.row{
+                    
                     dcell?.backgroungImgView.image = UIImage(named:"NT box hit")
-                }
-                else
-                {
+                }else{
+                    
                     dcell?.backgroungImgView.image = UIImage(named:"NT box")
                 }
-            }
-            else
-            {
+            }else{
                 dcell?.backgroungImgView.image = UIImage(named:"NT box")
             }
             // Load the top-level objects from the custom cell XIB.
@@ -1017,8 +1000,8 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
             
             var dcell: Cell_YourTips? = tableView.dequeueReusableCell(withIdentifier: "Cell_YourTips", for: indexPath as IndexPath) as? Cell_YourTips
             
-            if (dcell == nil)
-            {
+            if (dcell == nil){
+                
                 if dcell == nil {
                     // Load the top-level objects from the custom cell XIB.
                     var topLevelObjects: [Any] = Bundle.main.loadNibNamed("Cell_YourTips", owner: self, options: nil)!
@@ -1048,7 +1031,7 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
                 dcell?.lblName.text = strlblName
             }
 
-            if isselctedYourTips == true{
+            if isselctedYourTips == true {
                 if selectedIndexYourTips == indexPath.row{
                     
                     dcell?.backgroundImg.image = UIImage(named:"NT box hit")
@@ -1072,13 +1055,13 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
            // dcell?.view_RightMenu.isHidden = true
 
             return dcell!
-        }
-        else if tableView == tblYourLists
-        {
+            
+        }else if tableView == tblYourLists{
+            
             var dcell: Cell_YourList? = tableView.dequeueReusableCell(withIdentifier: "Cell_YourList", for: indexPath as IndexPath) as? Cell_YourList
             
-            if (dcell == nil)
-            {
+            if (dcell == nil){
+                
                 if dcell == nil {
                     // Load the top-level objects from the custom cell XIB.
                     var topLevelObjects: [Any] = Bundle.main.loadNibNamed("Cell_YourList", owner: self, options: nil)!
@@ -1117,9 +1100,9 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
             }
 
             return dcell!
-        }
-        else if tableView == tblListYouLike
-        {
+            
+        }else if tableView == tblListYouLike{
+            
             var dcell: Cell_ListYouLike? = tableView.dequeueReusableCell(withIdentifier: "Cell_ListYouLike", for: indexPath as IndexPath) as? Cell_ListYouLike
             
             if (dcell == nil)
@@ -1173,13 +1156,13 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
             }
 
             return dcell!
-        }
-        else if tableView == tblFriendsList
-        {
+            
+        }else if tableView == tblFriendsList{
+            
             var dcell: Cell_FriendsList? = tableView.dequeueReusableCell(withIdentifier: "Cell_FriendsList", for: indexPath as IndexPath) as? Cell_FriendsList
             
-            if (dcell == nil)
-            {
+            if (dcell == nil){
+                
                 if dcell == nil {
                     // Load the top-level objects from the custom cell XIB.
                     var topLevelObjects: [Any] = Bundle.main.loadNibNamed("Cell_FriendsList", owner: self, options: nil)!
@@ -1194,13 +1177,13 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
             
             let dict_FriendsList : NSDictionary?
             
-            if isSearchingFriendsList == true
-            {
+            if isSearchingFriendsList == true{
+                
                 dict_FriendsList = arr_FriendsListFilter.object(at: indexPath.row) as? NSDictionary
             }else{
+                
                 dict_FriendsList = arr_FriendsList.object(at: indexPath.row) as? NSDictionary
             }
-            
             
             if let strTitleName = dict_FriendsList?.value(forKey: "ListName") as? String{
                 
@@ -1230,9 +1213,8 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
             }
             
             return dcell!
-        }
-        else if tableView == tblPublicList
-        {
+        }else if tableView == tblPublicList{
+            
             var dcell: Cell_PublicList? = tableView.dequeueReusableCell(withIdentifier: "Cell_PublicList", for: indexPath as IndexPath) as? Cell_PublicList
             
             if (dcell == nil)
@@ -1290,9 +1272,8 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
             }
             
             return dcell!
-        }
-        else
-        {
+            
+        }else{
             let dcell: YourLikesTableViewCell? = tableView.dequeueReusableCell(withIdentifier: "YourLikesTableViewCell", for: indexPath as IndexPath) as? YourLikesTableViewCell
             
             dcell?.selectionStyle = .none
@@ -1300,8 +1281,8 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
         }
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
-    {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
+        
         if tableView == tblYourLikes{
             return 120
         }else if tableView == tblYourTips{
@@ -1318,8 +1299,8 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
         return 0
     }
    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
-    {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        
         if tableView == tblYourLikes{
             
             let cell = tableView.cellForRow(at:indexPath) as! YourLikesTableViewCell
@@ -1428,15 +1409,14 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
 //                }
 //            }
             
-            
             let leftUtilityButtons = NSMutableArray()
-            leftUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "aarchive.png"))
+//            leftUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "aarchive.png"))
             leftUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "archive.png"))
             leftUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "FB.png"))
             
             return leftUtilityButtons as! [Any]
             
-        }else if tableview == tblYourTips{
+        }else if tableview == tblYourTips {
             
             let leftUtilityButtons = NSMutableArray()
             leftUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "archive.png"))
@@ -1485,13 +1465,10 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
                     rightUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "remove from"))
                     
                 }else{
-                    
                     rightUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "remove from"))
                 }
             }
             
-            //This Button is for Space Only
-            rightUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "deletee"))
             return rightUtilityButtons as! [Any]
             
         }else if tableview == tblYourTips {
@@ -1502,7 +1479,7 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
             rightUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "Cross"))
             return rightUtilityButtons as! [Any]
             
-        }else if tableview == tblYourLists{
+        }else if tableview == tblYourLists {
             
             let rightUtilityButtons = NSMutableArray()
             rightUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "like.png"))
@@ -1510,19 +1487,19 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
             rightUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "Cross"))
             return rightUtilityButtons as! [Any]
             
-        }else if tableview == tblListYouLike{
+        }else if tableview == tblListYouLike {
             
             let rightUtilityButtons = NSMutableArray()
             rightUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "remove from"))
             return rightUtilityButtons as! [Any]
             
-        }else if tableview == tblFriendsList{
+        }else if tableview == tblFriendsList {
             
             let rightUtilityButtons = NSMutableArray()
             rightUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "like.png"))
             return rightUtilityButtons as! [Any]
             
-        }else if tableview == tblPublicList{
+        }else if tableview == tblPublicList {
             let rightUtilityButtons = NSMutableArray()
             rightUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "like.png"))
             return rightUtilityButtons as! [Any]
@@ -1535,7 +1512,6 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
     }
     
     func swipeableTableViewCell(_ cell: SWTableViewCell, scrollingTo state: SWCellState){
-        
         
         //bhavesh Work on it
 //        let indexpath = NSIndexPath(row: cell.tag, section: 0)
@@ -1578,7 +1554,6 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
             print("This Right Cell is from tblPublicList and Index = \(index)")
         }
 
-        
 //        switch index
 //        {
 //        case 0:
@@ -1595,8 +1570,8 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
 //        }
     }
   
-    func swipeableTableViewCell(_ cell: SWTableViewCell, didTriggerRightUtilityButtonWith index: Int)
-    {
+    func swipeableTableViewCell(_ cell: SWTableViewCell, didTriggerRightUtilityButtonWith index: Int){
+        
         if cell is YourLikesTableViewCell {
             print("This Right Cell is from tblYourLikes and Index = \(index)")
         }else if cell is Cell_YourTips{
@@ -1610,6 +1585,7 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
         }else if cell is Cell_PublicList{
             print("This Right Cell is from tblPublicList and Index = \(index)")
         }
+        
         
 //        let indexPath: IndexPath? = tblYourLikes.indexPath(for: cell)
 //        print("Index path: \(String(describing: indexPath))")
@@ -1637,49 +1613,44 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
 
     @IBAction func handleValueChange(_ sender: UITextField)
     {
-        if let txt = sender.text, txt != ""
-        {
+        
+        if let txt = sender.text, txt != ""{
+            
             isSearchingListYoulikes = true
             let predicate = NSPredicate(format: "%K CONTAINS[cd] %@", "ListName", txt)
             arr_ListsYouLikeFilter = arr_ListsYouLike.filter {predicate.evaluate(with: $0)} as! NSMutableArray
+        }else{
             
-        }
-        else
-        {
             isSearchingListYoulikes = false
             arr_ListsYouLikeFilter = []
         }
         tblListYouLike.reloadData()
     }
     
-    @IBAction func handleValueChangeFriendsList(_ sender: UITextField)
-    {
-        if let txt = sender.text, txt != ""
-        {
+    @IBAction func handleValueChangeFriendsList(_ sender: UITextField){
+        
+        if let txt = sender.text, txt != ""{
+            
             isSearchingFriendsList = true
             let predicate = NSPredicate(format: "%K CONTAINS[cd] %@", "AuthorName", txt)
             arr_FriendsListFilter = arr_Friends.filter {predicate.evaluate(with: $0)} as! NSMutableArray
             
+        }else{
             
-        }
-        else
-        {
             isSearchingFriendsList = false
             arr_FriendsListFilter = []
         }
         tblFriendsList.reloadData()
     }
-    @IBAction func handleValueChangePublicList(_ sender: UITextField)
-    {
-        if let txt = sender.text, txt != ""
-        {
+    @IBAction func handleValueChangePublicList(_ sender: UITextField){
+        
+        if let txt = sender.text, txt != ""{
+            
             isSearchingPubliclist = true
             let predicate = NSPredicate(format: "%K CONTAINS[cd] %@", "AuthorName", txt)
             arr_PublicListFilter = arr_PublicList.filter {predicate.evaluate(with: $0)} as! NSMutableArray
+        }else{
             
-        }
-        else
-        {
             isSearchingPubliclist = false
             arr_ListsYouLikeFilter = []
         }
@@ -1687,8 +1658,8 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
     }
 
     //MARK:- Hide-Show Section
-    func isHideAllSection()
-    {
+    func isHideAllSection(){
+        
         isYourLikes = false
         isYourTips = false
         isYourLists = false
@@ -1698,8 +1669,8 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
     }
     
     //MARK:- UIButton Action
-    @IBAction func YourLikesTapped(_ sender: Any)
-    {
+    @IBAction func YourLikesTapped(_ sender: Any){
+        
         //let myButton: UIButton = sender as! UIButton
         
         //print(NSStringFromCGRect(mainScrl.convert(myButton.frame, from: myButton.superview)))
@@ -1712,12 +1683,11 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
         isFriendsList = false
         ispublicList = false
         
-        if isYourLikes
-        {
+        if isYourLikes{
+            
             isYourLikes = false
-        }
-        else
-        {
+        }else{
+            
             isYourLikes = true
         }
         self.setupViews()
@@ -1733,19 +1703,18 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
         isFriendsList = false
         ispublicList = false
         
-        if isYourTips
-        {
+        if isYourTips{
+            
             isYourTips = false
-        }
-        else
-        {
+        }else{
+            
             isYourTips = true
         }
         self.setupViews()
     }
     
-    @IBAction func YourListsTapped(_ sender: Any)
-    {
+    @IBAction func YourListsTapped(_ sender: Any){
+        
         scrlYPos = Float(viewYourListHeader.frame.origin.y);
         
         isYourLikes = false
@@ -1754,23 +1723,22 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
         isFriendsList = false
         ispublicList = false
         
-        if isYourLists
-        {
+        if isYourLists{
+            
             isYourLists = false
-        }
-        else
-        {
+        }else{
+            
             isYourLists = true
         }
         self.setupViews()
     }
     
-    @IBAction func crossListYouLikeTapped(_ sender: Any)
-    {
+    @IBAction func crossListYouLikeTapped(_ sender: Any){
+        
         txtListYouLikeHeader.resignFirstResponder()
     }
-    @IBAction func ListYouLikeTapped(_ sender: Any)
-    {
+    @IBAction func ListYouLikeTapped(_ sender: Any){
+        
         isYourLikes = false
         isYourTips = false
         isYourLists = false
@@ -1779,23 +1747,22 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
         
         scrlYPos = Float(viewListYouLikeHeader.frame.origin.y);
         
-        if isListYouLike
-        {
+        if isListYouLike{
+            
             isListYouLike = false
-        }
-        else
-        {
+        }else{
+            
             isListYouLike = true
         }
         self.setupViews()
     }
     
-    @IBAction func crossFriendsTapped(_ sender: Any)
-    {
+    @IBAction func crossFriendsTapped(_ sender: Any){
+        
         txtFriendsHeader.resignFirstResponder()
     }
-    @IBAction func FriendsListTapped(_ sender: Any)
-    {
+    @IBAction func FriendsListTapped(_ sender: Any){
+        
         scrlYPos = Float(viewFriendsListHeader.frame.origin.y);
         
         isYourLikes = false
@@ -1804,23 +1771,22 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
         isListYouLike = false
         ispublicList = false
         
-        if isFriendsList
-        {
+        if isFriendsList{
+            
             isFriendsList = false
-        }
-        else
-        {
+        }else{
+            
             isFriendsList = true
         }
         self.setupViews()
     }
     
-    @IBAction func crossPublicListTapped(_ sender: Any)
-    {
+    @IBAction func crossPublicListTapped(_ sender: Any){
+        
         txtPublicListHeader.resignFirstResponder()
     }
-    @IBAction func publicListTapped(_ sender: Any)
-    {
+    @IBAction func publicListTapped(_ sender: Any){
+        
         scrlYPos = Float(viewPublicListDetails.frame.origin.y);
         
         isYourLikes = false
@@ -1829,12 +1795,11 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
         isListYouLike = false
         isFriendsList = false
         
-        if ispublicList
-        {
+        if ispublicList{
+            
             ispublicList = false
-        }
-        else
-        {
+        }else{
+            
             ispublicList = true
         }
         self.setupViews()
@@ -1868,7 +1833,6 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
         
         HUD.show(true)
         web.getNewAndTendingTips()
-        
     }
     
     func getNewAndTendingTipsResponse(responseObj: NSDictionary) -> Void{
@@ -1880,10 +1844,10 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
         if responseAllKey.contains(kAPI_Status) {
             
             if let statusCode : Int = responseObj.value(forKey: kAPI_Status) as? Int {
-                if statusCode == 200
-                {
-                    if ISDebug
-                    {
+                if statusCode == 200{
+                    
+                    if ISDebug{
+                        
                         print("Simple Login True response \(responseObj)")
                         
                         let jsonArray = responseObj.value(forKey: "NewnTrending") as! NSArray
@@ -1919,8 +1883,8 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
 //        web.getHome_alllist(strUserID: appDel.instanceModelLogin.UserID)
     }
     
-    func getHomescreenAllsectionResponse(responseObj: NSDictionary) -> Void
-    {
+    func getHomescreenAllsectionResponse(responseObj: NSDictionary) -> Void{
+        
         HUD.hide(true)
         let responseAllKey : NSArray = responseObj.allKeys as NSArray
         print("Print Array Keys : \(responseAllKey)")
@@ -1928,8 +1892,8 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
         if responseAllKey.contains(kAPI_Status) {
             
             if let statusCode : Int = responseObj.value(forKey: kAPI_Status) as? Int {
-                if statusCode == 200
-                {
+                if statusCode == 200 {
+                    
                     if ISDebug{
                         print("Simple Login True response \(responseObj)")
                     }
@@ -1960,8 +1924,8 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
                     
                     perform(#selector(setupViews), with: nil, afterDelay: 0.2)
                     
-                }
-                else{
+                }else{
+                    
                     if ISDebug{
                         print("Tips like & Unlike False")
                     }
