@@ -990,13 +990,13 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
             }
             // Load the top-level objects from the custom cell XIB.
             dcell?.setLeftUtilityButtons(leftButtons(tableView,indexpath: indexPath), withButtonWidth: 40.0)
-            dcell?.setRightUtilityButtons(rightbuttons(tableView,indexpath: indexPath), withButtonWidth: 40.0)
+            dcell?.setRightUtilityButtons(rightbuttons(tableView,indexPath: indexPath), withButtonWidth: 40.0)
             dcell?.delegate = self
             dcell?.selectionStyle = .none
             
             return dcell!
             
-        }else if tableView == tblYourTips{
+        }else if tableView == tblYourTips {
             
             var dcell: Cell_YourTips? = tableView.dequeueReusableCell(withIdentifier: "Cell_YourTips", for: indexPath as IndexPath) as? Cell_YourTips
             
@@ -1046,7 +1046,7 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
             
             // Load the top-level objects from the custom cell XIB.
             dcell?.setLeftUtilityButtons(leftButtons(tableView,indexpath: indexPath), withButtonWidth: 40.0)
-            dcell?.setRightUtilityButtons(rightbuttons(tableView,indexpath: indexPath), withButtonWidth: 40.0)
+            dcell?.setRightUtilityButtons(rightbuttons(tableView,indexPath: indexPath), withButtonWidth: 40.0)
             dcell?.delegate = self
             dcell?.selectionStyle = .none
             dcell?.tag = indexPath.row
@@ -1056,21 +1056,19 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
 
             return dcell!
             
-        }else if tableView == tblYourLists{
+        }else if tableView == tblYourLists {
             
             var dcell: Cell_YourList? = tableView.dequeueReusableCell(withIdentifier: "Cell_YourList", for: indexPath as IndexPath) as? Cell_YourList
             
             if (dcell == nil){
                 
                 if dcell == nil {
-                    // Load the top-level objects from the custom cell XIB.
                     var topLevelObjects: [Any] = Bundle.main.loadNibNamed("Cell_YourList", owner: self, options: nil)!
-                    // Grab a pointer to the first object (presumably the custom cell, as that's all the XIB should contain).
                     dcell = topLevelObjects[0] as? Cell_YourList
                 }
             }
             dcell?.setLeftUtilityButtons(leftButtons(tableView,indexpath: indexPath), withButtonWidth: 40.0)
-            dcell?.setRightUtilityButtons(rightbuttons(tableView,indexpath: indexPath), withButtonWidth: 40.0)
+            dcell?.setRightUtilityButtons(rightbuttons(tableView,indexPath: indexPath), withButtonWidth: 40.0)
             dcell?.delegate = self
             dcell?.selectionStyle = .none
             
@@ -1101,7 +1099,7 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
 
             return dcell!
             
-        }else if tableView == tblListYouLike{
+        }else if tableView == tblListYouLike {
             
             var dcell: Cell_ListYouLike? = tableView.dequeueReusableCell(withIdentifier: "Cell_ListYouLike", for: indexPath as IndexPath) as? Cell_ListYouLike
             
@@ -1115,7 +1113,7 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
                 }
             }
             dcell?.setLeftUtilityButtons(leftButtons(tableView,indexpath: indexPath), withButtonWidth: 40.0)
-            dcell?.setRightUtilityButtons(rightbuttons(tableView,indexpath: indexPath), withButtonWidth: 40.0)
+            dcell?.setRightUtilityButtons(rightbuttons(tableView,indexPath: indexPath), withButtonWidth: 40.0)
             dcell?.delegate = self
             dcell?.selectionStyle = .none
             
@@ -1171,7 +1169,7 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
                 }
             }
             dcell?.setLeftUtilityButtons(leftButtons(tableView,indexpath: indexPath), withButtonWidth: 40.0)
-            dcell?.setRightUtilityButtons(rightbuttons(tableView,indexpath: indexPath), withButtonWidth: 40.0)
+            dcell?.setRightUtilityButtons(rightbuttons(tableView,indexPath: indexPath), withButtonWidth: 40.0)
             dcell?.delegate = self
             dcell?.selectionStyle = .none
             
@@ -1227,7 +1225,7 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
                 }
             }
             dcell?.setLeftUtilityButtons(leftButtons(tableView, indexpath: indexPath), withButtonWidth: 40.0)
-            dcell?.setRightUtilityButtons(rightbuttons(tableView,indexpath: indexPath), withButtonWidth: 40.0)
+            dcell?.setRightUtilityButtons(rightbuttons(tableView,indexPath: indexPath), withButtonWidth: 40.0)
             dcell?.delegate = self
             dcell?.selectionStyle = .none
             
@@ -1389,6 +1387,8 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
         }
     }
     
+    //MARK:- SWSwipe Methods
+    
     func leftButtons(_ tableview : UITableView,indexpath:IndexPath) -> [Any]{
         
         if tableview == tblYourLikes {
@@ -1450,13 +1450,13 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
         }
     }
     
-    func rightbuttons(_ tableview : UITableView,indexpath:IndexPath) -> [Any]{
+    func rightbuttons(_ tableview : UITableView,indexPath:IndexPath) -> [Any]{
         
         if tableview == tblYourLikes {
             
             let rightUtilityButtons = NSMutableArray()
             
-            let dict_YourLikes = arr_YourLikes.object(at: indexpath.row) as? NSDictionary
+            let dict_YourLikes = arr_YourLikes.object(at: indexPath.row) as? NSDictionary
             if let strAutherID = dict_YourLikes?.value(forKey: "AuthorID") as? String{
                 
                 //If this Tips is created by me OR not
@@ -1476,10 +1476,23 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
             let rightUtilityButtons = NSMutableArray()
             
             rightUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "edit.png"))
-            rightUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "Cross"))
+            rightUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "delete_YourTips"))
             return rightUtilityButtons as! [Any]
             
         }else if tableview == tblYourLists {
+            
+            let dict_YourLists = arr_YourLists.object(at: indexPath.row) as? NSDictionary
+            
+            //For Like and DisLike
+            
+            
+            
+            
+            
+            
+            
+            
+            
             
             let rightUtilityButtons = NSMutableArray()
             rightUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "like.png"))
