@@ -1386,11 +1386,9 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
                 dict_YourLists = arr_FriendsList.object(at: indexPath.row) as? NSDictionary
             }
             
-            let move = self.storyboard?.instantiateViewController(withIdentifier: kVIew_YOURLISTS) as! YOURLISTSVC
-            move.dict_CurrentListFromHome = dict_YourLists!
-            move.str_ScreenTitle = "FRIENDS’ LISTS"
-            self.navigationController?.pushViewController(move, animated: true)
-            
+            let objView = self.storyboard?.instantiateViewController(withIdentifier: "TipsAddToListViewController")
+            self.navigationController?.pushViewController(objView!, animated: true)
+
         } else if tableView == tblPublicList{
             
             var dict_YourLists : NSDictionary?
