@@ -1881,8 +1881,7 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
     func HomescreenOtherSectionAPI(){
         
         HUD.show(true)
-        web.getHome_alllist(strUserID: "31") //We have to change this Id to Login User ID.
-//        web.getHome_alllist(strUserID: appDel.instanceModelLogin.UserID)
+        web.getHome_alllist(strUserID: appDel.instanceModelLogin.UserID) //We have to change this Id to Login User ID
     }
     
     func getHomescreenAllsectionResponse(responseObj: NSDictionary) -> Void{

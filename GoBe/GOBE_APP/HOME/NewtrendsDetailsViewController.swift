@@ -175,7 +175,9 @@ class NewtrendsDetailsViewController: UIViewController,UICollectionViewDelegate,
         
         //Call Webservices
         if let strTipID = dict_Cell?.value(forKey: "TipID") as? String{
-            self.tipLikeUnlike(strTipID: strTipID)
+            
+            self.perform(#selector(tipLikeUnlike), with: strTipID, afterDelay: 0.1)
+//            self.tipLikeUnlike(strTipID: strTipID)
         }
     }
 
@@ -204,7 +206,8 @@ class NewtrendsDetailsViewController: UIViewController,UICollectionViewDelegate,
     //MARK:- Webservice Methods
     
     func tipLikeUnlike(strTipID:String) -> Void {
-        
+
+        print("TipID : \(strTipID)")
         web.tipLikeUnlike(strUserID: appDel.instanceModelLogin.UserID, strTipID: strTipID)
     }
     
