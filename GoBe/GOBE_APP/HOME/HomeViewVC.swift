@@ -246,9 +246,7 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
         perform(#selector(getNewAndTrending), with: nil, afterDelay: 0.1)
         perform(#selector(HomescreenOtherSectionAPI), with: nil, afterDelay: 0.1)
         
-        
         //Cell click Highlights Reload
-        
         if isselcted == true
         {
             isselcted = false
@@ -1650,7 +1648,6 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
             let predicate = NSPredicate(format: "%K CONTAINS[cd] %@", "AuthorName", txt)
             arr_PublicListFilter = arr_PublicList.filter {predicate.evaluate(with: $0)} as! NSMutableArray
         }else{
-            
             isSearchingPubliclist = false
             arr_ListsYouLikeFilter = []
         }
@@ -1736,6 +1733,12 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
     @IBAction func crossListYouLikeTapped(_ sender: Any){
         
         txtListYouLikeHeader.resignFirstResponder()
+        txtListYouLikeHeader.text=""
+        isSearchingListYoulikes = false
+        arr_ListsYouLikeFilter = []
+        tblListYouLike.reloadData()
+        
+        
     }
     @IBAction func ListYouLikeTapped(_ sender: Any){
         
@@ -1760,6 +1763,11 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
     @IBAction func crossFriendsTapped(_ sender: Any){
         
         txtFriendsHeader.resignFirstResponder()
+        txtFriendsHeader.text=""
+        isSearchingFriendsList = false
+        arr_FriendsListFilter = []
+        tblFriendsList.reloadData()
+
     }
     @IBAction func FriendsListTapped(_ sender: Any){
         
@@ -1784,6 +1792,11 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
     @IBAction func crossPublicListTapped(_ sender: Any){
         
         txtPublicListHeader.resignFirstResponder()
+        txtPublicListHeader.text=""
+        isSearchingPubliclist = false
+        arr_ListsYouLikeFilter = []
+        tblPublicList.reloadData()
+
     }
     @IBAction func publicListTapped(_ sender: Any){
         
@@ -1821,8 +1834,8 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
     @IBAction func btnAction_SharePostaTip(_ sender: Any) {
         
         //This is only for testing
-//        let view = self.storyboard?.instantiateViewController(withIdentifier: kVIew_YOURLISTS)
-//        self.navigationController?.pushViewController(view!, animated: true)
+        let view = self.storyboard?.instantiateViewController(withIdentifier: "SharedTipsViewController")
+        self.navigationController?.pushViewController(view!, animated: true)
     }
     
     
@@ -1847,7 +1860,6 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
                 if statusCode == 200{
                     
                     if ISDebug{
-                        
                         print("Simple Login True response \(responseObj)")
                         
                         let jsonArray = responseObj.value(forKey: "NewnTrending") as! NSArray
@@ -1855,7 +1867,6 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
                         print(arr_NewTrending)
                         self.setupViews()
                     }
-                    
                 }
                 else{
                     
@@ -1863,8 +1874,8 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
                         print("Tips like & Unlike False")
                     }
                     
-                    if responseAllKey.contains(kAPI_Msg) {
-                        
+                    if responseAllKey.contains(kAPI_Msg)
+                    {
                         if let strMessage = responseObj.value(forKey: kAPI_Msg) as? String {
                             Constants.showAlertTitle(kAlertAppName, messageStr: strMessage, viewController: self)
                         }

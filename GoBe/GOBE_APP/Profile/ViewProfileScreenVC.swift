@@ -152,10 +152,9 @@ class ViewProfileScreenVC: UIViewController,WebApiRequestDelegate {
                     let strFName = responseObj.object(forKey: "FirstName") as? String
                     let strLName = responseObj.object(forKey: "LastName") as? String
                     lbl_Name.text = strFName! + " " + strLName!
-                    
-                    
-                }else{
-                    
+                }
+                else
+                {
                     if ISDebug {
                         print("Get Profile Error:\(responseObj.value(forKey: kAPI_Msg) as! String)")
                     }
