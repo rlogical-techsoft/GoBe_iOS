@@ -18,12 +18,18 @@
 		3F5D0F181F28A03F004A44DE /* Cell_TipsadToList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F5D0F161F28A03F004A44DE /* Cell_TipsadToList.xib */; };
 		3F6A88CA1F29EE45008567B2 /* Screen Shot 2017-07-27 at 3.16.23 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F6A88C91F29EE45008567B2 /* Screen Shot 2017-07-27 at 3.16.23 PM.png */; };
 		3F6A88CC1F2A0027008567B2 /* StartANewListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6A88CB1F2A0027008567B2 /* StartANewListViewController.swift */; };
+		3F7E80881F2B0FEB002D6BE0 /* Screen Shot 2017-07-28 at 11.53.04 AM.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F7E80871F2B0FEB002D6BE0 /* Screen Shot 2017-07-28 at 11.53.04 AM.png */; };
+		3F7E808E1F2B3931002D6BE0 /* SharedTipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7E808D1F2B3931002D6BE0 /* SharedTipsViewController.swift */; };
+		3F7E80901F2B3F9B002D6BE0 /* Screen Shot 2017-07-28 at 3.16.18 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F7E808F1F2B3F9B002D6BE0 /* Screen Shot 2017-07-28 at 3.16.18 PM.png */; };
+		3F7E80921F2B6823002D6BE0 /* Screen Shot 2017-07-28 at 6.09.28 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F7E80911F2B6823002D6BE0 /* Screen Shot 2017-07-28 at 6.09.28 PM.png */; };
+		3F7E80941F2B717C002D6BE0 /* Screen Shot 2017-07-28 at 6.49.32 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F7E80931F2B717C002D6BE0 /* Screen Shot 2017-07-28 at 6.49.32 PM.png */; };
+		3F7E80961F2B75A5002D6BE0 /* sharedTipsVisibilityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7E80951F2B75A5002D6BE0 /* sharedTipsVisibilityViewController.swift */; };
+		3F7E80981F2B76F1002D6BE0 /* sharedEventMapSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7E80971F2B76F1002D6BE0 /* sharedEventMapSelectionViewController.swift */; };
 		3FD0D8141F062DBF001EDD04 /* AvengersHD.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FD0D8131F062DBF001EDD04 /* AvengersHD.png */; };
 		3FD0D81D1F064A2B001EDD04 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD0D81C1F064A2B001EDD04 /* MBProgressHUD.m */; };
 		3FD0D81F1F064B20001EDD04 /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD0D81E1F064B20001EDD04 /* Extension+String.swift */; };
 		5AA7441B4054BE42871238FA /* Pods_GoBe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE2199B55CC0495B1CDCD0EE /* Pods_GoBe.framework */; };
 		730878041F21E1D300E3EF22 /* NewtrendsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730878031F21E1D300E3EF22 /* NewtrendsDetailsViewController.swift */; };
-		73301A561F2B1C3F003B868C /* Mitul_ScreenShotYourLISTS.png in Resources */ = {isa = PBXBuildFile; fileRef = 73301A551F2B1C3F003B868C /* Mitul_ScreenShotYourLISTS.png */; };
 		733F77931F2773F700E68603 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 733F77921F2773F700E68603 /* MapKit.framework */; };
 		736111061F23495F00BF0B45 /* YOURLIKES_screenshot1.png in Resources */ = {isa = PBXBuildFile; fileRef = 736111051F23495F00BF0B45 /* YOURLIKES_screenshot1.png */; };
 		736914831F1F27BD00EBECE7 /* HomeViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736914821F1F27BD00EBECE7 /* HomeViewVC.swift */; };
@@ -114,12 +120,18 @@
 		3F5D0F161F28A03F004A44DE /* Cell_TipsadToList.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Cell_TipsadToList.xib; sourceTree = "<group>"; };
 		3F6A88C91F29EE45008567B2 /* Screen Shot 2017-07-27 at 3.16.23 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2017-07-27 at 3.16.23 PM.png"; sourceTree = "<group>"; };
 		3F6A88CB1F2A0027008567B2 /* StartANewListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartANewListViewController.swift; sourceTree = "<group>"; };
+		3F7E80871F2B0FEB002D6BE0 /* Screen Shot 2017-07-28 at 11.53.04 AM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2017-07-28 at 11.53.04 AM.png"; sourceTree = "<group>"; };
+		3F7E808D1F2B3931002D6BE0 /* SharedTipsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedTipsViewController.swift; sourceTree = "<group>"; };
+		3F7E808F1F2B3F9B002D6BE0 /* Screen Shot 2017-07-28 at 3.16.18 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2017-07-28 at 3.16.18 PM.png"; sourceTree = "<group>"; };
+		3F7E80911F2B6823002D6BE0 /* Screen Shot 2017-07-28 at 6.09.28 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2017-07-28 at 6.09.28 PM.png"; sourceTree = "<group>"; };
+		3F7E80931F2B717C002D6BE0 /* Screen Shot 2017-07-28 at 6.49.32 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2017-07-28 at 6.49.32 PM.png"; sourceTree = "<group>"; };
+		3F7E80951F2B75A5002D6BE0 /* sharedTipsVisibilityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sharedTipsVisibilityViewController.swift; sourceTree = "<group>"; };
+		3F7E80971F2B76F1002D6BE0 /* sharedEventMapSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sharedEventMapSelectionViewController.swift; sourceTree = "<group>"; };
 		3FD0D8131F062DBF001EDD04 /* AvengersHD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AvengersHD.png; sourceTree = "<group>"; };
 		3FD0D81B1F064A2B001EDD04 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		3FD0D81C1F064A2B001EDD04 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		3FD0D81E1F064B20001EDD04 /* Extension+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 		730878031F21E1D300E3EF22 /* NewtrendsDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewtrendsDetailsViewController.swift; sourceTree = "<group>"; };
-		73301A551F2B1C3F003B868C /* Mitul_ScreenShotYourLISTS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Mitul_ScreenShotYourLISTS.png; sourceTree = "<group>"; };
 		733F77921F2773F700E68603 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		736111051F23495F00BF0B45 /* YOURLIKES_screenshot1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = YOURLIKES_screenshot1.png; sourceTree = "<group>"; };
 		736914821F1F27BD00EBECE7 /* HomeViewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewVC.swift; sourceTree = "<group>"; };
@@ -325,6 +337,16 @@
 			path = TipsAddtoListCell;
 			sourceTree = "<group>";
 		};
+		3F7E808C1F2B3931002D6BE0 /* SharedTips */ = {
+			isa = PBXGroup;
+			children = (
+				3F7E808D1F2B3931002D6BE0 /* SharedTipsViewController.swift */,
+				3F7E80951F2B75A5002D6BE0 /* sharedTipsVisibilityViewController.swift */,
+				3F7E80971F2B76F1002D6BE0 /* sharedEventMapSelectionViewController.swift */,
+			);
+			path = SharedTips;
+			sourceTree = "<group>";
+		};
 		3FD0D8151F06345F001EDD04 /* Webservice and Constant */ = {
 			isa = PBXGroup;
 			children = (
@@ -403,7 +425,10 @@
 		73A420531F0B5CB6001A1BCB /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				73301A551F2B1C3F003B868C /* Mitul_ScreenShotYourLISTS.png */,
+				3F7E80911F2B6823002D6BE0 /* Screen Shot 2017-07-28 at 6.09.28 PM.png */,
+				3F7E80931F2B717C002D6BE0 /* Screen Shot 2017-07-28 at 6.49.32 PM.png */,
+				3F7E808F1F2B3F9B002D6BE0 /* Screen Shot 2017-07-28 at 3.16.18 PM.png */,
+				3F7E80871F2B0FEB002D6BE0 /* Screen Shot 2017-07-28 at 11.53.04 AM.png */,
 				3F6A88C91F29EE45008567B2 /* Screen Shot 2017-07-27 at 3.16.23 PM.png */,
 				737A94991F27651900AD6F9D /* Screen Shot 2017-07-25 at 1.07.23 PM.png */,
 				736111051F23495F00BF0B45 /* YOURLIKES_screenshot1.png */,
@@ -557,6 +582,7 @@
 				9A52CE6D1F03B0A100FCEB71 /* HOME */,
 				7396074D1F134AC80036C839 /* Profile */,
 				9A52CE751F03B0C400FCEB71 /* NewtrendsViewController.swift */,
+				3F7E808C1F2B3931002D6BE0 /* SharedTips */,
 				9AB5C0681F15FFBE00A926B4 /* FRIENDS & FOLLOWERS */,
 				3F5D0F0E1F2895F6004A44DE /* Tips Add to list */,
 			);
@@ -749,11 +775,13 @@
 				9AD302E21F1767180021CC16 /* Screen Shot 2017-07-13 at 1.59.42 PM.png in Resources */,
 				73A420591F0B5CE4001A1BCB /* Background2.png in Resources */,
 				9A5C69221F0CB2C00009C083 /* Cell_PublicList.xib in Resources */,
+				3F7E80941F2B717C002D6BE0 /* Screen Shot 2017-07-28 at 6.49.32 PM.png in Resources */,
 				9A3E64291F18980F00ED6697 /* Screen Shot 2017-07-14 at 11.39.53 AM.png in Resources */,
 				3FD0D8141F062DBF001EDD04 /* AvengersHD.png in Resources */,
 				9A52CEC01F03B34200FCEB71 /* Type Dynamic - Larsseit Bold.otf in Resources */,
 				9AD302E41F17951A0021CC16 /* Screen Shot 2017-07-13 at 5.15.23 PM.png in Resources */,
 				3F6A88CA1F29EE45008567B2 /* Screen Shot 2017-07-27 at 3.16.23 PM.png in Resources */,
+				3F7E80881F2B0FEB002D6BE0 /* Screen Shot 2017-07-28 at 11.53.04 AM.png in Resources */,
 				9A3E642B1F1899FB00ED6697 /* Screen Shot 2017-07-14 at 11.48.29 AM.png in Resources */,
 				73A4207E1F0BC677001A1BCB /* Cell_ListYouLike.xib in Resources */,
 				73B84AFC1F0A379800D22FB7 /* LaunchScreen.storyboard in Resources */,
@@ -767,17 +795,18 @@
 				7397A43B1F179FCB004BE6EB /* Profile.png in Resources */,
 				73A420761F0BC677001A1BCB /* Cell_YourTips.xib in Resources */,
 				9A3C24F71F0E3D0400F17845 /* Cell_Trendings.xib in Resources */,
+				3F7E80901F2B3F9B002D6BE0 /* Screen Shot 2017-07-28 at 3.16.18 PM.png in Resources */,
 				73A420911F0BCA1B001A1BCB /* Background3.png in Resources */,
 				73A420581F0B5CE4001A1BCB /* Background1.png in Resources */,
 				73A4208F1F0BC914001A1BCB /* Cell_FriendsList.xib in Resources */,
 				9A52CE9D1F03B13700FCEB71 /* YourLikesTableViewCell.xib in Resources */,
 				736DFD5D1F1CC1C90097E771 /* Cell_FriendsRequest.xib in Resources */,
-				73301A561F2B1C3F003B868C /* Mitul_ScreenShotYourLISTS.png in Resources */,
 				9A52CEC31F03B34200FCEB71 /* Type Dynamic - Larsseit Medium.otf in Resources */,
 				737A949A1F27651900AD6F9D /* Screen Shot 2017-07-25 at 1.07.23 PM.png in Resources */,
 				3F486AB41EFAAA55006BB1D0 /* Main.storyboard in Resources */,
 				7369148C1F1F2A5400EBECE7 /* Cell_Following.xib in Resources */,
 				7397A43D1F179FCB004BE6EB /* profile2.png in Resources */,
+				3F7E80921F2B6823002D6BE0 /* Screen Shot 2017-07-28 at 6.09.28 PM.png in Resources */,
 				3F4E2EAF1EFB8AC100D9297D /* Info.plist in Resources */,
 				736DFD5F1F1CC1C90097E771 /* Cell_userList.xib in Resources */,
 			);
@@ -848,6 +877,7 @@
 				73B004A21F220AAD00FE4372 /* YOURLISTSVC.swift in Sources */,
 				73A420751F0BC677001A1BCB /* Cell_YourTips.swift in Sources */,
 				9A5C69211F0CB2C00009C083 /* Cell_PublicList.swift in Sources */,
+				3F7E80981F2B76F1002D6BE0 /* sharedEventMapSelectionViewController.swift in Sources */,
 				3F5D0F101F28962F004A44DE /* TipsAddToListViewController.swift in Sources */,
 				7397A42D1F179F16004BE6EB /* Webservice.swift in Sources */,
 				736914831F1F27BD00EBECE7 /* HomeViewVC.swift in Sources */,
@@ -864,11 +894,13 @@
 				9A52CEB61F03B31D00FCEB71 /* UPCarouselFlowLayout.swift in Sources */,
 				736914871F1F28F200EBECE7 /* InterestedCatCollectionViewCell.swift in Sources */,
 				73B9AE531F18B6A100BE8EBC /* EditProfileScreenVC.swift in Sources */,
+				3F7E80961F2B75A5002D6BE0 /* sharedTipsVisibilityViewController.swift in Sources */,
 				3FD0D81D1F064A2B001EDD04 /* MBProgressHUD.m in Sources */,
 				736DFD4E1F1CBD770097E771 /* Friends_FollowersViewController.swift in Sources */,
 				736DFD5E1F1CC1C90097E771 /* Cell_userList.swift in Sources */,
 				737A94981F27645500AD6F9D /* LocationSearchViewController.swift in Sources */,
 				9A52CE9C1F03B13700FCEB71 /* YourLikesTableViewCell.m in Sources */,
+				3F7E808E1F2B3931002D6BE0 /* SharedTipsViewController.swift in Sources */,
 				738E1A331F164E0300B13A6D /* ViewController.swift in Sources */,
 				7397A4311F179F3A004BE6EB /* ModelLogin.swift in Sources */,
 				9A3C24F61F0E3D0400F17845 /* Cell_Trendings.swift in Sources */,

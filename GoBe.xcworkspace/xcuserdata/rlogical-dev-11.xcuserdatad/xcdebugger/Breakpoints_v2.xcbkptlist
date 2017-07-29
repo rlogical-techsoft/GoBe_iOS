@@ -697,7 +697,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1842"
             endingLineNumber = "1842"
-            landmarkName = "getNewAndTrending()"
+            landmarkName = "btnAction_GoExplore(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
