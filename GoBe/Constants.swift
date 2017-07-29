@@ -70,6 +70,10 @@ let kAPIForgotPassword      = "forget-password"
 
 //MARK:- User Details
 let kAPIUserDetails         = "user-details"
+let kAPIEditUserProfile     = "edit-user-profile"
+
+//MARK:- Profile Topics
+let kAPIAllTopicList        = "topic-list"
 
 //MARK:- AllSection Home screen
 let kAPINewAndTrending      = "new-n-trending"
@@ -77,6 +81,8 @@ let kAPINewAndTrending      = "new-n-trending"
 //MARK:- Tips Related API
 let kAPITip_like_Unlike     = "tip-like-unlike"
 
+//MARK:- List Related API
+let kAPIList_like_unlike    = "list-like-unlike"
 
 let kAPIAllListHomeScreen   = "all-list"
 

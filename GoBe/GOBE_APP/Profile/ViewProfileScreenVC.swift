@@ -153,11 +153,58 @@ class ViewProfileScreenVC: UIViewController,WebApiRequestDelegate {
                     let strLName = responseObj.object(forKey: "LastName") as? String
                     lbl_Name.text = strFName! + " " + strLName!
                     
+                    if let strAboutMe = responseObj.value(forKey: "About") as? String {
+                        txt_MySelfText.text = strAboutMe
+                    }else{
+                        txt_MySelfText.text = ""
+                    }
+
+                    if let strPlaces = responseObj.value(forKey: "Places") as? String{
+                        txt_LiveORKnowText.text = strPlaces
+                    }else{
+                        txt_LiveORKnowText.text = ""
+                    }
+                    
+                    if let intTIPS = responseObj.value(forKey: "TipNumber") as? String {
+                        btn_numberOfTips.setTitle("\(intTIPS) TIPS", for: .normal)
+                    }
+                    
+                    if let intLIKES = responseObj.value(forKey: "LikeNumber") as? Int {
+                        btn_numberOfLIKES.setTitle("\(intLIKES) LIKES", for: .normal)
+                    }
+                    
+                    if let intLISTS = responseObj.value(forKey: "ListNumber") as? String {
+                        btn_numberOfLISTS.setTitle("\(intLISTS) LISTS", for: .normal)
+                    }
+                    
+                    if let intLIKEDLISTS = responseObj.value(forKey: "ListLikeNumber") as? String {
+                        btn_numberOfLIKEDLISTS.setTitle("\(intLIKEDLISTS) LIKED LISTS", for: .normal)
+                    }
+                    
+                    if let intFRIENDS = responseObj.value(forKey: "FriendNumber") as? String {
+                        btn_numberOfFRIENDS.setTitle("\(intFRIENDS) FRIENDS", for: .normal)
+                    }
+                    
+                    if let intFOLLOWERS = responseObj.value(forKey: "FollowerNumber") as? String {
+                        btn_numberOfFOLLOWERS.setTitle("\(intFOLLOWERS) FOLLOWERS", for: .normal)
+                    }
+                    
+                    if let intFOLLOWING = responseObj.value(forKey: "FollowingNumber") as? String {
+                        btn_numberOfFOLLOWING.setTitle("\(intFOLLOWING) FOLLOWING", for: .normal)
+                    }
+                    
                     
                 }else{
                     
                     if ISDebug {
                         print("Get Profile Error:\(responseObj.value(forKey: kAPI_Msg) as! String)")
+                    }
+                    
+                    if responseAllKey.contains(kAPI_Msg) {
+                        
+                        if let strMessage = responseObj.value(forKey: kAPI_Msg) as? String {
+                            Constants.showAlertTitle(kAlertAppName, messageStr: strMessage, viewController: self)
+                        }
                     }
                 }
             }

@@ -1461,6 +1461,7 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
                 
                 //If this Tips is created by me OR not
                 if strAutherID == appDel.instanceModelLogin.UserID {
+                    
                     rightUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "edit"))
                     rightUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "remove from"))
                     
@@ -1488,12 +1489,6 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
             
             
             
-            
-            
-            
-            
-            
-            
             let rightUtilityButtons = NSMutableArray()
             rightUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "like.png"))
             rightUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "visib small.png"))
@@ -1513,6 +1508,12 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
             return rightUtilityButtons as! [Any]
             
         }else if tableview == tblPublicList {
+            
+            
+            
+            
+            
+            
             let rightUtilityButtons = NSMutableArray()
             rightUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "like.png"))
             return rightUtilityButtons as! [Any]
@@ -1845,7 +1846,11 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
     func getNewAndTrending() {
         
         HUD.show(true)
-        web.getNewAndTendingTips()
+        if appDel.instanceModelLogin.UserID.characters.count > 0 {
+            web.getNewAndTendingTips(strUserID: appDel.instanceModelLogin.UserID)
+        }else{
+            web.getNewAndTendingTips(strUserID:"")
+        }
     }
     
     func getNewAndTendingTipsResponse(responseObj: NSDictionary) -> Void{
@@ -1951,5 +1956,46 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
                 }
             }
         }
+    }
+    
+// List Like & UnLike
+    
+    func listLikeUnLike(strListID:String) -> Void {
+        
+        web.listLikeUnLike(strUserID: appDel.instanceModelLogin.UserID, strListID: strListID)
+    }
+    
+    func listLikeOrUnLikeResponse(responseObj: NSDictionary) -> Void {
+        
+        let responseAllKey : NSArray = responseObj.allKeys as NSArray
+        //        print("Print Array Keys : \(responseAllKey)")
+        
+        if responseAllKey.contains(kAPI_Status) {
+            
+            if let statusCode : Int = responseObj.value(forKey: kAPI_Status) as? Int {
+                if statusCode == 200
+                {
+                    if ISDebug{
+                        print("List like & Unlike Response \(responseObj)")
+                    }
+                    
+                }else{
+                    
+                    if ISDebug{
+                        print("List like & Unlike False")
+                    }
+                    
+                    if responseAllKey.contains(kAPI_Msg) {
+                        
+                        if let strMessage = responseObj.value(forKey: kAPI_Msg) as? String {
+                            Constants.showAlertTitle(kAlertAppName, messageStr: strMessage, viewController: self)
+                        }
+                    }
+                    
+                }
+            }
+            
+        }
+        
     }
 }

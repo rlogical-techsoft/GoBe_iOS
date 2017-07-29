@@ -23,6 +23,7 @@
 		3FD0D81F1F064B20001EDD04 /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD0D81E1F064B20001EDD04 /* Extension+String.swift */; };
 		5AA7441B4054BE42871238FA /* Pods_GoBe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE2199B55CC0495B1CDCD0EE /* Pods_GoBe.framework */; };
 		730878041F21E1D300E3EF22 /* NewtrendsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730878031F21E1D300E3EF22 /* NewtrendsDetailsViewController.swift */; };
+		73301A561F2B1C3F003B868C /* Mitul_ScreenShotYourLISTS.png in Resources */ = {isa = PBXBuildFile; fileRef = 73301A551F2B1C3F003B868C /* Mitul_ScreenShotYourLISTS.png */; };
 		733F77931F2773F700E68603 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 733F77921F2773F700E68603 /* MapKit.framework */; };
 		736111061F23495F00BF0B45 /* YOURLIKES_screenshot1.png in Resources */ = {isa = PBXBuildFile; fileRef = 736111051F23495F00BF0B45 /* YOURLIKES_screenshot1.png */; };
 		736914831F1F27BD00EBECE7 /* HomeViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736914821F1F27BD00EBECE7 /* HomeViewVC.swift */; };
@@ -118,6 +119,7 @@
 		3FD0D81C1F064A2B001EDD04 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		3FD0D81E1F064B20001EDD04 /* Extension+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 		730878031F21E1D300E3EF22 /* NewtrendsDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewtrendsDetailsViewController.swift; sourceTree = "<group>"; };
+		73301A551F2B1C3F003B868C /* Mitul_ScreenShotYourLISTS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Mitul_ScreenShotYourLISTS.png; sourceTree = "<group>"; };
 		733F77921F2773F700E68603 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		736111051F23495F00BF0B45 /* YOURLIKES_screenshot1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = YOURLIKES_screenshot1.png; sourceTree = "<group>"; };
 		736914821F1F27BD00EBECE7 /* HomeViewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewVC.swift; sourceTree = "<group>"; };
@@ -401,6 +403,7 @@
 		73A420531F0B5CB6001A1BCB /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				73301A551F2B1C3F003B868C /* Mitul_ScreenShotYourLISTS.png */,
 				3F6A88C91F29EE45008567B2 /* Screen Shot 2017-07-27 at 3.16.23 PM.png */,
 				737A94991F27651900AD6F9D /* Screen Shot 2017-07-25 at 1.07.23 PM.png */,
 				736111051F23495F00BF0B45 /* YOURLIKES_screenshot1.png */,
@@ -769,6 +772,7 @@
 				73A4208F1F0BC914001A1BCB /* Cell_FriendsList.xib in Resources */,
 				9A52CE9D1F03B13700FCEB71 /* YourLikesTableViewCell.xib in Resources */,
 				736DFD5D1F1CC1C90097E771 /* Cell_FriendsRequest.xib in Resources */,
+				73301A561F2B1C3F003B868C /* Mitul_ScreenShotYourLISTS.png in Resources */,
 				9A52CEC31F03B34200FCEB71 /* Type Dynamic - Larsseit Medium.otf in Resources */,
 				737A949A1F27651900AD6F9D /* Screen Shot 2017-07-25 at 1.07.23 PM.png in Resources */,
 				3F486AB41EFAAA55006BB1D0 /* Main.storyboard in Resources */,

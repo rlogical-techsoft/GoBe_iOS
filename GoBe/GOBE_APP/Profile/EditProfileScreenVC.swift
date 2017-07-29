@@ -40,6 +40,11 @@ class EditProfileScreenVC: UIViewController,WebApiRequestDelegate,UIImagePickerC
         imagePickerViewController.allowsEditing = true
         imagePickerViewController.delegate = self
         
+        txt_AboutMySelf.text = ""
+        txt_ListOfPlace.text = ""
+        
+        //Get Profile
+        self.perform(#selector(getProfile), with: nil, afterDelay: 0.1)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -52,6 +57,7 @@ class EditProfileScreenVC: UIViewController,WebApiRequestDelegate,UIImagePickerC
         
         txt_ListOfPlace.textContainerInset = UIEdgeInsets.zero
         txt_ListOfPlace.textContainer.lineFragmentPadding = 0
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -120,7 +126,66 @@ class EditProfileScreenVC: UIViewController,WebApiRequestDelegate,UIImagePickerC
         self.dismiss(animated: true, completion: nil)
     }
     
-    //MARK: - Webservices Delegate Methods
+    //MARK:- UIWebservices Methods
+    
+    func getProfile() {
+        
+        HUD.show(true)
+        web.getUserProfileDetails(strUserID: appDel.instanceModelLogin.UserID)
+    }
+    
+    func getUserProfileDetailsResponse(responseObj: NSDictionary) -> Void {
+        
+        HUD.hide(true)
+        
+        let responseAllKey : NSArray = responseObj.allKeys as NSArray
+        print("Print Array Keys : \(responseAllKey)")
+        
+        if responseAllKey.contains(kAPI_Status) {
+            
+            if let statusCode : Int = responseObj.value(forKey: kAPI_Status) as? Int {
+                if statusCode == 200 {
+                    
+                    if ISDebug {
+                        print("User Profile Response : \(responseObj)")
+                    }
+                    
+                    let strFName = responseObj.object(forKey: "FirstName") as? String
+                    let strLName = responseObj.object(forKey: "LastName") as? String
+                    lbl_UserName.text = strFName! + " " + strLName!
+                    
+                    if let strAboutMe = responseObj.value(forKey: "About") as? String {
+                        txt_AboutMySelf.text = strAboutMe
+                    }else{
+                        txt_AboutMySelf.text = ""
+                    }
+                    
+                    if let strPlaces = responseObj.value(forKey: "Places") as? String{
+                        txt_ListOfPlace.text = strPlaces
+                    }else{
+                        txt_ListOfPlace.text = ""
+                    }
+                    
+                    
+                    
+                    
+                }else{
+                    
+                    if ISDebug {
+                        print("Get Profile Error:\(responseObj.value(forKey: kAPI_Msg) as! String)")
+                    }
+                    
+                    if responseAllKey.contains(kAPI_Msg) {
+                        
+                        if let strMessage = responseObj.value(forKey: kAPI_Msg) as? String {
+                            Constants.showAlertTitle(kAlertAppName, messageStr: strMessage, viewController: self)
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
     
     
     

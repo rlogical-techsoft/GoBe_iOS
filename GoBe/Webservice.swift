@@ -32,6 +32,9 @@ import UIKit
     //User details Profile
     @objc optional func getUserProfileDetailsResponse(responseObj: NSDictionary) -> Void
 
+    //Topic List
+    @objc optional func getTopicListDetailsResponse(responseObj: NSDictionary) -> Void
+    
 //Home screen API
     // New & Trending API
     @objc optional func getNewAndTendingTipsResponse(responseObj: NSDictionary) -> Void
@@ -42,6 +45,9 @@ import UIKit
 //Tips Like & UnLike
     @objc optional func tipsLikeOrUnLikeResponse(responseObj: NSDictionary) -> Void
     
+
+//List Like & UnLike
+    @objc optional func listLikeOrUnLikeResponse(responseObj: NSDictionary) -> Void
     
 //Friend 
     
@@ -91,9 +97,6 @@ class Webservice: AnyObject {
             }
         }
         
-//        let request = NSMutableURLRequest(url: NSURL(string: str_Url)! as URL,
-//                                          cachePolicy: .useProtocolCachePolicy,
-//                                          timeoutInterval: requestTimeout)
         var request: URLRequest = URLRequest(url: NSURL(string: str_Url)! as URL)
         request.httpMethod = "POST"
         request.allHTTPHeaderFields = headers
@@ -102,31 +105,36 @@ class Webservice: AnyObject {
         
         let dataTask = URLSession.shared.dataTask(with: request, completionHandler: { data, response, error in
             
-            let httpResponse : HTTPURLResponse = response as! HTTPURLResponse
-            let responseCode : Int = (httpResponse.statusCode)
-            print(responseCode)
-            if data != nil {
+            if (response != nil && data != nil) {
                 
-                do {
-                    let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! NSDictionary
-                    print(json)
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
-                        self.delegate?.register_NormalResponse?(responseObj: json)
-                    }
-                } catch let error as NSError {
-                    print(error)
-                    let emptyDict = NSDictionary()
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
-                        self.delegate?.register_NormalResponse?(responseObj: emptyDict)
+                if let httpResponse : HTTPURLResponse = response as? HTTPURLResponse
+                {
+                    let responseCode : Int = (httpResponse.statusCode)
+                    print(responseCode)
+                    if data != nil {
+                        
+                        do {
+                            let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! NSDictionary
+                            print(json)
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
+                                self.delegate?.register_NormalResponse?(responseObj: json)
+                            }
+                        } catch let error as NSError {
+                            print(error)
+                            let emptyDict = NSDictionary()
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
+                                self.delegate?.register_NormalResponse?(responseObj: emptyDict)
+                            }
+                        }
+                    } else {
+                        let emptyDict = NSDictionary()
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
+                            self.delegate?.register_NormalResponse?(responseObj: emptyDict)
+                        }
                     }
                 }
-            } else {
-                let emptyDict = NSDictionary()
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
-                    self.delegate?.register_NormalResponse?(responseObj: emptyDict)
-                }
+                
             }
-        
         })
     
         dataTask.resume()
@@ -155,9 +163,6 @@ class Webservice: AnyObject {
             }
         }
         
-//        let request = NSMutableURLRequest(url: NSURL(string: str_Url)! as URL,
-//                                          cachePolicy: .useProtocolCachePolicy,
-//                                          timeoutInterval: requestTimeout)
         var request: URLRequest = URLRequest(url: NSURL(string: str_Url)! as URL)
         request.httpMethod = "POST"
         request.allHTTPHeaderFields = headers
@@ -166,31 +171,36 @@ class Webservice: AnyObject {
         
         let dataTask = URLSession.shared.dataTask(with: request, completionHandler: { data, response, error in
             
-            let httpResponse : HTTPURLResponse = response as! HTTPURLResponse
-            let responseCode : Int = (httpResponse.statusCode)
-            print(responseCode)
-            if data != nil {
+            if (response != nil && data != nil) {
                 
-                do {
-                    let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! NSDictionary
-                    print(json)
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
-                        self.delegate?.register_FacebookResponse?(responseObj: json)
-                    }
-                } catch let error as NSError {
-                    print(error)
-                    let emptyDict = NSDictionary()
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
-                        self.delegate?.register_FacebookResponse?(responseObj: emptyDict)
+                if let httpResponse : HTTPURLResponse = response as? HTTPURLResponse
+                {
+                    let responseCode : Int = (httpResponse.statusCode)
+                    print(responseCode)
+                    if data != nil {
+                        
+                        do {
+                            let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! NSDictionary
+                            print(json)
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
+                                self.delegate?.register_FacebookResponse?(responseObj: json)
+                            }
+                        } catch let error as NSError {
+                            print(error)
+                            let emptyDict = NSDictionary()
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
+                                self.delegate?.register_FacebookResponse?(responseObj: emptyDict)
+                            }
+                        }
+                    } else {
+                        let emptyDict = NSDictionary()
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
+                            self.delegate?.register_FacebookResponse?(responseObj: emptyDict)
+                        }
                     }
                 }
-            } else {
-                let emptyDict = NSDictionary()
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
-                    self.delegate?.register_FacebookResponse?(responseObj: emptyDict)
-                }
+                
             }
-            
         })
         
         dataTask.resume()
@@ -221,9 +231,6 @@ class Webservice: AnyObject {
             }
         }
         
-//        let request = NSMutableURLRequest(url: NSURL(string: str_Url)! as URL,
-//                                          cachePolicy: .useProtocolCachePolicy,
-//                                          timeoutInterval: requestTimeout)
         var request: URLRequest = URLRequest(url: NSURL(string: str_Url)! as URL)
         request.httpMethod = "POST"
         request.allHTTPHeaderFields = headers
@@ -231,32 +238,39 @@ class Webservice: AnyObject {
         
         
         let dataTask = URLSession.shared.dataTask(with: request, completionHandler: { data, response, error in
-
-            let httpResponse : HTTPURLResponse = response as! HTTPURLResponse
-            let responseCode : Int = (httpResponse.statusCode)
-            print(responseCode)
-            if data != nil {
+            
+            if (response != nil && data != nil) {
                 
-                do {
-                    let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! NSDictionary
-                    print(json)
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
-                        self.delegate?.login_NormalResponse?(responseObj: json)
-                    }
-                } catch let error as NSError {
-                    print(error)
-                    let emptyDict = NSDictionary()
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
-                        self.delegate?.login_NormalResponse?(responseObj: emptyDict)
+                if let httpResponse : HTTPURLResponse = response as? HTTPURLResponse
+                {
+                    let responseCode : Int = (httpResponse.statusCode)
+                    print(responseCode)
+                    if data != nil {
+                        
+                        do {
+                            let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! NSDictionary
+                            print(json)
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
+                                self.delegate?.login_NormalResponse?(responseObj: json)
+                            }
+                        } catch let error as NSError {
+                            print(error)
+                            let emptyDict = NSDictionary()
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
+                                self.delegate?.login_NormalResponse?(responseObj: emptyDict)
+                            }
+                        }
+                    } else {
+                        let emptyDict = NSDictionary()
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
+                            self.delegate?.login_NormalResponse?(responseObj: emptyDict)
+                        }
                     }
                 }
-            } else {
-                let emptyDict = NSDictionary()
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
-                    self.delegate?.login_NormalResponse?(responseObj: emptyDict)
-                }
+                
             }
         })
+        
         dataTask.resume()
 
     }
@@ -285,9 +299,6 @@ class Webservice: AnyObject {
             }
         }
         
-//        let request = NSMutableURLRequest(url: NSURL(string: str_Url)! as URL,
-//                                          cachePolicy: .useProtocolCachePolicy,
-//                                          timeoutInterval: requestTimeout)
         var request: URLRequest = URLRequest(url: NSURL(string: str_Url)! as URL)
         request.httpMethod = "POST"
         request.allHTTPHeaderFields = headers
@@ -296,31 +307,38 @@ class Webservice: AnyObject {
         
         let dataTask = URLSession.shared.dataTask(with: request, completionHandler: { data, response, error in
             
-            let httpResponse : HTTPURLResponse = response as! HTTPURLResponse
-            let responseCode : Int = (httpResponse.statusCode)
-            print(responseCode)
-            if data != nil {
+            if (response != nil && data != nil) {
                 
-                do {
-                    let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! NSDictionary
-                    print(json)
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
-                        self.delegate?.login_FacebookResponse?(responseObj: json)
-                    }
-                } catch let error as NSError {
-                    print(error)
-                    let emptyDict = NSDictionary()
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
-                        self.delegate?.login_FacebookResponse?(responseObj: emptyDict)
+                if let httpResponse : HTTPURLResponse = response as? HTTPURLResponse
+                {
+                    let responseCode : Int = (httpResponse.statusCode)
+                    print(responseCode)
+                    if data != nil {
+                        
+                        do {
+                            let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! NSDictionary
+                            print(json)
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
+                                self.delegate?.login_FacebookResponse?(responseObj: json)
+                            }
+                        } catch let error as NSError {
+                            print(error)
+                            let emptyDict = NSDictionary()
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
+                                self.delegate?.login_FacebookResponse?(responseObj: emptyDict)
+                            }
+                        }
+                    } else {
+                        let emptyDict = NSDictionary()
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
+                            self.delegate?.login_FacebookResponse?(responseObj: emptyDict)
+                        }
                     }
                 }
-            } else {
-                let emptyDict = NSDictionary()
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
-                    self.delegate?.login_FacebookResponse?(responseObj: emptyDict)
-                }
+                
             }
         })
+        
         dataTask.resume()   
     }
     
@@ -349,10 +367,7 @@ class Webservice: AnyObject {
                 postData.append("&\(strKey)=\(valueKey!)".data(using: String.Encoding.utf8)!)
             }
         }
-        
-//        let request = NSMutableURLRequest(url: NSURL(string: str_Url)! as URL,
-//                                          cachePolicy: .useProtocolCachePolicy,
-//                                          timeoutInterval: requestTimeout)
+
         var request: URLRequest = URLRequest(url: NSURL(string: str_Url)! as URL)
         request.httpMethod = "POST"
         request.allHTTPHeaderFields = headers
@@ -361,31 +376,38 @@ class Webservice: AnyObject {
         
         let dataTask = URLSession.shared.dataTask(with: request, completionHandler: { data, response, error in
             
-            let httpResponse : HTTPURLResponse = response as! HTTPURLResponse
-            let responseCode : Int = (httpResponse.statusCode)
-            print(responseCode)
-            if data != nil {
+            if (response != nil && data != nil) {
                 
-                do {
-                    let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! NSDictionary
-                    print(json)
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
-                        self.delegate?.forgotPasswordResponse?(responseObj: json)
-                    }
-                } catch let error as NSError {
-                    print(error)
-                    let emptyDict = NSDictionary()
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
-                        self.delegate?.forgotPasswordResponse?(responseObj: emptyDict)
+                if let httpResponse : HTTPURLResponse = response as? HTTPURLResponse
+                {
+                    let responseCode : Int = (httpResponse.statusCode)
+                    print(responseCode)
+                    if data != nil {
+                        
+                        do {
+                            let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! NSDictionary
+                            print(json)
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
+                                self.delegate?.forgotPasswordResponse?(responseObj: json)
+                            }
+                        } catch let error as NSError {
+                            print(error)
+                            let emptyDict = NSDictionary()
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
+                                self.delegate?.forgotPasswordResponse?(responseObj: emptyDict)
+                            }
+                        }
+                    } else {
+                        let emptyDict = NSDictionary()
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
+                            self.delegate?.forgotPasswordResponse?(responseObj: emptyDict)
+                        }
                     }
                 }
-            } else {
-                let emptyDict = NSDictionary()
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
-                    self.delegate?.forgotPasswordResponse?(responseObj: emptyDict)
-                }
+                
             }
         })
+        
         dataTask.resume()
         
     }
@@ -417,9 +439,6 @@ class Webservice: AnyObject {
             }
         }
         
-//        let request = NSMutableURLRequest(url: NSURL(string: str_Url)! as URL,
-//                                          cachePolicy: .useProtocolCachePolicy,
-//                                          timeoutInterval: requestTimeout)
         var request: URLRequest = URLRequest(url: NSURL(string: str_Url)! as URL)
         request.httpMethod = "POST"
         request.allHTTPHeaderFields = headers
@@ -428,38 +447,105 @@ class Webservice: AnyObject {
         
         let dataTask = URLSession.shared.dataTask(with: request, completionHandler: { data, response, error in
             
-            let httpResponse : HTTPURLResponse = response as! HTTPURLResponse
-            let responseCode : Int = (httpResponse.statusCode)
-            print(responseCode)
-            if data != nil {
+            if (response != nil && data != nil) {
                 
-                do {
-                    let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! NSDictionary
-                    print(json)
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
-                        self.delegate?.getUserProfileDetailsResponse?(responseObj: json)
-                    }
-                } catch let error as NSError {
-                    print(error)
-                    let emptyDict = NSDictionary()
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
-                        self.delegate?.getUserProfileDetailsResponse?(responseObj: emptyDict)
+                if let httpResponse : HTTPURLResponse = response as? HTTPURLResponse {
+                    
+                    let responseCode : Int = (httpResponse.statusCode)
+                    print(responseCode)
+                    if data != nil {
+                        
+                        do {
+                            let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! NSDictionary
+                            print(json)
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
+                                self.delegate?.getUserProfileDetailsResponse?(responseObj: json)
+                            }
+                        } catch let error as NSError {
+                            print(error)
+                            let emptyDict = NSDictionary()
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
+                                self.delegate?.getUserProfileDetailsResponse?(responseObj: emptyDict)
+                            }
+                        }
+                    } else {
+                        let emptyDict = NSDictionary()
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
+                            self.delegate?.getUserProfileDetailsResponse?(responseObj: emptyDict)
+                        }
                     }
                 }
-            } else {
-                let emptyDict = NSDictionary()
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
-                    self.delegate?.getUserProfileDetailsResponse?(responseObj: emptyDict)
-                }
+                
             }
         })
+        
         dataTask.resume()
+    }
     
+    //MARK:- Edit User Profile
+
+    func editUserProfile(strUserID:String,strFirstName:String,strLastName:String,strProfImgUrl:String,strAbout:String,strPlaces:String) -> Void {
+        
+
+    }
+    
+    //MARK:- Profile Topic Method
+    
+    func getTopicList() -> Void {
+        
+        let str_Url:String = "\(kAPIBASEURL)\(kAPIAllTopicList)"
+        if ISDebug { print("URL : \(str_Url)"); }
+        
+        let postData = NSMutableData()
+        
+        var request: URLRequest = URLRequest(url: NSURL(string: str_Url)! as URL)
+        request.httpMethod = "POST"
+        request.allHTTPHeaderFields = headers
+        request.httpBody = postData as Data
+        request.timeoutInterval = requestTimeout
+        
+        let dataTask = URLSession.shared.dataTask(with: request, completionHandler: { data, response, error in
+            
+            if (response != nil && data != nil) {
+                
+                if let httpResponse : HTTPURLResponse = response as? HTTPURLResponse
+                {
+                    let responseCode : Int = (httpResponse.statusCode)
+                    print("Get Topic List \(responseCode)")
+                    if data != nil {
+                        
+                        do {
+                            let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! NSDictionary
+                            print(json)
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
+                                self.delegate?.getTopicListDetailsResponse?(responseObj: json)
+                            }
+                        } catch let error as NSError {
+                            print(error)
+                            let emptyDict = NSDictionary()
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
+                                self.delegate?.getTopicListDetailsResponse?(responseObj: emptyDict)
+                            }
+                        }
+                    } else {
+                        let emptyDict = NSDictionary()
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
+                            self.delegate?.getTopicListDetailsResponse?(responseObj: emptyDict)
+                        }
+                    }
+                }
+                
+            }
+        })
+        
+        dataTask.resume()
     }
     
     //MARK:- Home screen Tips and List API
     
-    func getNewAndTendingTips() {
+    func getNewAndTendingTips(strUserID:String) {
+        
+        let dictPara : Dictionary = ["UserID":strUserID]
         
         let str_Url:String = "\(kAPIBASEURL)\(kAPINewAndTrending)"
         
@@ -469,9 +555,22 @@ class Webservice: AnyObject {
         
         let postData = NSMutableData()
         
-//        let request = NSMutableURLRequest(url: NSURL(string: str_Url)! as URL,
-//                                          cachePolicy: .useProtocolCachePolicy,
-//                                          timeoutInterval: requestTimeout)
+        if strUserID.characters.count > 0 {
+            
+            let arrKey = Array(dictPara.keys)
+            for i in 0..<arrKey.count {
+                let strKey = arrKey[i]
+                let valueKey = dictPara[strKey]
+                //            print("Key : \(strKey) Value : \(valueKey!)")
+                
+                if i == 0 {
+                    postData.append("\(strKey)=\(valueKey!)".data(using: String.Encoding.utf8)!)
+                }else{
+                    postData.append("&\(strKey)=\(valueKey!)".data(using: String.Encoding.utf8)!)
+                }
+            }
+        }
+        
         var request: URLRequest = URLRequest(url: NSURL(string: str_Url)! as URL)
         request.httpMethod = "POST"
         request.allHTTPHeaderFields = headers
@@ -480,31 +579,38 @@ class Webservice: AnyObject {
         
         let dataTask = URLSession.shared.dataTask(with: request, completionHandler: { data, response, error in
             
-            let httpResponse : HTTPURLResponse = response as! HTTPURLResponse
-            let responseCode : Int = (httpResponse.statusCode)
-            print(responseCode)
-            if data != nil {
+            if (response != nil && data != nil) {
                 
-                do {
-                    let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! NSDictionary
-                    print(json)
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
-                        self.delegate?.getNewAndTendingTipsResponse?(responseObj: json)
-                    }
-                } catch let error as NSError {
-                    print(error)
-                    let emptyDict = NSDictionary()
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
-                        self.delegate?.getNewAndTendingTipsResponse?(responseObj: emptyDict)
+                if let httpResponse : HTTPURLResponse = response as? HTTPURLResponse
+                {
+                    let responseCode : Int = (httpResponse.statusCode)
+                    print(responseCode)
+                    if data != nil {
+                        
+                        do {
+                            let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! NSDictionary
+                            print(json)
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
+                                self.delegate?.getNewAndTendingTipsResponse?(responseObj: json)
+                            }
+                        } catch let error as NSError {
+                            print(error)
+                            let emptyDict = NSDictionary()
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
+                                self.delegate?.getNewAndTendingTipsResponse?(responseObj: emptyDict)
+                            }
+                        }
+                    } else {
+                        let emptyDict = NSDictionary()
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
+                            self.delegate?.getNewAndTendingTipsResponse?(responseObj: emptyDict)
+                        }
                     }
                 }
-            } else {
-                let emptyDict = NSDictionary()
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
-                    self.delegate?.getNewAndTendingTipsResponse?(responseObj: emptyDict)
-                }
+                
             }
         })
+        
         dataTask.resume()
     }
     
@@ -533,9 +639,7 @@ class Webservice: AnyObject {
             }
         }
         
-        //        let request = NSMutableURLRequest(url: NSURL(string: str_Url)! as URL,
-        //                                          cachePolicy: .useProtocolCachePolicy,
-        //                                          timeoutInterval: requestTimeout)
+        
         var request: URLRequest = URLRequest(url: NSURL(string: str_Url)! as URL)
         request.httpMethod = "POST"
         request.allHTTPHeaderFields = headers
@@ -544,30 +648,35 @@ class Webservice: AnyObject {
         
         let dataTask = URLSession.shared.dataTask(with: request, completionHandler: { data, response, error in
             
-            let httpResponse : HTTPURLResponse = response as! HTTPURLResponse
-            let responseCode : Int = (httpResponse.statusCode)
-            print(responseCode)
-            if data != nil {
+            if (response != nil && data != nil) {
                 
-                do {
-                    
-                    let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! NSDictionary
-                    print(json)
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
-                        self.delegate?.getHomescreenAllsectionResponse?(responseObj: json)
-                    }
-                } catch let error as NSError {
-                    print(error)
-                    let emptyDict = NSDictionary()
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
-                        self.delegate?.getHomescreenAllsectionResponse?(responseObj: emptyDict)
+                if let httpResponse : HTTPURLResponse = response as? HTTPURLResponse
+                {
+                    let responseCode : Int = (httpResponse.statusCode)
+                    print(responseCode)
+                    if data != nil {
+                        
+                        do {
+                            let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! NSDictionary
+                            print(json)
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
+                                self.delegate?.getHomescreenAllsectionResponse?(responseObj: json)
+                            }
+                        } catch let error as NSError {
+                            print(error)
+                            let emptyDict = NSDictionary()
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
+                                self.delegate?.getHomescreenAllsectionResponse?(responseObj: emptyDict)
+                            }
+                        }
+                    } else {
+                        let emptyDict = NSDictionary()
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
+                            self.delegate?.getHomescreenAllsectionResponse?(responseObj: emptyDict)
+                        }
                     }
                 }
-            } else {
-                let emptyDict = NSDictionary()
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
-                    self.delegate?.getHomescreenAllsectionResponse?(responseObj: emptyDict)
-                }
+                
             }
         })
         dataTask.resume()
@@ -608,33 +717,107 @@ class Webservice: AnyObject {
         
         let dataTask = URLSession.shared.dataTask(with: request, completionHandler: { data, response, error in
             
-            let httpResponse : HTTPURLResponse = response as! HTTPURLResponse
-            let responseCode : Int = (httpResponse.statusCode)
-            print(responseCode)
-            if data != nil {
+            if (response != nil && data != nil) {
                 
-                do {
-                    
-                    let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! NSDictionary
-                    print(json)
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
-                        self.delegate?.tipsLikeOrUnLikeResponse?(responseObj: json)
-                    }
-                } catch let error as NSError {
-                    print(error)
-                    let emptyDict = NSDictionary()
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
-                        self.delegate?.tipsLikeOrUnLikeResponse?(responseObj: emptyDict)
+                if let httpResponse : HTTPURLResponse = response as? HTTPURLResponse
+                {
+                    let responseCode : Int = (httpResponse.statusCode)
+                    print(responseCode)
+                    if data != nil {
+                        
+                        do {
+                            let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! NSDictionary
+                            print(json)
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
+                                self.delegate?.tipsLikeOrUnLikeResponse?(responseObj: json)
+                            }
+                        } catch let error as NSError {
+                            print(error)
+                            let emptyDict = NSDictionary()
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
+                                self.delegate?.tipsLikeOrUnLikeResponse?(responseObj: emptyDict)
+                            }
+                        }
+                    } else {
+                        let emptyDict = NSDictionary()
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
+                            self.delegate?.tipsLikeOrUnLikeResponse?(responseObj: emptyDict)
+                        }
                     }
                 }
-            } else {
-                let emptyDict = NSDictionary()
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
-                    self.delegate?.tipsLikeOrUnLikeResponse?(responseObj: emptyDict)
-                }
+                
             }
         })
         dataTask.resume()
+    }
+    
+    //MARK:- List related Methods
+    
+    func listLikeUnLike(strUserID:String,strListID:String) -> Void {
+        
+        let str_Url:String = "\(kAPIBASEURL)\(kAPIList_like_unlike)"
+        let dictPara : Dictionary = ["UserID":strUserID,"ListID":strListID]
+        
+        if ISDebug {
+            print("AllList URL : \(str_Url) Parameters : \(dictPara)")
+        }
+        
+        let postData = NSMutableData()
+        
+        let arrKey = Array(dictPara.keys)
+        for i in 0..<arrKey.count {
+            let strKey = arrKey[i]
+            let valueKey = dictPara[strKey]
+            
+            if i == 0 {
+                postData.append("\(strKey)=\(valueKey!)".data(using: String.Encoding.utf8)!)
+            }else{
+                postData.append("&\(strKey)=\(valueKey!)".data(using: String.Encoding.utf8)!)
+            }
+        }
+        
+        var request: URLRequest = URLRequest(url: NSURL(string: str_Url)! as URL)
+        request.httpMethod = "POST"
+        request.allHTTPHeaderFields = headers
+        request.httpBody = postData as Data
+        request.timeoutInterval = requestTimeout
+        
+        
+        let dataTask = URLSession.shared.dataTask(with: request, completionHandler: { data, response, error in
+            
+            if (response != nil && data != nil) {
+                
+                if let httpResponse : HTTPURLResponse = response as? HTTPURLResponse
+                {
+                    let responseCode : Int = (httpResponse.statusCode)
+                    print(responseCode)
+                    if data != nil {
+                        
+                        do {
+                            let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! NSDictionary
+                            print(json)
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
+                                self.delegate?.listLikeOrUnLikeResponse?(responseObj: json)
+                            }
+                        } catch let error as NSError {
+                            print(error)
+                            let emptyDict = NSDictionary()
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
+                                self.delegate?.listLikeOrUnLikeResponse?(responseObj: emptyDict)
+                            }
+                        }
+                    } else {
+                        let emptyDict = NSDictionary()
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
+                            self.delegate?.listLikeOrUnLikeResponse?(responseObj: emptyDict)
+                        }
+                    }
+                }
+                
+            }
+        })
+        dataTask.resume()
+        
     }
     
     //MARK:- Friends
@@ -664,9 +847,7 @@ class Webservice: AnyObject {
             }
         }
         
-//        let request = NSMutableURLRequest(url: NSURL(string: str_Url)! as URL,
-//                                          cachePolicy: .useProtocolCachePolicy,
-//                                          timeoutInterval: requestTimeout)
+
         var request: URLRequest = URLRequest(url: NSURL(string: str_Url)! as URL)
         request.httpMethod = "POST"
         request.allHTTPHeaderFields = headers
@@ -675,30 +856,35 @@ class Webservice: AnyObject {
         
         let dataTask = URLSession.shared.dataTask(with: request, completionHandler: { data, response, error in
             
-            
-            let httpResponse : HTTPURLResponse = response as! HTTPURLResponse
-            let responseCode : Int = (httpResponse.statusCode)
-            print(responseCode)
-            if data != nil {
+            if (response != nil && data != nil) {
                 
-                do {
-                    let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! NSDictionary
-                    print(json)
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
-                        self.delegate?.getFriendListResponse?(responseObj: json)
-                    }
-                } catch let error as NSError {
-                    print(error)
-                    let emptyDict = NSDictionary()
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
-                        self.delegate?.getFriendListResponse?(responseObj: emptyDict)
+                if let httpResponse : HTTPURLResponse = response as? HTTPURLResponse
+                {
+                    let responseCode : Int = (httpResponse.statusCode)
+                    print(responseCode)
+                    if data != nil {
+                        
+                        do {
+                            let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! NSDictionary
+                            print(json)
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
+                                self.delegate?.getFriendListResponse?(responseObj: json)
+                            }
+                        } catch let error as NSError {
+                            print(error)
+                            let emptyDict = NSDictionary()
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
+                                self.delegate?.getFriendListResponse?(responseObj: emptyDict)
+                            }
+                        }
+                    } else {
+                        let emptyDict = NSDictionary()
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
+                            self.delegate?.getFriendListResponse?(responseObj: emptyDict)
+                        }
                     }
                 }
-            } else {
-                let emptyDict = NSDictionary()
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
-                    self.delegate?.getFriendListResponse?(responseObj: emptyDict)
-                }
+                
             }
         })
         dataTask.resume()
@@ -729,10 +915,7 @@ class Webservice: AnyObject {
                 postData.append("&\(strKey)=\(valueKey!)".data(using: String.Encoding.utf8)!)
             }
         }
-        
-//        let request = NSMutableURLRequest(url: NSURL(string: str_Url)! as URL,
-//                                          cachePolicy: .useProtocolCachePolicy,
-//                                          timeoutInterval: requestTimeout)
+
         var request: URLRequest = URLRequest(url: NSURL(string: str_Url)! as URL)
         request.httpMethod = "POST"
         request.allHTTPHeaderFields = headers
@@ -741,38 +924,39 @@ class Webservice: AnyObject {
         
         let dataTask = URLSession.shared.dataTask(with: request, completionHandler: { data, response, error in
             
-            let httpResponse : HTTPURLResponse = response as! HTTPURLResponse
-            let responseCode : Int = (httpResponse.statusCode)
-            print(responseCode)
-            if data != nil {
+            if (response != nil && data != nil) {
                 
-                do {
-                    let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! NSDictionary
-                    print(json)
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
-                        self.delegate?.sendFriendRequestResponse?(responseObj: json)
-                    }
-                } catch let error as NSError {
-                    print(error)
-                    let emptyDict = NSDictionary()
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
-                        self.delegate?.sendFriendRequestResponse?(responseObj: emptyDict)
+                if let httpResponse : HTTPURLResponse = response as? HTTPURLResponse
+                {
+                    let responseCode : Int = (httpResponse.statusCode)
+                    print(responseCode)
+                    if data != nil {
+                        
+                        do {
+                            let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! NSDictionary
+                            print(json)
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
+                                self.delegate?.sendFriendRequestResponse?(responseObj: json)
+                            }
+                        } catch let error as NSError {
+                            print(error)
+                            let emptyDict = NSDictionary()
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
+                                self.delegate?.sendFriendRequestResponse?(responseObj: emptyDict)
+                            }
+                        }
+                    } else {
+                        let emptyDict = NSDictionary()
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
+                            self.delegate?.sendFriendRequestResponse?(responseObj: emptyDict)
+                        }
                     }
                 }
-            } else {
-                let emptyDict = NSDictionary()
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
-                    self.delegate?.sendFriendRequestResponse?(responseObj: emptyDict)
-                }
+                
             }
         })
+        
         dataTask.resume()
     }
-    
-    
-    
-    
-    
-    
     
 }
