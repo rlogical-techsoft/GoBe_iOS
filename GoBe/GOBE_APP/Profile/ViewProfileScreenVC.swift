@@ -54,8 +54,7 @@ class ViewProfileScreenVC: UIViewController,WebApiRequestDelegate {
         Constants.setBorderTo(imgProfile, withBorderWidth: 1, radiousView: Float(imgProfile.frame.size.height/2), color: UIColor.gray)
         
         //Get Profile
-        self.getProfile()
-        
+        self.perform(#selector(getProfile), with: nil, afterDelay: 0.1)
     }
 
     override func viewWillLayoutSubviews() {

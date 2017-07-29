@@ -137,6 +137,8 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
     
     //MARK:- Cell Highlights
     
+    let tableviewRightButtonSize : CGFloat = 32.0
+    
     //N & T cell var
     var selectedIndex = Int ()
     var isselcted : Bool = false
@@ -987,8 +989,8 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
                 dcell?.backgroungImgView.image = UIImage(named:"NT box")
             }
             // Load the top-level objects from the custom cell XIB.
-            dcell?.setLeftUtilityButtons(leftButtons(tableView,indexpath: indexPath), withButtonWidth: 40.0)
-            dcell?.setRightUtilityButtons(rightbuttons(tableView,indexPath: indexPath), withButtonWidth: 40.0)
+            dcell?.setLeftUtilityButtons(leftButtons(tableView,indexpath: indexPath), withButtonWidth: tableviewRightButtonSize)
+            dcell?.setRightUtilityButtons(rightbuttons(tableView,indexPath: indexPath), withButtonWidth: tableviewRightButtonSize)
             dcell?.delegate = self
             dcell?.selectionStyle = .none
             
@@ -1043,8 +1045,8 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
             }
             
             // Load the top-level objects from the custom cell XIB.
-            dcell?.setLeftUtilityButtons(leftButtons(tableView,indexpath: indexPath), withButtonWidth: 40.0)
-            dcell?.setRightUtilityButtons(rightbuttons(tableView,indexPath: indexPath), withButtonWidth: 40.0)
+            dcell?.setLeftUtilityButtons(leftButtons(tableView,indexpath: indexPath), withButtonWidth: tableviewRightButtonSize)
+            dcell?.setRightUtilityButtons(rightbuttons(tableView,indexPath: indexPath), withButtonWidth: tableviewRightButtonSize)
             dcell?.delegate = self
             dcell?.selectionStyle = .none
             dcell?.tag = indexPath.row
@@ -1065,8 +1067,8 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
                     dcell = topLevelObjects[0] as? Cell_YourList
                 }
             }
-            dcell?.setLeftUtilityButtons(leftButtons(tableView,indexpath: indexPath), withButtonWidth: 40.0)
-            dcell?.setRightUtilityButtons(rightbuttons(tableView,indexPath: indexPath), withButtonWidth: 40.0)
+            dcell?.setLeftUtilityButtons(leftButtons(tableView,indexpath: indexPath), withButtonWidth: tableviewRightButtonSize)
+            dcell?.setRightUtilityButtons(rightbuttons(tableView,indexPath: indexPath), withButtonWidth: tableviewRightButtonSize)
             dcell?.delegate = self
             dcell?.selectionStyle = .none
             
@@ -1110,8 +1112,8 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
                     dcell = topLevelObjects[0] as? Cell_ListYouLike
                 }
             }
-            dcell?.setLeftUtilityButtons(leftButtons(tableView,indexpath: indexPath), withButtonWidth: 40.0)
-            dcell?.setRightUtilityButtons(rightbuttons(tableView,indexPath: indexPath), withButtonWidth: 40.0)
+            dcell?.setLeftUtilityButtons(leftButtons(tableView,indexpath: indexPath), withButtonWidth: tableviewRightButtonSize)
+            dcell?.setRightUtilityButtons(rightbuttons(tableView,indexPath: indexPath), withButtonWidth: tableviewRightButtonSize)
             dcell?.delegate = self
             dcell?.selectionStyle = .none
             
@@ -1153,31 +1155,24 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
 
             return dcell!
             
-        }else if tableView == tblFriendsList{
+        }else if tableView == tblFriendsList {
             
             var dcell: Cell_FriendsList? = tableView.dequeueReusableCell(withIdentifier: "Cell_FriendsList", for: indexPath as IndexPath) as? Cell_FriendsList
             
-            if (dcell == nil){
-                
-                if dcell == nil {
-                    // Load the top-level objects from the custom cell XIB.
-                    var topLevelObjects: [Any] = Bundle.main.loadNibNamed("Cell_FriendsList", owner: self, options: nil)!
-                    // Grab a pointer to the first object (presumably the custom cell, as that's all the XIB should contain).
-                    dcell = topLevelObjects[0] as? Cell_FriendsList
-                }
+            if dcell == nil {
+                var topLevelObjects: [Any] = Bundle.main.loadNibNamed("Cell_FriendsList", owner: self, options: nil)!
+                dcell = topLevelObjects[0] as? Cell_FriendsList
             }
-            dcell?.setLeftUtilityButtons(leftButtons(tableView,indexpath: indexPath), withButtonWidth: 40.0)
-            dcell?.setRightUtilityButtons(rightbuttons(tableView,indexPath: indexPath), withButtonWidth: 40.0)
+            
+            dcell?.setLeftUtilityButtons(leftButtons(tableView,indexpath: indexPath), withButtonWidth: tableviewRightButtonSize)
+            dcell?.setRightUtilityButtons(rightbuttons(tableView,indexPath: indexPath), withButtonWidth: tableviewRightButtonSize)
             dcell?.delegate = self
             dcell?.selectionStyle = .none
             
             let dict_FriendsList : NSDictionary?
-            
-            if isSearchingFriendsList == true{
-                
+            if isSearchingFriendsList == true {
                 dict_FriendsList = arr_FriendsListFilter.object(at: indexPath.row) as? NSDictionary
             }else{
-                
                 dict_FriendsList = arr_FriendsList.object(at: indexPath.row) as? NSDictionary
             }
             
@@ -1209,6 +1204,7 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
             }
             
             return dcell!
+            
         }else if tableView == tblPublicList{
             
             var dcell: Cell_PublicList? = tableView.dequeueReusableCell(withIdentifier: "Cell_PublicList", for: indexPath as IndexPath) as? Cell_PublicList
@@ -1216,14 +1212,12 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
             if (dcell == nil)
             {
                 if dcell == nil {
-                    // Load the top-level objects from the custom cell XIB.
                     var topLevelObjects: [Any] = Bundle.main.loadNibNamed("Cell_PublicList", owner: self, options: nil)!
-                    // Grab a pointer to the first object (presumably the custom cell, as that's all the XIB should contain).
                     dcell = topLevelObjects[0] as? Cell_PublicList
                 }
             }
-            dcell?.setLeftUtilityButtons(leftButtons(tableView, indexpath: indexPath), withButtonWidth: 40.0)
-            dcell?.setRightUtilityButtons(rightbuttons(tableView,indexPath: indexPath), withButtonWidth: 40.0)
+            dcell?.setLeftUtilityButtons(leftButtons(tableView, indexpath: indexPath), withButtonWidth: tableviewRightButtonSize)
+            dcell?.setRightUtilityButtons(rightbuttons(tableView,indexPath: indexPath), withButtonWidth: tableviewRightButtonSize)
             dcell?.delegate = self
             dcell?.selectionStyle = .none
             
@@ -1483,12 +1477,17 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
             let dict_YourLists = arr_YourLists.object(at: indexPath.row) as? NSDictionary
             
             //For Like and DisLike
-            
-            
-            
-            
             let rightUtilityButtons = NSMutableArray()
-            rightUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "like.png"))
+            
+            if let intListLikeStatus = dict_YourLists?.value(forKey: "ListLikeStatus") as? Int {
+                
+                if intListLikeStatus == 1 { //Show Selected
+                    rightUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "like selec"))
+                }else{
+                    rightUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "like"))
+                }
+            }
+            
             rightUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "visib small.png"))
             rightUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "Cross"))
             return rightUtilityButtons as! [Any]
@@ -1501,19 +1500,48 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
             
         }else if tableview == tblFriendsList {
             
+            //For Like & UnLike
+            let dict_FriendsList : NSDictionary?
+            if isSearchingFriendsList == true{
+                dict_FriendsList = arr_FriendsListFilter.object(at: indexPath.row) as? NSDictionary
+            }else{
+                dict_FriendsList = arr_FriendsList.object(at: indexPath.row) as? NSDictionary
+            }
+            
             let rightUtilityButtons = NSMutableArray()
-            rightUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "like.png"))
+            
+            if let intListLikeStatus = dict_FriendsList?.value(forKey: "ListLikeStatus") as? Int {
+            
+                if intListLikeStatus == 1 { //Show Selected
+                    rightUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "like selec"))
+                }else{ //Show UnSelected
+                    rightUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "like"))
+                }
+            }
+            
             return rightUtilityButtons as! [Any]
             
         }else if tableview == tblPublicList {
             
-            
-            
-            
-            
+            //For Like & UnLike
+            let dict_PublicList : NSDictionary?
+            if isSearchingPubliclist == true{
+                dict_PublicList = arr_PublicListFilter.object(at: indexPath.row) as? NSDictionary
+            }else{
+                dict_PublicList = arr_PublicList.object(at: indexPath.row) as? NSDictionary
+            }
             
             let rightUtilityButtons = NSMutableArray()
-            rightUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "like.png"))
+            
+            if let intListLikeStatus = dict_PublicList?.value(forKey: "ListLikeStatus") as? Int {
+                
+                if intListLikeStatus == 1 { //Show Selected
+                    rightUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "like selec"))
+                }else{
+                    rightUtilityButtons .sw_addUtilityButton(with: UIColor.clear, icon: UIImage(named: "like"))
+                }
+            }
+            
             return rightUtilityButtons as! [Any]
             
         }else{
@@ -1552,6 +1580,9 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
     
     func swipeableTableViewCell(_ cell: SWTableViewCell, didTriggerLeftUtilityButtonWith index: Int)
     {
+        
+        
+        
         if cell is YourLikesTableViewCell {
             print("This Left Cell is from tblYourLikes and Index = \(index)")
         }else if cell is Cell_YourTips{
@@ -1582,37 +1613,205 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
 //        }
     }
   
-    func swipeableTableViewCell(_ cell: SWTableViewCell, didTriggerRightUtilityButtonWith index: Int){
+    func swipeableTableViewCell(_ cell: SWTableViewCell, didTriggerRightUtilityButtonWith index: Int) {
         
         if cell is YourLikesTableViewCell {
-            print("This Right Cell is from tblYourLikes and Index = \(index)")
+            
         }else if cell is Cell_YourTips{
-            print("This Right Cell is from tblYourTips and Index = \(index)")
+            
         }else if cell is Cell_YourList{
-            print("ThisRight  Cell is from tblYourList and Index = \(index)")
+            
+            if index == 0 {
+                
+                let indexPath : IndexPath = tblYourLists.indexPath(for: cell)!
+                print("Index Path : \(indexPath)")
+                
+                let dict_YourLists = arr_YourLists.object(at: indexPath.row) as? NSDictionary
+                let dictChange : NSMutableDictionary = NSMutableDictionary(dictionary: dict_YourLists!)
+                
+                if let intTotalLikelist = dict_YourLists?.value(forKey: "ListLikeCustomer") as? String {
+                    
+                    var intTotalCount : Int = Int(intTotalLikelist)!
+                    
+                    if let int_isLikeOrNot = dict_YourLists?.value(forKey: "ListLikeStatus") as? Int {
+                        
+                        if int_isLikeOrNot == 1 {
+                            intTotalCount = intTotalCount - 1
+                            
+                            dictChange.setValue(0, forKey: "ListLikeStatus")
+                            dictChange.setValue("\(intTotalCount)", forKey: "ListLikeCustomer")
+                        }else{
+                            intTotalCount = intTotalCount + 1
+                            
+                            dictChange.setValue(1, forKey: "ListLikeStatus")
+                            dictChange.setValue("\(intTotalCount)", forKey: "ListLikeCustomer")
+                        }
+                        
+                        if ISDebug { print("Change Dict:\(dictChange)"); }
+                        
+                        if let strListID = dictChange.value(forKeyPath: "ListID") as? String{
+                            if ISDebug { print("List ID :\(strListID)"); }
+                            
+                            
+                            //For Main Array
+                            if let arr_YourListIDs = arr_YourLists.value(forKeyPath: "ListID") as? NSArray{
+                                
+                                if ISDebug { print("IDs \(arr_YourListIDs)"); }
+                                if arr_YourListIDs.contains(strListID) {
+                                    let indexOfChangeList : Int = arr_YourListIDs.index(of: strListID)
+                                    arr_YourLists.replaceObject(at: indexOfChangeList, with: dictChange)
+                                }
+                            }
+                            
+                            //Call List Like & UnLike API
+                            self.perform(#selector(listLikeUnLike(strListID:)), with: strListID, afterDelay: 0.1)
+                        }
+                        tblYourLists.reloadData()
+                    }
+                }
+            }
+            
+            
         }else if cell is Cell_ListYouLike{
-            print("This Right Cell is from tblListYouLike and Index = \(index)")
+            
         }else if cell is Cell_FriendsList{
-            print("This Right Cell is from tblFriendsList and Index = \(index)")
-        }else if cell is Cell_PublicList{
-            print("This Right Cell is from tblPublicList and Index = \(index)")
+            
+            if index == 0 {
+                
+                let indexPath : IndexPath = tblFriendsList.indexPath(for: cell)!
+                print("Index Path : \(indexPath)")
+                
+                let dict_FriendsList : NSDictionary?
+                if isSearchingFriendsList == true {
+                    dict_FriendsList = arr_FriendsListFilter.object(at: indexPath.row) as? NSDictionary
+                }else{
+                    dict_FriendsList = arr_FriendsList.object(at: indexPath.row) as? NSDictionary
+                }
+                
+                let dictChange : NSMutableDictionary = NSMutableDictionary(dictionary: dict_FriendsList!)
+                
+                if let intTotalLikelist = dict_FriendsList?.value(forKey: "ListLikeCustomer") as? String {
+                    
+                    var intTotalCount : Int = Int(intTotalLikelist)!
+                    
+                    if let int_isLikeOrNot = dict_FriendsList?.value(forKey: "ListLikeStatus") as? Int {
+                        
+                        if int_isLikeOrNot == 1 {
+                            intTotalCount = intTotalCount - 1
+                            
+                            dictChange.setValue(0, forKey: "ListLikeStatus")
+                            dictChange.setValue("\(intTotalCount)", forKey: "ListLikeCustomer")
+                        }else{
+                            intTotalCount = intTotalCount + 1
+                            
+                            dictChange.setValue(1, forKey: "ListLikeStatus")
+                            dictChange.setValue("\(intTotalCount)", forKey: "ListLikeCustomer")
+                        }
+                        
+                        if ISDebug { print("Change Dict:\(dictChange)"); }
+                        
+                        if let strListID = dictChange.value(forKeyPath: "ListID") as? String{
+                            if ISDebug { print("List ID :\(strListID)"); }
+                            
+                            //For Search Array
+                            if let arr_FriendsListFilterListIDs = arr_FriendsListFilter.value(forKeyPath: "ListID") as? NSArray {
+                                
+                                print("IDs \(arr_FriendsListFilterListIDs)")
+                                if arr_FriendsListFilterListIDs.contains(strListID) {
+                                    
+                                    let indexOfChangeList : Int = arr_FriendsListFilterListIDs.index(of: strListID)
+                                    arr_FriendsListFilter.replaceObject(at: indexOfChangeList, with: dictChange)
+                                }
+                            }
+                            
+                            //For Main Array
+                            if let arr_FriendsListIDs = arr_FriendsList.value(forKeyPath: "ListID") as? NSArray{
+                                
+                                if ISDebug { print("IDs \(arr_FriendsListIDs)"); }
+                                if arr_FriendsListIDs.contains(strListID) {
+                                    let indexOfChangeList : Int = arr_FriendsListIDs.index(of: strListID)
+                                    arr_FriendsList.replaceObject(at: indexOfChangeList, with: dictChange)
+                                }
+                            }
+                            
+                            //Call List Like & UnLike API
+                            self.perform(#selector(listLikeUnLike(strListID:)), with: strListID, afterDelay: 0.1)
+                        }
+                        tblFriendsList.reloadData()
+                    }
+                }
+            }
+            
+            
+        } else if cell is Cell_PublicList {
+            
+            let indexPath : IndexPath = tblPublicList.indexPath(for: cell)!
+            print("Index Path : \(indexPath)")
+            
+            if index == 0 {
+                let dict_PublicList : NSDictionary?
+                if isSearchingPubliclist == true {
+                    dict_PublicList = arr_PublicListFilter.object(at: indexPath.row) as? NSDictionary
+                }else{
+                    dict_PublicList = arr_PublicList.object(at: indexPath.row) as? NSDictionary
+                }
+                
+                let dictChange : NSMutableDictionary = NSMutableDictionary(dictionary: dict_PublicList!)
+                
+                if let intTotalLikelist = dict_PublicList?.value(forKey: "ListLikeCustomer") as? String {
+                    
+                    var intTotalCount : Int = Int(intTotalLikelist)!
+                    
+                    if let int_isLikeOrNot = dict_PublicList?.value(forKey: "ListLikeStatus") as? Int {
+                        
+                        if int_isLikeOrNot == 1 {
+                            intTotalCount = intTotalCount - 1
+                            
+                            dictChange.setValue(0, forKey: "ListLikeStatus")
+                            dictChange.setValue("\(intTotalCount)", forKey: "ListLikeCustomer")
+                        }else{
+                            intTotalCount = intTotalCount + 1
+                            
+                            dictChange.setValue(1, forKey: "ListLikeStatus")
+                            dictChange.setValue("\(intTotalCount)", forKey: "ListLikeCustomer")
+                        }
+                        
+                        if ISDebug { print("Change Dict:\(dictChange)"); }
+                        
+                        if let strListID = dictChange.value(forKeyPath: "ListID") as? String{
+                            if ISDebug { print("List ID :\(strListID)"); }
+                            
+                            //For Search Array
+                            if let arr_PublicListFilterListIDs = arr_PublicListFilter.value(forKeyPath: "ListID") as? NSArray {
+                                
+                                print("IDs \(arr_PublicListFilterListIDs)")
+                                if arr_PublicListFilterListIDs.contains(strListID) {
+                                    
+                                    let indexOfChangeList : Int = arr_PublicListFilterListIDs.index(of: strListID)
+                                    arr_PublicListFilter.replaceObject(at: indexOfChangeList, with: dictChange)
+                                }
+                            }
+                            
+                            //For Main Array
+                            if let arr_PublicListListIDs = arr_PublicList.value(forKeyPath: "ListID") as? NSArray{
+                                
+                                if ISDebug { print("IDs \(arr_PublicListListIDs)"); }
+                                if arr_PublicListListIDs.contains(strListID) {
+                                    let indexOfChangeList : Int = arr_PublicListListIDs.index(of: strListID)
+                                    arr_PublicList.replaceObject(at: indexOfChangeList, with: dictChange)
+                                }
+                            }
+                            
+                            //Call List Like & UnLike API
+                            self.perform(#selector(listLikeUnLike(strListID:)), with: strListID, afterDelay: 0.1)
+                        }
+                        tblPublicList.reloadData()
+                    }
+                }
+
+            }
+
         }
-        
-        
-//        let indexPath: IndexPath? = tblYourLikes.indexPath(for: cell)
-//        print("Index path: \(String(describing: indexPath))")
-        
-//        switch index
-//        {
-//        case 0: break
-//        // [cell hideUtilityButtonsAnimated:YES];
-//        case 1:
-//            break
-//        case 2: break
-//        // Delete button was pressed
-//        default:
-//            break
-//        }
         
     }
     
@@ -1626,7 +1825,7 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
     @IBAction func handleValueChange(_ sender: UITextField)
     {
         
-        if let txt = sender.text, txt != ""{
+        if let txt = sender.text, txt != "" {
             
             isSearchingListYoulikes = true
             let predicate = NSPredicate(format: "%K CONTAINS[cd] %@", "ListName", txt)
@@ -1645,7 +1844,7 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
             
             isSearchingFriendsList = true
             let predicate = NSPredicate(format: "%K CONTAINS[cd] %@", "AuthorName", txt)
-            arr_FriendsListFilter = arr_Friends.filter {predicate.evaluate(with: $0)} as! NSMutableArray
+            arr_FriendsListFilter =  NSMutableArray(array:arr_FriendsList.filter {predicate.evaluate(with: $0)})
             
         }else{
             
@@ -1660,7 +1859,7 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
             
             isSearchingPubliclist = true
             let predicate = NSPredicate(format: "%K CONTAINS[cd] %@", "AuthorName", txt)
-            arr_PublicListFilter = arr_PublicList.filter {predicate.evaluate(with: $0)} as! NSMutableArray
+            arr_PublicListFilter = NSMutableArray(array: arr_PublicList.filter {predicate.evaluate(with: $0)})
         }else{
             isSearchingPubliclist = false
             arr_ListsYouLikeFilter = []
@@ -1909,9 +2108,11 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
         
         HUD.show(true)
         web.getHome_alllist(strUserID: appDel.instanceModelLogin.UserID) //We have to change this Id to Login User ID
+        
+        
     }
     
-    func getHomescreenAllsectionResponse(responseObj: NSDictionary) -> Void{
+    func getHomescreenAllsectionResponse(responseObj: NSDictionary) -> Void {
         
         HUD.hide(true)
         let responseAllKey : NSArray = responseObj.allKeys as NSArray
@@ -1979,7 +2180,6 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
     func listLikeOrUnLikeResponse(responseObj: NSDictionary) -> Void {
         
         let responseAllKey : NSArray = responseObj.allKeys as NSArray
-        //        print("Print Array Keys : \(responseAllKey)")
         
         if responseAllKey.contains(kAPI_Status) {
             
@@ -1993,7 +2193,7 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
                 }else{
                     
                     if ISDebug{
-                        print("List like & Unlike False")
+                        print("List like & Unlike Response False")
                     }
                     
                     if responseAllKey.contains(kAPI_Msg) {

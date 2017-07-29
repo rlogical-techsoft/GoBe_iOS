@@ -105,7 +105,7 @@ class Webservice: AnyObject {
         
         let dataTask = URLSession.shared.dataTask(with: request, completionHandler: { data, response, error in
             
-            if (response != nil && data != nil) {
+            if (response != nil) {
                 
                 if let httpResponse : HTTPURLResponse = response as? HTTPURLResponse
                 {
@@ -171,7 +171,7 @@ class Webservice: AnyObject {
         
         let dataTask = URLSession.shared.dataTask(with: request, completionHandler: { data, response, error in
             
-            if (response != nil && data != nil) {
+            if (response != nil) {
                 
                 if let httpResponse : HTTPURLResponse = response as? HTTPURLResponse
                 {
@@ -239,7 +239,7 @@ class Webservice: AnyObject {
         
         let dataTask = URLSession.shared.dataTask(with: request, completionHandler: { data, response, error in
             
-            if (response != nil && data != nil) {
+            if (response != nil) {
                 
                 if let httpResponse : HTTPURLResponse = response as? HTTPURLResponse
                 {
@@ -307,7 +307,7 @@ class Webservice: AnyObject {
         
         let dataTask = URLSession.shared.dataTask(with: request, completionHandler: { data, response, error in
             
-            if (response != nil && data != nil) {
+            if (response != nil) {
                 
                 if let httpResponse : HTTPURLResponse = response as? HTTPURLResponse
                 {
@@ -376,7 +376,7 @@ class Webservice: AnyObject {
         
         let dataTask = URLSession.shared.dataTask(with: request, completionHandler: { data, response, error in
             
-            if (response != nil && data != nil) {
+            if (response != nil) {
                 
                 if let httpResponse : HTTPURLResponse = response as? HTTPURLResponse
                 {
@@ -447,7 +447,7 @@ class Webservice: AnyObject {
         
         let dataTask = URLSession.shared.dataTask(with: request, completionHandler: { data, response, error in
             
-            if (response != nil && data != nil) {
+            if (response != nil) {
                 
                 if let httpResponse : HTTPURLResponse = response as? HTTPURLResponse {
                     
@@ -506,7 +506,7 @@ class Webservice: AnyObject {
         
         let dataTask = URLSession.shared.dataTask(with: request, completionHandler: { data, response, error in
             
-            if (response != nil && data != nil) {
+            if (response != nil) {
                 
                 if let httpResponse : HTTPURLResponse = response as? HTTPURLResponse
                 {
@@ -579,7 +579,7 @@ class Webservice: AnyObject {
         
         let dataTask = URLSession.shared.dataTask(with: request, completionHandler: { data, response, error in
             
-            if (response != nil && data != nil) {
+            if (response != nil) {
                 
                 if let httpResponse : HTTPURLResponse = response as? HTTPURLResponse
                 {
@@ -648,7 +648,7 @@ class Webservice: AnyObject {
         
         let dataTask = URLSession.shared.dataTask(with: request, completionHandler: { data, response, error in
             
-            if (response != nil && data != nil) {
+            if (response != nil) {
                 
                 if let httpResponse : HTTPURLResponse = response as? HTTPURLResponse
                 {
@@ -717,7 +717,7 @@ class Webservice: AnyObject {
         
         let dataTask = URLSession.shared.dataTask(with: request, completionHandler: { data, response, error in
             
-            if (response != nil && data != nil) {
+            if (response != nil) {
                 
                 if let httpResponse : HTTPURLResponse = response as? HTTPURLResponse
                 {
@@ -785,7 +785,7 @@ class Webservice: AnyObject {
         
         let dataTask = URLSession.shared.dataTask(with: request, completionHandler: { data, response, error in
             
-            if (response != nil && data != nil) {
+            if (response != nil) {
                 
                 if let httpResponse : HTTPURLResponse = response as? HTTPURLResponse
                 {
@@ -856,7 +856,7 @@ class Webservice: AnyObject {
         
         let dataTask = URLSession.shared.dataTask(with: request, completionHandler: { data, response, error in
             
-            if (response != nil && data != nil) {
+            if (response != nil) {
                 
                 if let httpResponse : HTTPURLResponse = response as? HTTPURLResponse
                 {
@@ -924,7 +924,7 @@ class Webservice: AnyObject {
         
         let dataTask = URLSession.shared.dataTask(with: request, completionHandler: { data, response, error in
             
-            if (response != nil && data != nil) {
+            if (response != nil) {
                 
                 if let httpResponse : HTTPURLResponse = response as? HTTPURLResponse
                 {

@@ -136,12 +136,9 @@ class NewtrendsDetailsViewController: UIViewController,UICollectionViewDelegate,
     func btnLikeTapped(_ sender : UIButton){
         
         let indexForTap = sender.tag
-//        print("Index of Tap Like button : \(indexForTap)")
         let dict_Cell = arrTipsListData.object(at: indexForTap) as? NSDictionary
         
         let dictChange : NSMutableDictionary = dict_Cell?.mutableCopy() as! NSMutableDictionary
-        
-//        print("Old Dict: \(dict_Cell!) \n")
         
         if let intTotalLikelist = dict_Cell?.value(forKey: "Likelist") as? String {
             

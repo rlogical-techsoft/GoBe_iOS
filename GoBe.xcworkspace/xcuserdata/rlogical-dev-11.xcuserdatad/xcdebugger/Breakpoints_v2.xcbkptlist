@@ -122,12 +122,12 @@
                   moduleName = "GoBe"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rlogical-dev-11/Desktop/Mitul%20Work/Applications/Gobe/Repo/GoBe/GoBe/GOBE_APP/Login-SignUp/LoginViewController.swift"
-                  timestampString = "523000535.425337"
+                  timestampString = "523016685.34845"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "258"
                   endingLineNumber = "258"
-                  offsetFromSymbolStart = "357">
+                  offsetFromSymbolStart = "328">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -137,12 +137,12 @@
                   moduleName = "GoBe"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rlogical-dev-11/Desktop/Mitul%20Work/Applications/Gobe/Repo/GoBe/GoBe/GOBE_APP/Login-SignUp/LoginViewController.swift"
-                  timestampString = "523000535.427847"
+                  timestampString = "523016685.352522"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "258"
                   endingLineNumber = "258"
-                  offsetFromSymbolStart = "794">
+                  offsetFromSymbolStart = "660">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -260,11 +260,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoBe/GOBE_APP/HOME/HomeViewVC.swift"
-            timestampString = "522761590.608737"
+            timestampString = "523012195.158638"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "399"
-            endingLineNumber = "399"
+            startingLineNumber = "401"
+            endingLineNumber = "401"
             landmarkName = "setupViews()"
             landmarkType = "7">
          </BreakpointContent>
@@ -276,27 +276,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoBe/GOBE_APP/HOME/HomeViewVC.swift"
-            timestampString = "522928477.896395"
+            timestampString = "523012195.158638"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1944"
-            endingLineNumber = "1944"
-            landmarkName = "getHomescreenAllsectionResponse(responseObj:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "GoBe/GOBE_APP/HOME/HomeViewVC.swift"
-            timestampString = "522761590.608737"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "951"
-            endingLineNumber = "951"
+            startingLineNumber = "953"
+            endingLineNumber = "953"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
             <Locations>
@@ -340,12 +324,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoBe/GOBE_APP/HOME/HomeViewVC.swift"
-            timestampString = "522928477.896395"
+            timestampString = "523015872.935026"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1929"
-            endingLineNumber = "1929"
-            landmarkName = "getHomescreenAllsectionResponse(responseObj:)"
+            startingLineNumber = "2092"
+            endingLineNumber = "2092"
+            landmarkName = "getNewAndTendingTipsResponse(responseObj:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -356,11 +340,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoBe/GOBE_APP/HOME/HomeViewVC.swift"
-            timestampString = "522761590.608737"
+            timestampString = "523012195.158638"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1398"
-            endingLineNumber = "1398"
+            startingLineNumber = "1392"
+            endingLineNumber = "1392"
             landmarkName = "leftButtons(_:indexpath:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -388,11 +372,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoBe/GOBE_APP/HOME/NewtrendsDetailsViewController.swift"
-            timestampString = "522676858.079719"
+            timestampString = "523003943.202098"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
             landmarkName = "btnLikeTapped(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -404,11 +388,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoBe/GOBE_APP/HOME/NewtrendsDetailsViewController.swift"
-            timestampString = "522676858.079719"
+            timestampString = "523003943.202098"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
             landmarkName = "btnLikeTapped(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -436,11 +420,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoBe/GOBE_APP/HOME/NewtrendsDetailsViewController.swift"
-            timestampString = "522676858.079719"
+            timestampString = "523003943.202098"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
             landmarkName = "btnLikeTapped(_:)"
             landmarkType = "7">
             <Locations>
@@ -484,11 +468,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoBe/GOBE_APP/HOME/NewtrendsDetailsViewController.swift"
-            timestampString = "522676858.079719"
+            timestampString = "523003943.202098"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "163"
-            endingLineNumber = "163"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
             landmarkName = "btnLikeTapped(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -500,11 +484,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoBe/GOBE_APP/HOME/NewtrendsDetailsViewController.swift"
-            timestampString = "522913648.35248"
+            timestampString = "523003943.202098"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "225"
-            endingLineNumber = "225"
+            startingLineNumber = "222"
+            endingLineNumber = "222"
             landmarkName = "tipsLikeOrUnLikeResponse(responseObj:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -532,11 +516,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoBe/GOBE_APP/HOME/NewtrendsDetailsViewController.swift"
-            timestampString = "522913648.35248"
+            timestampString = "523003943.202098"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "186"
-            endingLineNumber = "186"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
             landmarkName = "btnAction_Direction(_:)"
             landmarkType = "7">
             <Locations>
@@ -580,11 +564,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoBe/GOBE_APP/HOME/NewtrendsDetailsViewController.swift"
-            timestampString = "522913648.35248"
+            timestampString = "523003943.202098"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "210"
-            endingLineNumber = "210"
+            startingLineNumber = "207"
+            endingLineNumber = "207"
             landmarkName = "tipLikeUnlike(strTipID:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -612,11 +596,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoBe/GOBE_APP/HOME/NewtrendsDetailsViewController.swift"
-            timestampString = "522913648.35248"
+            timestampString = "523003943.202098"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "221"
-            endingLineNumber = "221"
+            startingLineNumber = "218"
+            endingLineNumber = "218"
             landmarkName = "tipsLikeOrUnLikeResponse(responseObj:)"
             landmarkType = "7">
             <Locations>
@@ -691,28 +675,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "GoBe/GOBE_APP/HOME/HomeViewVC.swift"
-            timestampString = "523000533.011935"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1842"
-            endingLineNumber = "1842"
-            landmarkName = "btnAction_GoExplore(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "GoBe/GOBE_APP/Profile/ViewProfileScreenVC.swift"
-            timestampString = "522928803.915805"
+            timestampString = "523016110.427245"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "149"
-            endingLineNumber = "149"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
             landmarkName = "getUserProfileDetailsResponse(responseObj:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -724,11 +692,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoBe/GOBE_APP/Profile/ViewProfileScreenVC.swift"
-            timestampString = "522930185.809277"
+            timestampString = "523016110.427245"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "169"
-            endingLineNumber = "169"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
             landmarkName = "getUserProfileDetailsResponse(responseObj:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -736,7 +704,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoBe/Webservice.swift"
@@ -752,7 +720,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoBe/Webservice.swift"
@@ -762,6 +730,134 @@
             startingLineNumber = "762"
             endingLineNumber = "762"
             landmarkName = "listLikeUnLike(strUserID:strListID:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GoBe/GOBE_APP/HOME/HomeViewVC.swift"
+            timestampString = "523015940.944977"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2190"
+            endingLineNumber = "2190"
+            landmarkName = "listLikeOrUnLikeResponse(responseObj:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GoBe/GOBE_APP/HOME/HomeViewVC.swift"
+            timestampString = "523015940.944977"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2196"
+            endingLineNumber = "2196"
+            landmarkName = "listLikeOrUnLikeResponse(responseObj:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GoBe/GOBE_APP/HOME/HomeViewVC.swift"
+            timestampString = "523015872.935026"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2062"
+            endingLineNumber = "2062"
+            landmarkName = "getNewAndTrending()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GoBe/GOBE_APP/HOME/HomeViewVC.swift"
+            timestampString = "523013084.577501"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1485"
+            endingLineNumber = "1485"
+            landmarkName = "rightbuttons(_:indexPath:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GoBe/GOBE_APP/HOME/HomeViewVC.swift"
+            timestampString = "523013086.153395"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1487"
+            endingLineNumber = "1487"
+            landmarkName = "rightbuttons(_:indexPath:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GoBe/GOBE_APP/HOME/HomeViewVC.swift"
+            timestampString = "523015872.935026"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1616"
+            endingLineNumber = "1616"
+            landmarkName = "swipeableTableViewCell(_:didTriggerRightUtilityButtonWith:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GoBe/GOBE_APP/HOME/HomeViewVC.swift"
+            timestampString = "523015872.935026"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1749"
+            endingLineNumber = "1749"
+            landmarkName = "swipeableTableViewCell(_:didTriggerRightUtilityButtonWith:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GoBe/GOBE_APP/HOME/HomeViewVC.swift"
+            timestampString = "523015858.411523"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1627"
+            endingLineNumber = "1627"
+            landmarkName = "swipeableTableViewCell(_:didTriggerRightUtilityButtonWith:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
