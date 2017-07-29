@@ -9,5 +9,7 @@ target 'GoBe' do
 
 pod 'IQKeyboardManagerSwift', '4.0.8'
 pod 'SDWebImage', '~>3.8'
-
+pod 'GoogleMaps'
+pod 'GooglePlaces'
+pod 'Alamofire'
 end

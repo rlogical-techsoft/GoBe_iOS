@@ -13,6 +13,17 @@
 		3F4E2EB61EFC018400D9297D /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F4E2EB31EFC018400D9297D /* FBSDKCoreKit.framework */; };
 		3F4E2EB71EFC018400D9297D /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F4E2EB41EFC018400D9297D /* FBSDKLoginKit.framework */; };
 		3F4E2EB81EFC018400D9297D /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F4E2EB51EFC018400D9297D /* FBSDKShareKit.framework */; };
+		3F5BE8741F2C655B002A7D7C /* SharedTipsSearchLocViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5BE8731F2C655B002A7D7C /* SharedTipsSearchLocViewController.swift */; };
+		3F5BE8771F2C66A5002A7D7C /* Cell_locationSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5BE8761F2C66A5002A7D7C /* Cell_locationSearch.swift */; };
+		3F5BE87B1F2C83E1002A7D7C /* GoogleMapsAPIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5BE8791F2C83E1002A7D7C /* GoogleMapsAPIKey.swift */; };
+		3F5BE87C1F2C83E1002A7D7C /* GoogleMapsRestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5BE87A1F2C83E1002A7D7C /* GoogleMapsRestClient.swift */; };
+		3F5BE8841F2C85F3002A7D7C /* Info-iOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F5BE87E1F2C85F3002A7D7C /* Info-iOS.plist */; };
+		3F5BE8851F2C85F3002A7D7C /* Info-OSX.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F5BE87F1F2C85F3002A7D7C /* Info-OSX.plist */; };
+		3F5BE8861F2C85F3002A7D7C /* Info-tvOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F5BE8801F2C85F3002A7D7C /* Info-tvOS.plist */; };
+		3F5BE8871F2C85F3002A7D7C /* Info-watchOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F5BE8811F2C85F3002A7D7C /* Info-watchOS.plist */; };
+		3F5BE8881F2C85F3002A7D7C /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5BE8831F2C85F3002A7D7C /* SwiftyJSON.swift */; };
+		3F5BE88A1F2C9C02002A7D7C /* SharedEventPodSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5BE8891F2C9C02002A7D7C /* SharedEventPodSelection.swift */; };
+		3F5BE88C1F2CB3B7002A7D7C /* EventPostPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5BE88B1F2CB3B7002A7D7C /* EventPostPreviewViewController.swift */; };
 		3F5D0F101F28962F004A44DE /* TipsAddToListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5D0F0F1F28962F004A44DE /* TipsAddToListViewController.swift */; };
 		3F5D0F171F28A03F004A44DE /* Cell_TipsadToList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5D0F151F28A03F004A44DE /* Cell_TipsadToList.swift */; };
 		3F5D0F181F28A03F004A44DE /* Cell_TipsadToList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F5D0F161F28A03F004A44DE /* Cell_TipsadToList.xib */; };
@@ -115,6 +126,18 @@
 		3F4E2EB31EFC018400D9297D /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		3F4E2EB41EFC018400D9297D /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		3F4E2EB51EFC018400D9297D /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		3F5BE8731F2C655B002A7D7C /* SharedTipsSearchLocViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedTipsSearchLocViewController.swift; sourceTree = "<group>"; };
+		3F5BE8761F2C66A5002A7D7C /* Cell_locationSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell_locationSearch.swift; sourceTree = "<group>"; };
+		3F5BE8791F2C83E1002A7D7C /* GoogleMapsAPIKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleMapsAPIKey.swift; sourceTree = "<group>"; };
+		3F5BE87A1F2C83E1002A7D7C /* GoogleMapsRestClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleMapsRestClient.swift; sourceTree = "<group>"; };
+		3F5BE87E1F2C85F3002A7D7C /* Info-iOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
+		3F5BE87F1F2C85F3002A7D7C /* Info-OSX.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-OSX.plist"; sourceTree = "<group>"; };
+		3F5BE8801F2C85F3002A7D7C /* Info-tvOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-tvOS.plist"; sourceTree = "<group>"; };
+		3F5BE8811F2C85F3002A7D7C /* Info-watchOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-watchOS.plist"; sourceTree = "<group>"; };
+		3F5BE8821F2C85F3002A7D7C /* SwiftyJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftyJSON.h; sourceTree = "<group>"; };
+		3F5BE8831F2C85F3002A7D7C /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		3F5BE8891F2C9C02002A7D7C /* SharedEventPodSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedEventPodSelection.swift; sourceTree = "<group>"; };
+		3F5BE88B1F2CB3B7002A7D7C /* EventPostPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventPostPreviewViewController.swift; sourceTree = "<group>"; };
 		3F5D0F0F1F28962F004A44DE /* TipsAddToListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsAddToListViewController.swift; sourceTree = "<group>"; };
 		3F5D0F151F28A03F004A44DE /* Cell_TipsadToList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell_TipsadToList.swift; sourceTree = "<group>"; };
 		3F5D0F161F28A03F004A44DE /* Cell_TipsadToList.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Cell_TipsadToList.xib; sourceTree = "<group>"; };
@@ -258,6 +281,8 @@
 			isa = PBXGroup;
 			children = (
 				9A52CE801F03B13700FCEB71 /* GoBe-Bridging-Header.h */,
+				3F5BE87D1F2C85F3002A7D7C /* SwiftyJSON */,
+				3F5BE8781F2C83E1002A7D7C /* GoogleServices */,
 				73A420531F0B5CB6001A1BCB /* Images */,
 				3FD0D8151F06345F001EDD04 /* Webservice and Constant */,
 				73A4205F1F0B6F0E001A1BCB /* Models */,
@@ -319,6 +344,38 @@
 			path = Framework;
 			sourceTree = "<group>";
 		};
+		3F5BE8751F2C668C002A7D7C /* Cell_LocationSearch */ = {
+			isa = PBXGroup;
+			children = (
+				3F5BE8761F2C66A5002A7D7C /* Cell_locationSearch.swift */,
+			);
+			path = Cell_LocationSearch;
+			sourceTree = "<group>";
+		};
+		3F5BE8781F2C83E1002A7D7C /* GoogleServices */ = {
+			isa = PBXGroup;
+			children = (
+				3F5BE8791F2C83E1002A7D7C /* GoogleMapsAPIKey.swift */,
+				3F5BE87A1F2C83E1002A7D7C /* GoogleMapsRestClient.swift */,
+			);
+			name = GoogleServices;
+			path = GOBE_APP/GoogleServices;
+			sourceTree = "<group>";
+		};
+		3F5BE87D1F2C85F3002A7D7C /* SwiftyJSON */ = {
+			isa = PBXGroup;
+			children = (
+				3F5BE87E1F2C85F3002A7D7C /* Info-iOS.plist */,
+				3F5BE87F1F2C85F3002A7D7C /* Info-OSX.plist */,
+				3F5BE8801F2C85F3002A7D7C /* Info-tvOS.plist */,
+				3F5BE8811F2C85F3002A7D7C /* Info-watchOS.plist */,
+				3F5BE8821F2C85F3002A7D7C /* SwiftyJSON.h */,
+				3F5BE8831F2C85F3002A7D7C /* SwiftyJSON.swift */,
+			);
+			name = SwiftyJSON;
+			path = GOBE_APP/SwiftyJSON;
+			sourceTree = "<group>";
+		};
 		3F5D0F0E1F2895F6004A44DE /* Tips Add to list */ = {
 			isa = PBXGroup;
 			children = (
@@ -340,9 +397,13 @@
 		3F7E808C1F2B3931002D6BE0 /* SharedTips */ = {
 			isa = PBXGroup;
 			children = (
+				3F5BE8751F2C668C002A7D7C /* Cell_LocationSearch */,
 				3F7E808D1F2B3931002D6BE0 /* SharedTipsViewController.swift */,
 				3F7E80951F2B75A5002D6BE0 /* sharedTipsVisibilityViewController.swift */,
 				3F7E80971F2B76F1002D6BE0 /* sharedEventMapSelectionViewController.swift */,
+				3F5BE8731F2C655B002A7D7C /* SharedTipsSearchLocViewController.swift */,
+				3F5BE8891F2C9C02002A7D7C /* SharedEventPodSelection.swift */,
+				3F5BE88B1F2CB3B7002A7D7C /* EventPostPreviewViewController.swift */,
 			);
 			path = SharedTips;
 			sourceTree = "<group>";
@@ -768,12 +829,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F5BE8871F2C85F3002A7D7C /* Info-watchOS.plist in Resources */,
 				736DFD4C1F1C87720097E771 /* Screen Shot - Launch.png in Resources */,
 				9A52CEBE1F03B34200FCEB71 /* GarageFonts - FreightText Pro Medium.otf in Resources */,
 				73A420781F0BC677001A1BCB /* Cell_YourList.xib in Resources */,
 				73A420801F0BC6B1001A1BCB /* Assets.xcassets in Resources */,
 				9AD302E21F1767180021CC16 /* Screen Shot 2017-07-13 at 1.59.42 PM.png in Resources */,
 				73A420591F0B5CE4001A1BCB /* Background2.png in Resources */,
+				3F5BE8861F2C85F3002A7D7C /* Info-tvOS.plist in Resources */,
 				9A5C69221F0CB2C00009C083 /* Cell_PublicList.xib in Resources */,
 				3F7E80941F2B717C002D6BE0 /* Screen Shot 2017-07-28 at 6.49.32 PM.png in Resources */,
 				9A3E64291F18980F00ED6697 /* Screen Shot 2017-07-14 at 11.39.53 AM.png in Resources */,
@@ -792,8 +855,10 @@
 				9A52CEC21F03B34200FCEB71 /* Type Dynamic - Larsseit Italic.otf in Resources */,
 				9A52CEBF1F03B34200FCEB71 /* HVD Fonts - BrandonText-Black.otf in Resources */,
 				736111061F23495F00BF0B45 /* YOURLIKES_screenshot1.png in Resources */,
+				3F5BE8841F2C85F3002A7D7C /* Info-iOS.plist in Resources */,
 				7397A43B1F179FCB004BE6EB /* Profile.png in Resources */,
 				73A420761F0BC677001A1BCB /* Cell_YourTips.xib in Resources */,
+				3F5BE8851F2C85F3002A7D7C /* Info-OSX.plist in Resources */,
 				9A3C24F71F0E3D0400F17845 /* Cell_Trendings.xib in Resources */,
 				3F7E80901F2B3F9B002D6BE0 /* Screen Shot 2017-07-28 at 3.16.18 PM.png in Resources */,
 				73A420911F0BCA1B001A1BCB /* Background3.png in Resources */,
@@ -870,13 +935,17 @@
 				3FD0D81F1F064B20001EDD04 /* Extension+String.swift in Sources */,
 				7369148B1F1F2A5400EBECE7 /* Cell_Following.swift in Sources */,
 				9A52CE9A1F03B13700FCEB71 /* SWUtilityButtonTapGestureRecognizer.m in Sources */,
+				3F5BE8881F2C85F3002A7D7C /* SwiftyJSON.swift in Sources */,
 				7397A4361F179F66004BE6EB /* DKLabel.m in Sources */,
 				730878041F21E1D300E3EF22 /* NewtrendsDetailsViewController.swift in Sources */,
 				9A52CE981F03B13700FCEB71 /* SWLongPressGestureRecognizer.m in Sources */,
 				9A52CE9B1F03B13700FCEB71 /* SWUtilityButtonView.m in Sources */,
 				73B004A21F220AAD00FE4372 /* YOURLISTSVC.swift in Sources */,
+				3F5BE87C1F2C83E1002A7D7C /* GoogleMapsRestClient.swift in Sources */,
 				73A420751F0BC677001A1BCB /* Cell_YourTips.swift in Sources */,
 				9A5C69211F0CB2C00009C083 /* Cell_PublicList.swift in Sources */,
+				3F5BE8771F2C66A5002A7D7C /* Cell_locationSearch.swift in Sources */,
+				3F5BE87B1F2C83E1002A7D7C /* GoogleMapsAPIKey.swift in Sources */,
 				3F7E80981F2B76F1002D6BE0 /* sharedEventMapSelectionViewController.swift in Sources */,
 				3F5D0F101F28962F004A44DE /* TipsAddToListViewController.swift in Sources */,
 				7397A42D1F179F16004BE6EB /* Webservice.swift in Sources */,
@@ -884,11 +953,13 @@
 				9A52CEB31F03B31D00FCEB71 /* CarouselCollectionViewCell.swift in Sources */,
 				9A52CE971F03B13700FCEB71 /* SWCellScrollView.m in Sources */,
 				73A4207D1F0BC677001A1BCB /* Cell_ListYouLike.swift in Sources */,
+				3F5BE88C1F2CB3B7002A7D7C /* EventPostPreviewViewController.swift in Sources */,
 				3F486AE21EFAAC78006BB1D0 /* GobeFont.swift in Sources */,
 				3F5D0F171F28A03F004A44DE /* Cell_TipsadToList.swift in Sources */,
 				9A52CE951F03B13700FCEB71 /* NewTrendsTableViewCell.swift in Sources */,
 				7397A42B1F179F07004BE6EB /* RegisterViewController.swift in Sources */,
 				9A52CE771F03B0C400FCEB71 /* NewtrendsViewController.swift in Sources */,
+				3F5BE8741F2C655B002A7D7C /* SharedTipsSearchLocViewController.swift in Sources */,
 				9A52CEB41F03B31D00FCEB71 /* Character.swift in Sources */,
 				736DFD5C1F1CC1C90097E771 /* Cell_FriendsRequest.swift in Sources */,
 				9A52CEB61F03B31D00FCEB71 /* UPCarouselFlowLayout.swift in Sources */,
@@ -896,6 +967,7 @@
 				73B9AE531F18B6A100BE8EBC /* EditProfileScreenVC.swift in Sources */,
 				3F7E80961F2B75A5002D6BE0 /* sharedTipsVisibilityViewController.swift in Sources */,
 				3FD0D81D1F064A2B001EDD04 /* MBProgressHUD.m in Sources */,
+				3F5BE88A1F2C9C02002A7D7C /* SharedEventPodSelection.swift in Sources */,
 				736DFD4E1F1CBD770097E771 /* Friends_FollowersViewController.swift in Sources */,
 				736DFD5E1F1CC1C90097E771 /* Cell_userList.swift in Sources */,
 				737A94981F27645500AD6F9D /* LocationSearchViewController.swift in Sources */,

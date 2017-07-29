@@ -63,7 +63,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1755"
             endingLineNumber = "1755"
-            landmarkName = "ListYouLikeTapped(_:)"
+            landmarkName = "crossListYouLikeTapped(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -80,22 +80,6 @@
             startingLineNumber = "1886"
             endingLineNumber = "1886"
             landmarkName = "getNewAndTendingTipsResponse(responseObj:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "GoBe/GOBE_APP/HOME/HomeViewVC.swift"
-            timestampString = "522916160.691101"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "634"
-            endingLineNumber = "634"
-            landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -202,7 +186,7 @@
                   moduleName = "GoBe"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rlogical-dev-35/Desktop/Manoj/Applications/Gobe/GoBe%20Repo/GoBe/GoBe/GOBE_APP/HOME/HomeViewVC.swift"
-                  timestampString = "523000502.635225"
+                  timestampString = "523026928.695693"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "1025"
@@ -217,7 +201,7 @@
                   moduleName = "GoBe"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rlogical-dev-35/Desktop/Manoj/Applications/Gobe/GoBe%20Repo/GoBe/GoBe/GOBE_APP/HOME/HomeViewVC.swift"
-                  timestampString = "523000502.637525"
+                  timestampString = "523026928.697581"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "1025"
@@ -266,7 +250,7 @@
                   moduleName = "GoBe"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rlogical-dev-35/Desktop/Manoj/Applications/Gobe/GoBe%20Repo/GoBe/GoBe/GOBE_APP/TipsAddToListViewController.swift"
-                  timestampString = "523000502.644316"
+                  timestampString = "523026928.704034"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "78"
@@ -281,7 +265,7 @@
                   moduleName = "GoBe"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rlogical-dev-35/Desktop/Manoj/Applications/Gobe/GoBe%20Repo/GoBe/GoBe/GOBE_APP/TipsAddToListViewController.swift"
-                  timestampString = "523000502.645642"
+                  timestampString = "523026928.705793"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "78"
@@ -296,7 +280,7 @@
                   moduleName = "GoBe"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rlogical-dev-35/Desktop/Manoj/Applications/Gobe/GoBe%20Repo/GoBe/GoBe/GOBE_APP/TipsAddToListViewController.swift"
-                  timestampString = "523000502.647003"
+                  timestampString = "523026928.707468"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "80"
@@ -329,7 +313,7 @@
                   moduleName = "GoBe"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rlogical-dev-35/Desktop/Manoj/Applications/Gobe/GoBe%20Repo/GoBe/GoBe/GOBE_APP/TipsAddToListViewController.swift"
-                  timestampString = "523000502.651062"
+                  timestampString = "523026928.711468"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "80"
@@ -344,7 +328,7 @@
                   moduleName = "GoBe"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rlogical-dev-35/Desktop/Manoj/Applications/Gobe/GoBe%20Repo/GoBe/GoBe/GOBE_APP/TipsAddToListViewController.swift"
-                  timestampString = "523000502.65237"
+                  timestampString = "523026928.7133"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "82"
@@ -377,7 +361,7 @@
                   moduleName = "GoBe"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rlogical-dev-35/Desktop/Manoj/Applications/Gobe/GoBe%20Repo/GoBe/GoBe/GOBE_APP/TipsAddToListViewController.swift"
-                  timestampString = "523000502.655773"
+                  timestampString = "523026928.716826"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "84"
@@ -392,7 +376,7 @@
                   moduleName = "GoBe"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rlogical-dev-35/Desktop/Manoj/Applications/Gobe/GoBe%20Repo/GoBe/GoBe/GOBE_APP/TipsAddToListViewController.swift"
-                  timestampString = "523000502.657272"
+                  timestampString = "523026928.718808"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "86"
@@ -414,7 +398,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1617"
             endingLineNumber = "1617"
-            landmarkName = "handleValueChange(_:)"
+            landmarkName = "swipeableTableViewCell(_:didTriggerRightUtilityButtonWith:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -430,7 +414,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1612"
             endingLineNumber = "1612"
-            landmarkName = "handleValueChange(_:)"
+            landmarkName = "swipeableTableViewCell(_:didTriggerRightUtilityButtonWith:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -446,8 +430,40 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1643"
             endingLineNumber = "1643"
-            landmarkName = "handleValueChangePublicList(_:)"
+            landmarkName = "handleValueChangeFriendsList(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GoBe.HomeViewVC.handleValueChangeFriendsList (__ObjC.UITextField) -&gt; ()"
+                  moduleName = "GoBe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rlogical-dev-35/Desktop/Manoj/Applications/Gobe/GoBe%20Repo/GoBe/GoBe/GOBE_APP/HOME/HomeViewVC.swift"
+                  timestampString = "523026928.733027"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1644"
+                  endingLineNumber = "1644"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GoBe.HomeViewVC.handleValueChangeFriendsList (__ObjC.UITextField) -&gt; ()"
+                  moduleName = "GoBe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rlogical-dev-35/Desktop/Manoj/Applications/Gobe/GoBe%20Repo/GoBe/GoBe/GOBE_APP/HOME/HomeViewVC.swift"
+                  timestampString = "523026928.73486"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1644"
+                  endingLineNumber = "1644"
+                  offsetFromSymbolStart = "279">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -457,11 +473,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoBe/GOBE_APP/SharedTips/SharedTipsViewController.swift"
-            timestampString = "523000009.159777"
+            timestampString = "523024297.705224"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "271"
-            endingLineNumber = "271"
+            startingLineNumber = "277"
+            endingLineNumber = "277"
             landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -472,13 +488,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
+            filePath = "GoBe/GOBE_APP/SharedTips/SharedTipsViewController.swift"
+            timestampString = "523026927.277138"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
+            landmarkName = "btn_DoneClick(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
             filePath = "GoBe/GOBE_APP/SharedTips/sharedTipsVisibilityViewController.swift"
-            timestampString = "523000193.506385"
+            timestampString = "523024006.888403"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "setDataonDisplay()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -488,13 +520,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "GoBe/GOBE_APP/SharedTips/SharedTipsViewController.swift"
-            timestampString = "523000223.294373"
+            filePath = "GoBe/GOBE_APP/SharedTips/SharedTipsSearchLocViewController.swift"
+            timestampString = "523027740.882511"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
-            landmarkName = "btn_DoneClick(_:)"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -504,13 +536,157 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "GoBe/GOBE_APP/SharedTips/SharedTipsViewController.swift"
-            timestampString = "523000490.747378"
+            filePath = "GoBe/GOBE_APP/SharedTips/SharedTipsSearchLocViewController.swift"
+            timestampString = "523028231.325974"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
-            landmarkName = "btn_DoneClick(_:)"
+            startingLineNumber = "193"
+            endingLineNumber = "193"
+            landmarkName = "addAnnotations()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GoBe/GOBE_APP/SharedTips/SharedTipsSearchLocViewController.swift"
+            timestampString = "523027740.882511"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GoBe/GOBE_APP/SharedTips/SharedTipsSearchLocViewController.swift"
+            timestampString = "523027740.882511"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GoBe/GOBE_APP/SharedTips/SharedTipsSearchLocViewController.swift"
+            timestampString = "523027740.882511"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GoBe.SharedTipsSearchLocViewController.tableView (__ObjC.UITableView, didSelectRowAt : Foundation.IndexPath) -&gt; ()"
+                  moduleName = "GoBe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rlogical-dev-35/Desktop/Manoj/Applications/Gobe/GoBe%20Repo/GoBe/GoBe/GOBE_APP/SharedTips/SharedTipsSearchLocViewController.swift"
+                  timestampString = "523026928.780982"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "3234">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GoBe.SharedTipsSearchLocViewController.(tableView (__ObjC.UITableView, didSelectRowAt : Foundation.IndexPath) -&gt; ()).(closure #1)"
+                  moduleName = "GoBe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rlogical-dev-35/Desktop/Manoj/Applications/Gobe/GoBe%20Repo/GoBe/GoBe/GOBE_APP/SharedTips/SharedTipsSearchLocViewController.swift"
+                  timestampString = "523026928.782772"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "83"
+                  endingLineNumber = "83"
+                  offsetFromSymbolStart = "35">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GoBe/GOBE_APP/SharedTips/SharedTipsSearchLocViewController.swift"
+            timestampString = "523027740.882511"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GoBe/GOBE_APP/SharedTips/SharedTipsSearchLocViewController.swift"
+            timestampString = "523027740.882511"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GoBe/GOBE_APP/SharedTips/sharedTipsVisibilityViewController.swift"
+            timestampString = "523026870.970088"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "btn_publicClick(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GoBe/GOBE_APP/SharedTips/sharedTipsVisibilityViewController.swift"
+            timestampString = "523027740.882511"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "btn_FriendsClick(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

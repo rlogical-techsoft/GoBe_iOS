@@ -17,7 +17,7 @@ UINavigationControllerDelegate
     
     var imagePickerViewController = UIImagePickerController()
     var pickerImage : UIImage?
-    var Dict_shareTips : NSDictionary!
+    var Dict_shareTips : NSMutableDictionary!
     
     
     // MARK: - IBOUTLETS
@@ -95,15 +95,22 @@ UINavigationControllerDelegate
         }
         //This is only for testing
         let move = self.storyboard?.instantiateViewController(withIdentifier: "sharedTipsVisibilityViewController") as! sharedTipsVisibilityViewController
-        Dict_shareTips?.setValue(pickerImage, forKey: "EventImage")
-        Dict_shareTips?.setValue(txtView_Title, forKey: "EventTitle")
-        Dict_shareTips?.setValue(txtview_Details, forKey: "EventDescription")
-        move.Dict_SharedEvent = Dict_shareTips
+        
+        if pickerImage == nil
+        {
+            pickerImage = UIImage(named:"nopic")
+        }
+        
+        let SharedTips : [String: Any] = [
+            
+            "EventImage" : pickerImage!,
+            "EventTitle" : txtView_Title.text,
+            "EventDescription" : txtview_Details.text,
+            "Visibility" : "PUBLIC",
 
+        ]
+        move.Dict_SharedEvent=SharedTips as NSDictionary
         self.navigationController?.pushViewController(move, animated: true)
-
-        let view = self.storyboard?.instantiateViewController(withIdentifier: "sharedTipsVisibilityViewController")
-        self.navigationController?.pushViewController(view!, animated: true)
     }
     @IBAction func btn_HomeClick(_ sender: Any) {
     }
@@ -119,7 +126,6 @@ UINavigationControllerDelegate
         
         self.navigationController?.popViewController(animated: true)
     }
-    
     
     // MARK: - keyboardHide&keyboardShow
     

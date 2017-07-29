@@ -1,4 +1,5 @@
-//
+
+///
 //  AppDelegate.swift
 //  GoBe
 //
@@ -10,6 +11,8 @@ import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
 import IQKeyboardManagerSwift
+import GoogleMaps
+import GooglePlaces
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,8 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var instanceModelLogin = ModelLogin()
     var imageBG = UIImage()
-    
-    
     
     //MARK:- UIApplication Methods
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -39,6 +40,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             instanceModelLogin = ModelLogin(dictResult: responseObjUsers)
         }
         
+        GMSServices.provideAPIKey(GoogleMapsAPIKey.GMS_API_KEY)
+        GMSPlacesClient.provideAPIKey(GoogleMapsAPIKey.GMSPLACES_API_KEY)
+
         return true
     }
 
