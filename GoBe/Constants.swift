@@ -81,6 +81,8 @@ let kAPINewAndTrending      = "new-n-trending"
 //MARK:- Tips Related API
 let kAPITip_like_Unlike     = "tip-like-unlike"
 
+let kAPITips_in_list        = "tips-in-list"
+
 //MARK:- List Related API
 let kAPIList_like_unlike    = "list-like-unlike"
 

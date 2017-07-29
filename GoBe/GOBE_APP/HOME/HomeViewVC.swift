@@ -245,8 +245,6 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
     {
         super.viewWillAppear(animated)
         
-        perform(#selector(getNewAndTrending), with: nil, afterDelay: 0.1)
-        perform(#selector(HomescreenOtherSectionAPI), with: nil, afterDelay: 0.1)
         
         //Cell click Highlights Reload
         if isselcted == true
@@ -281,6 +279,9 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
             self.tblYourTips?.reloadData()
             
         }
+
+        perform(#selector(getNewAndTrending), with: nil, afterDelay: 0.1)
+        perform(#selector(HomescreenOtherSectionAPI), with: nil, afterDelay: 0.1)
 
     }
     
@@ -934,12 +935,9 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
             
             var dcell: YourLikesTableViewCell? = tableView.dequeueReusableCell(withIdentifier: "YourLikesTableViewCell", for: indexPath as IndexPath) as? YourLikesTableViewCell
             
-            if (dcell == nil){
-                
-                if dcell == nil {
-                    var topLevelObjects: [Any] = Bundle.main.loadNibNamed("YourLikesTableViewCell", owner: self, options: nil)!
-                    dcell = topLevelObjects[0] as? YourLikesTableViewCell
-                }
+            if dcell == nil {
+                var topLevelObjects: [Any] = Bundle.main.loadNibNamed("YourLikesTableViewCell", owner: self, options: nil)!
+                dcell = topLevelObjects[0] as? YourLikesTableViewCell
             }
             
             let dict_YourLikes = arr_YourLikes.object(at: indexPath.row) as? NSDictionary
@@ -976,7 +974,7 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
             }
             
 
-            if isselctedYourLikes == true{
+            if isselctedYourLikes == true {
                 
                 if selectedIndexYourLikes == indexPath.row{
                     
@@ -985,7 +983,9 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
                     
                     dcell?.backgroungImgView.image = UIImage(named:"NT box")
                 }
+                
             }else{
+                
                 dcell?.backgroungImgView.image = UIImage(named:"NT box")
             }
             // Load the top-level objects from the custom cell XIB.
@@ -1291,7 +1291,7 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         
-        if tableView == tblYourLikes{
+        if tableView == tblYourLikes {
             
             let cell = tableView.cellForRow(at:indexPath) as! YourLikesTableViewCell
 
@@ -1306,7 +1306,7 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
             
             self.navigationController?.pushViewController(move, animated: true)
             
-        }else if tableView == tblYourTips{
+        }else if tableView == tblYourTips {
             
             let cell = tableView.cellForRow(at:indexPath) as! Cell_YourTips
             
@@ -1580,8 +1580,6 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
     
     func swipeableTableViewCell(_ cell: SWTableViewCell, didTriggerLeftUtilityButtonWith index: Int)
     {
-        
-        
         
         if cell is YourLikesTableViewCell {
             print("This Left Cell is from tblYourLikes and Index = \(index)")
@@ -2021,7 +2019,7 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
         isListYouLike = false
         isFriendsList = false
         
-        if ispublicList{
+        if ispublicList {
             
             ispublicList = false
         }else{
@@ -2108,8 +2106,6 @@ class HomeViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDe
         
         HUD.show(true)
         web.getHome_alllist(strUserID: appDel.instanceModelLogin.UserID) //We have to change this Id to Login User ID
-        
-        
     }
     
     func getHomescreenAllsectionResponse(responseObj: NSDictionary) -> Void {

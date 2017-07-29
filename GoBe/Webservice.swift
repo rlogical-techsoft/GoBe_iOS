@@ -42,11 +42,12 @@ import UIKit
     // Other Section API
     @objc optional func getHomescreenAllsectionResponse(responseObj: NSDictionary) -> Void
 
-//Tips Like & UnLike
+//Tips Related Methods
     @objc optional func tipsLikeOrUnLikeResponse(responseObj: NSDictionary) -> Void
     
-
-//List Like & UnLike
+    @objc optional func getTipsFromListIDResponse(responseObj: NSDictionary) -> Void
+    
+//List Related Methods
     @objc optional func listLikeOrUnLikeResponse(responseObj: NSDictionary) -> Void
     
 //Friend 
@@ -749,6 +750,72 @@ class Webservice: AnyObject {
             }
         })
         dataTask.resume()
+    }
+    
+    func getTipsFromListID(strUserID:String,ListID:String) -> Void {
+        
+        let str_Url:String = "\(kAPIBASEURL)\(kAPITips_in_list)"
+        let dictPara : Dictionary = ["UserID":strUserID,"ListID":ListID]
+        
+        if ISDebug {
+            print("AllList URL : \(str_Url) Parameters : \(dictPara)")
+        }
+        
+        let postData = NSMutableData()
+        
+        let arrKey = Array(dictPara.keys)
+        for i in 0..<arrKey.count {
+            let strKey = arrKey[i]
+            let valueKey = dictPara[strKey]
+            
+            if i == 0 {
+                postData.append("\(strKey)=\(valueKey!)".data(using: String.Encoding.utf8)!)
+            }else{
+                postData.append("&\(strKey)=\(valueKey!)".data(using: String.Encoding.utf8)!)
+            }
+        }
+        
+        var request: URLRequest = URLRequest(url: NSURL(string: str_Url)! as URL)
+        request.httpMethod = "POST"
+        request.allHTTPHeaderFields = headers
+        request.httpBody = postData as Data
+        request.timeoutInterval = requestTimeout
+        
+        let dataTask = URLSession.shared.dataTask(with: request, completionHandler: { data, response, error in
+            
+            if (response != nil) {
+                
+                if let httpResponse : HTTPURLResponse = response as? HTTPURLResponse
+                {
+                    let responseCode : Int = (httpResponse.statusCode)
+                    print(responseCode)
+                    if data != nil {
+                        
+                        do {
+                            let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! NSDictionary
+                            print(json)
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
+                                self.delegate?.getTipsFromListIDResponse?(responseObj: json)
+                            }
+                        } catch let error as NSError {
+                            print(error)
+                            let emptyDict = NSDictionary()
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
+                                self.delegate?.getTipsFromListIDResponse?(responseObj: emptyDict)
+                            }
+                        }
+                    } else {
+                        let emptyDict = NSDictionary()
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
+                            self.delegate?.getTipsFromListIDResponse?(responseObj: emptyDict)
+                        }
+                    }
+                }
+                
+            }
+        })
+        dataTask.resume()
+        
     }
     
     //MARK:- List related Methods
