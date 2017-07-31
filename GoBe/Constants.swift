@@ -91,13 +91,6 @@ let kAPIAllListHomeScreen   = "all-list"
 //MARK:- Friend
 let kAPIFriendList          = "friend-list"
 
-
-let APP_USERNAME = "iosuser"
-let APP_PASSWORD = "5f5606f140aa9cafe3c34ce3bd6f2753de91e3ede6fa64cee908f2274655c7cb"
-let APP_APPLICATION_CODE = "APP001"
-let APP_COMCHANNEL = "IOS"
-//009395
-
 class Constants
 {
     
